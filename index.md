@@ -42,7 +42,7 @@
 
 * [Repl.it에서 하스켈 프로그래밍하기](https://youtu.be/OZ6q6Rz9f6k?t=261) 동영상 참조할 것
 
-* 주의사항: 아래에서 언급하는 Binder 서버가 제공하는 주피터 노트북을 활용하여 실습을 진행할 수도 있음.
+* 주의사항: 아래에서 언급하는 바인더(Binder) 서버가 제공하는 주피터 노트북을 활용하여 실습을 진행할 수도 있음.
     하지만 바인더 서버가 실행될 때까지 경우에 따라 시간이 좀 걸릴 수도 있으며, 수정한 내용은 저장되지 않음에 주의할 것.
 
 ### 추천 환경
@@ -71,15 +71,15 @@
     또한 Visual Studio Code를 도커 이미지에 연결하여 주피터 노트북 내용을 따라 학습할 수 있음.
     구체적인 활용법은 [참고자료](./개발환경설정.md)에서 설명됨.
     
-* 아래에서 소개하는 binder 서버에 변경사항을 적용하고자 할 경우 깃허브에 수정된 사항 푸시(push)할 것.
+* 아래에서 소개하는 바인더(Binder) 서버에 변경사항을 적용하고자 할 경우 깃허브에 수정된 사항 푸시(push)할 것.
 
 도커 이미지 활용이 어렵거나 제공되는 주피터 노트북을 단순히 실행하고자 한다면
-<a href="https://mybinder.org/">mybinder.org</a>에서 제공하는 아래 Binder 서버를 이용할 수 있습니다.
+<a href="https://mybinder.org/">mybinder.org</a>에서 제공하는 아래 바인더(Binder) 서버를 이용할 수 있습니다.
 
 * [![launch Learn You a Haskell](https://img.shields.io/badge/launch-하스켈%20프로그래밍%20배우기-579ACA.svg?logo=data:image/png;base64,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)](https://mybinder.org/v2/gh/prologma/learn-you-a-haskell/master?urlpath=lab/tree/learn_you_a_haskell/00-preface.ipynb) 를 
     클릭하여 이동하면 강의에 사용되는 주피터 노트북 바로 실행 가능
 
-* 주의사항: Binder 서버에서 제공하는 주피터 노트북을 이용하여 하스켈 코드를 실행할 수는 있지만 
+* 주의사항: 바인더(Binder) 서버에서 제공하는 주피터 노트북을 이용하여 하스켈 코드를 실행할 수는 있지만 
     실행 결과나 변경 사항이 저장되지는 않음.
     주피터 노트북을 수정한 후 저장하려면 앞서 추천한 도커 이미지 활용법을 사용해야 함.
 
@@ -90,7 +90,7 @@
 * 주피터 노트북의 간단한 사용법: [Jupyter Notebook 사용법](https://www.youtube.com/watch?v=4_-IIfbdR5M)
 
 ## 감사의 말(Acknowledgement)
-<p>제공되는 mybinder의 서버와 도커 이미지는 James Brock의 
+<p>제공되는 바인더(Binder)의 서버와 도커 이미지는 James Brock의 
 <a href="https://github.com/jamesdbrock/learn-you-a-haskell-notebook">learn-you-a-haskell-notebook</a>에서 
 제공한 것을 활용합니다.
 주피터 노트북 서버에 사용되는 하스켈 해석기는 
