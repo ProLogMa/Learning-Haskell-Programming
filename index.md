@@ -19,6 +19,8 @@
     Graham Hutton
 * [The Haskell Road to Logic, Maths and Programming](https://staff.fnwi.uva.nl/d.j.n.vaneijck2/HR/), 
     Kees Doets and Jan van Eijck
+* [Wikibooks Haskell](https://en.wikibooks.org/wiki/Haskell/Print_version)
+    * 번역본: [Wikibooks Haskell](https://wikidocs.net/book/204)
 
 함께 제공되는 주피터 노트북은 James Brock의 
 [learn-you-a-haskell-notebook](https://github.com/jamesdbrock/learn-you-a-haskell-notebook)을 
@@ -26,7 +28,8 @@
 
 ## 목차
 
-1. 소개
+1. [강좌소개](./notebooks_html/01-introduction.html)
+1. [하스켈 프로그래밍 시작하기](./notebooks_html/02-starting-out.html)
 1. ...
 
 ## 학습 및 프로그래밍 환경
