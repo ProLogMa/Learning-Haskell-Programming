@@ -28,7 +28,7 @@
 
 ## 목차
 
-1. [강좌소개](./notebooks_html/01-introduction.html)
+1. [하스켈 언어 소개](./notebooks_html/01-introduction.html)
 1. [하스켈 프로그래밍 시작하기](./notebooks_html/02-starting-out.html)
 1. ...
 
