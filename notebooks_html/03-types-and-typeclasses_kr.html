@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>03-types-and-typeclasses</title>
+<title>03-types-and-typeclasses_kr</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,24 +13077,28 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Types-and-Typeclasses">Types and Typeclasses<a class="anchor-link" href="#Types-and-Typeclasses">&#182;</a></h1><h2 id="Believe-the-type">Believe the type<a class="anchor-link" href="#Believe-the-type">&#182;</a></h2><p><img src="img/cow.png" title="moo" style="float:left;margin-right:2em;" /></p>
-<p>Previously we mentioned that Haskell has a static type system. The type
-of every expression is known at compile time, which leads to safer code.
-If you write a program where you try to divide a boolean type with some
-number, it won't even compile. That's good because it's better to catch
-such errors at compile time instead of having your program crash.
-Everything in Haskell has a type, so the compiler can reason quite a lot
-about your program before compiling it.</p>
-<p>Unlike Java or Pascal, Haskell has type inference. If we write a number,
-we don't have to tell Haskell it's a number. It can <em>infer</em> that on its
-own, so we don't have to explicitly write out the types of our functions
-and expressions to get things done. We covered some of the basics of
-Haskell with only a very superficial glance at types. However,
-understanding the type system is a very important part of learning
-Haskell.</p>
-<p>A type is a kind of label that every expression has. It tells us in
-which category of things that expression fits. The expression <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:True"><code>True</code></a> is a
-boolean, <code>"hello"</code> is a string, etc.</p>
+<h1 id="3&#51109;-&#50976;&#54805;&#44284;-&#50976;&#54805;-&#53364;&#47000;&#49828;">3&#51109; &#50976;&#54805;&#44284; &#50976;&#54805; &#53364;&#47000;&#49828;<a class="anchor-link" href="#3&#51109;-&#50976;&#54805;&#44284;-&#50976;&#54805;-&#53364;&#47000;&#49828;">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.1-&#50976;&#54805;(Types)">3.1 &#50976;&#54805;(Types)<a class="anchor-link" href="#3.1-&#50976;&#54805;(Types)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>하스켈은 견고한 유형 체계를 가진다. 
+모든 표현식의 유형은 컴파일 과정에서 결정되며, 이로 인해 작성된 코드의 안전성이 높아진다. 
+예를 들어, 부울 유형을 어떤 숫자로 나누려하는 프로그램을 작성하면, 
+이 프로그램은 컴파일조차 되지 않는다. 
+즉, 프로그램이 실행중에 중단될 수도 있는 오류를 일을 컴파일 과정에서 막아낸다. 
+하스켈에서 다뤄지는 모든 대상은 유형을 갖기에, 
+프로그램이 컴파일 되기 전에 프로그램에 대한 많은 정보를 알아낼 수 있다.
+따라서 하스켈의 유형 체계를 이해하는 일이 매우 중요하다.</p>
 
 </div>
 </div>
@@ -13102,8 +13106,40 @@ boolean, <code>"hello"</code> is a string, etc.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Jupyter Note:</strong> We'll turn off the <a href="https://github.com/gibiansky/IHaskell/wiki#opt-no-lint">automatic linting for IHaskell</a> first.</p>
-</blockquote>
+<h3 id="&#50976;&#54805;-&#52628;&#47200;(type-inference)">&#50976;&#54805; &#52628;&#47200;(type inference)<a class="anchor-link" href="#&#50976;&#54805;-&#52628;&#47200;(type-inference)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>정적 유형 언어인 C, 자바 등과는 하스켈은 주어진 대상의 유형을 추론할 수 있다.
+만약 숫자를 작성하면 하슷켈 스스로 그것이 숫자라는 것을 
+<strong>추론(infer)</strong> 할 수 있다. 
+따라서 함수와 표현식의 유형을 일반적으로 명시하지 않아도 된다.</p>
+<p><strong>주의사항:</strong> 예외가 있다. 나중에 살펴볼 것이다.</p>
+<p>유형은 모든 표현식이 갖는 일종의 라벨(label)이다. 
+유형은 주어진 표현식이 어떤 부류에 속하는가에 대한 정보를 알려준다. 
+예를 들어
+<code>True</code>는 부울(<code>Bool</code>) 유형을, 
+<code>"hello"</code>는 문자열 유형을 갖는다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고:</strong> 린팅(linting) 기능 끄기</p>
+<ul>
+<li>린팅(linting)<ul>
+<li>IHaskell에서 HLint라고 불리는 린터(linter)에 의해 보다 적절하다고 판단하는 표현식을 제안하는 기능</li>
+<li>보다 세련된 표현식(expression)을 제안하는 도구임. 하지만 반드시 필요한 기능은 아님.</li>
+</ul>
+</li>
+<li>린팅 기능을 켜놓은 상태에서 함수를 정의하거나 실행해보면 껐을 때와의 차이점을 알 수 있음.</li>
+<li>참조: <a href="https://github.com/gibiansky/IHaskell/wiki#opt-no-lint">IHaskell의 린팅 기능 설정하기</a></li>
+</ul>
 
 </div>
 </div>
@@ -13124,9 +13160,17 @@ boolean, <code>"hello"</code> is a string, etc.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we'll use GHCI to examine the types of some expressions. We'll do
-that by using the <code>:t</code> command which, followed by any valid expression,
-tells us its type. Let's give it a whirl.</p>
+<p>GHCi를 사용해 일부 식의 유형을 살펴보자. 
+<code>:t</code> 명령문을 이용하여 주어진 표현식의 유형을 알아볼 수 있다.</p>
+<ul>
+<li>더블 콜론(<code>::</code>)의 의미<ul>
+<li>왼편: (주어진) 표현식</li>
+<li>오른편: (주어진) 표현식의 유형</li>
+<li>(주어진) 표현식은 "~ 유형을 갖는다", "~ 유형에 속한다"로 설명함.</li>
+</ul>
+</li>
+<li>유형은 항상 대문자로 시작함.</li>
+</ul>
 
 </div>
 </div>
@@ -13244,6 +13288,17 @@ font-weight: bold;
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>'a'</code>의 유형: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Char"><code>Char</code></a>. </li>
+<li><code>Char</code>는 <em>character</em> 의 약자.</li>
+</ul>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
@@ -13356,6 +13411,17 @@ font-weight: bold;
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:True"><code>True</code></a>의 유형:
+  <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a>. </li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13470,9 +13536,21 @@ font-weight: bold;
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>"HELLO!"</code>의 유형: <code>[Char]</code></li>
+<li><code>[Char]</code>에서 대괄호는 리스트를 표현함. 
+  즉, <code>[Char]</code>는 문자로 구성된 리스트를 의미함.</li>
+</ul>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="p">(</span><span class="kt">True</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">)</span>
@@ -13582,6 +13660,131 @@ font-weight: bold;
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>/* Styles used for the Hoogle display in the pager */
+.hoogle-doc {
+display: block;
+padding-bottom: 1.3em;
+padding-left: 0.4em;
+}
+.hoogle-code {
+display: block;
+font-family: monospace;
+white-space: pre;
+}
+.hoogle-text {
+display: block;
+}
+.hoogle-name {
+color: green;
+font-weight: bold;
+}
+.hoogle-head {
+font-weight: bold;
+}
+.hoogle-sub {
+display: block;
+margin-left: 0.4em;
+}
+.hoogle-package {
+font-weight: bold;
+font-style: italic;
+}
+.hoogle-module {
+font-weight: bold;
+}
+.hoogle-class {
+font-weight: bold;
+}
+.get-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+display: block;
+white-space: pre-wrap;
+}
+.show-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+margin-left: 1em;
+}
+.mono {
+font-family: monospace;
+display: block;
+}
+.err-msg {
+color: red;
+font-style: italic;
+font-family: monospace;
+white-space: pre;
+display: block;
+}
+#unshowable {
+color: red;
+font-weight: bold;
+}
+.err-msg.in.collapse {
+padding-top: 0.7em;
+}
+.highlight-code {
+white-space: pre;
+font-family: monospace;
+}
+.suggestion-warning { 
+font-weight: bold;
+color: rgb(200, 130, 0);
+}
+.suggestion-error { 
+font-weight: bold;
+color: red;
+}
+.suggestion-name {
+font-weight: bold;
+}
+</style><span class='get-type'>('a','b','c') :: (Char, Char, Char)</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>(True, 'a')</code>의 유형: <code>(Bool, Char)</code></li>
+<li><code>('a','b','c')</code>의 유형: <code>(Char, Char, Char)</code></li>
+<li>리스트와는 달리, 튜플의 길이 또한 유형을 결정함.</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13699,36 +13902,54 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/bomb.png" title="bomb" style="float:right;margin-left:2em;" /> Here we see that doing <code>:t</code>
-on an expression prints out the expression followed by <code>::</code> and its type.
-<code>::</code> is read as "has type of". Explicit types are always denoted with the
-first letter in capital case. <code>'a'</code>, as it would seem, has a type of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Char"><code>Char</code></a>.
-It's not hard to conclude that it stands for <em>character</em>. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:True"><code>True</code></a> is of a
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a> type. That makes sense. But what's this? Examining the type of
-<code>"HELLO!"</code> yields a <code>[Char]</code>. The square brackets denote a list. So we read
-that as it being <em>a list of characters</em>. Unlike lists, each tuple length
-has its own type. So the expression of <code>(True, 'a')</code> has a type of
-<code>(Bool, Char)</code>, whereas an expression such as <code>('a','b','c')</code> would have the
-type of <code>(Char, Char, Char)</code>. <code>4 == 5</code> will always return <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a>, so its type
-is <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a>.</p>
-<p>Functions also have types. When writing our own functions, we can choose
-to give them an explicit type declaration. This is generally considered
-to be good practice except when writing very short functions. From here
-on, we'll give all the functions that we make type declarations.
-Remember the list comprehension we made previously that filters a string
-so that only caps remain? Here's how it looks like with a type
-declaration.</p>
+<ul>
+<li><code>4 == 5</code>의 유형: <code>Bool</code></li>
+<li>이유: <code>4 == 5</code>는 
+  <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a> 로 
+  계산되는데, 
+  <code>False</code>가 
+  <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a> 
+  유형을 가짐.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54632;&#49688;&#51032;-&#50976;&#54805;">&#54632;&#49688;&#51032; &#50976;&#54805;<a class="anchor-link" href="#&#54632;&#49688;&#51032;-&#50976;&#54805;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>하스켈의 표현식은 함수를 활용하여 생성한다. 
+따라서 함수 또한 유형을 갖는다.
+함수를 작성할 때, 함수의 유형을 명시적으로 표기할 필요는 없지만
+매우 간단한 함수 정의를 작성할 때를 제외하고, 일반적으로는 유형 선언을 해주는 것이 좋다.
+따라서 지금부터 선언되는 모든 함수에 유형을 명시할 것이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>예제</em></strong></p>
+<p>2장에서 조건제시법을 이용하여 문자열에서 대문자만 남기는 함수 <code>removeNonUppercase</code>를
+다음과 같이 정의하였다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">removeNonUppercase</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Char</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">Char</span><span class="p">]</span>
-<span class="nf">removeNonUppercase</span> <span class="n">st</span> <span class="ow">=</span> <span class="p">[</span> <span class="n">c</span> <span class="o">|</span> <span class="n">c</span> <span class="ow">&lt;-</span> <span class="n">st</span><span class="p">,</span> <span class="n">c</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="p">[</span><span class="sc">&#39;A&#39;</span><span class="o">..</span><span class="sc">&#39;Z&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">removeNonUppercase</span> <span class="n">str</span> <span class="ow">=</span> <span class="p">[</span> <span class="n">c</span> <span class="o">|</span> <span class="n">c</span> <span class="ow">&lt;-</span> <span class="n">str</span><span class="p">,</span> <span class="n">c</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="p">[</span><span class="sc">&#39;A&#39;</span><span class="o">..</span><span class="sc">&#39;Z&#39;</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -13739,23 +13960,189 @@ declaration.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>removeNonUppercase</code> has a type of <code>[Char] -&gt; [Char]</code>, meaning that it maps
-from a string to a string. That's because it takes one string as a
-parameter and returns another as a result. The <code>[Char]</code> type is synonymous
-with <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:String"><code>String</code></a> so it's clearer if we write
-<code>removeNonUppercase :: String -&gt; String</code>.
-We didn't have to give this function a type declaration because
-the compiler can infer by itself that it's a function from a string to a
-string but we did anyway. But how do we write out the type of a function
-that takes several parameters? Here's a simple function that takes three
-integers and adds them together:</p>
+<p>이제 위 함수의 유형을 확인해보자.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="n">removeNonUppercase</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>/* Styles used for the Hoogle display in the pager */
+.hoogle-doc {
+display: block;
+padding-bottom: 1.3em;
+padding-left: 0.4em;
+}
+.hoogle-code {
+display: block;
+font-family: monospace;
+white-space: pre;
+}
+.hoogle-text {
+display: block;
+}
+.hoogle-name {
+color: green;
+font-weight: bold;
+}
+.hoogle-head {
+font-weight: bold;
+}
+.hoogle-sub {
+display: block;
+margin-left: 0.4em;
+}
+.hoogle-package {
+font-weight: bold;
+font-style: italic;
+}
+.hoogle-module {
+font-weight: bold;
+}
+.hoogle-class {
+font-weight: bold;
+}
+.get-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+display: block;
+white-space: pre-wrap;
+}
+.show-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+margin-left: 1em;
+}
+.mono {
+font-family: monospace;
+display: block;
+}
+.err-msg {
+color: red;
+font-style: italic;
+font-family: monospace;
+white-space: pre;
+display: block;
+}
+#unshowable {
+color: red;
+font-weight: bold;
+}
+.err-msg.in.collapse {
+padding-top: 0.7em;
+}
+.highlight-code {
+white-space: pre;
+font-family: monospace;
+}
+.suggestion-warning { 
+font-weight: bold;
+color: rgb(200, 130, 0);
+}
+.suggestion-error { 
+font-weight: bold;
+color: red;
+}
+.suggestion-name {
+font-weight: bold;
+}
+</style><span class='get-type'>removeNonUppercase :: [Char] -> [Char]</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>removeNonUppercase</code> 함수의 유형은 <code>[Char] -&gt; [Char]</code> 이며,
+하나의 문자열을 인자로 받아 다른 문자열을 반환하는 함수라는 의미이다.</p>
+<p>이렇듯 <code>removeNonUppercase</code> 함수와 같이 간단한 함수의 유형은 
+하스켈 컴파일러가 스스로 추론해낼 수 있다. 
+따라서 애초에 위 함수를 아래와 같이 정의할 수도 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">removeNonUppercase</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Char</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">Char</span><span class="p">]</span>
+<span class="nf">removeNonUppercase</span> <span class="n">str</span> <span class="ow">=</span> <span class="p">[</span> <span class="n">c</span> <span class="o">|</span> <span class="n">c</span> <span class="ow">&lt;-</span> <span class="n">str</span><span class="p">,</span> <span class="n">c</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="p">[</span><span class="sc">&#39;A&#39;</span><span class="o">..</span><span class="sc">&#39;Z&#39;</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>[Char]</code>와 
+<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:String"><code>String</code></a>은
+동의어이이기에 아래와 같이 정의하는 게 보다 직관적이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">removeNonUppercase</span> <span class="ow">::</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">removeNonUppercase</span> <span class="n">str</span> <span class="ow">=</span> <span class="p">[</span> <span class="n">c</span> <span class="o">|</span> <span class="n">c</span> <span class="ow">&lt;-</span> <span class="n">str</span><span class="p">,</span> <span class="n">c</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="p">[</span><span class="sc">&#39;A&#39;</span><span class="o">..</span><span class="sc">&#39;Z&#39;</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>예제</em></strong></p>
+<p>아래에 정의된 <code>addThree</code> 함수는 세 개의 정수를 인자로 받아
+세 정수의 합을 계산하여 반환한다. 
+따라서 함수의 유형은 세 개의 정수 유형(<code>Int</code>)를 사용하고, 반환값 또한 정수 유형(<code>Int</code>) 임을 
+암시해야 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">addThree</span> <span class="ow">::</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
@@ -13770,31 +14157,174 @@ integers and adds them together:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The parameters are separated with <code>-&gt;</code> and there's no special distinction
-between the parameters and the return type. The return type is the last
-item in the declaration and the parameters are the first three. Later on
-we'll see why they're all just separated with <code>-&gt;</code> instead of having some
-more explicit distinction between the return types and the parameters
-like <code>Int, Int, Int -&gt; Int</code> or something.</p>
-<p>If you want to give your function a type declaration but are unsure as
-to what it should be, you can always just write the function without it
-and then check it with <code>:t</code>. Functions are expressions too, so <code>:t</code> works
-on them without a problem.</p>
-<p>Here's an overview of some common types.</p>
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a></strong> stands for integer. It's used for whole numbers. <code>7</code> can be an <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a> but
-<code>7.2</code> cannot. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a> is bounded, which means that it has a minimum and a
-maximum value. Usually on 32-bit machines the maximum possible <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a> is
-2147483647 and the minimum is -2147483648.</p>
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integer"><code>Integer</code></a></strong> stands for, er … also integer. The main difference is that it's
-not bounded so it can be used to represent really really big numbers. I
-mean like really big. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a>, however, is more efficient.</p>
+<p>매개변수들의 유형은 <code>-&gt;</code>로 구분하며, 반환값의 유형은 맨 마지막에 명시한다.</p>
+<p><strong>주의사항</strong></p>
+<ul>
+<li><p>함수의 기능상 유형을 아래와 같이 작성할 수도 있지만 엄밀하게 말하면 다른 유형이다. 
+이유는 차차 알게될 것이다.</p>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
+</pre></div>
+</li>
+<li><p>앞서 살펴 보았듯이 함수를 정의할 때 유형을 정확히 모르겠다면 먼저 유형 선언 없이 함수를 작성한 다음에 
+  <code>:t</code> 명령문을 이용하여 함수의 유형을 확인할 수 있다.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54616;&#49828;&#53000;&#51032;-&#44592;&#48376;-&#50976;&#54805;">&#54616;&#49828;&#53000;&#51032; &#44592;&#48376; &#50976;&#54805;<a class="anchor-link" href="#&#54616;&#49828;&#53000;&#51032;-&#44592;&#48376;-&#50976;&#54805;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Int-&#50976;&#54805;"><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a> &#50976;&#54805;<a class="anchor-link" href="#Int-&#50976;&#54805;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1, 2, 3 등 정수들의 유형이며, 최솟값과 최댓값으로 제한된 구간에 포함된 정수들을 대상으로 한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">addThree</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>15</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>주의사항:</strong> 이렇듯 제한된 구간의 값을 갖는 유형의 최솟값과 최댓값은
+<code>minBound</code> 와 <code>maxBound</code> 함수를 이용하여 확인할 수 있다.
+예를 들어, <code>Int</code> 형의 경우 최솟값과 최댓값은 다음과 같이 확인한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="n">minBound</span><span class="ow">::</span><span class="kt">Int</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>-9223372036854775808</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="n">maxBound</span><span class="ow">::</span><span class="kt">Int</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>9223372036854775807</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Integer-&#50976;&#54805;"><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integer"><code>Integer</code></a> &#50976;&#54805;<a class="anchor-link" href="#Integer-&#50976;&#54805;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>또다른 정수들의 유형이다. 
+하지만 <code>Int</code>와 달리 <code>Integer</code>에 속한 정수는 제한되지 않는다. 
+즉, 엄청 큰 숫자를 다뤄야 하는 경우 사용한다. 
+예를 들어, 아래 <code>factorial</code> 함수는 계승과 같이 매우 큰 수를 계산하기에 <code>Integer</code> 유형을 사용한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">factorial</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
@@ -13808,7 +14338,7 @@ mean like really big. <a href="https://hackage.haskell.org/package/base/docs/Pre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">factorial</span> <span class="mi">50</span>
@@ -13842,14 +14372,38 @@ mean like really big. <a href="https://hackage.haskell.org/package/base/docs/Pre
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Float"><code>Float</code></a></strong> is a real floating point with single precision.</p>
+<p><strong>주의사항:</strong> <code>Int</code> 유형에 속한 정수를 다루는 일이 보다 빠르고 효율적이기에, 그렇게 큰 정수를 다룰 필요가 없다면
+<code>Int</code> 유형이 권장된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Float-&#50976;&#54805;"><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Float"><code>Float</code></a> &#50976;&#54805;<a class="anchor-link" href="#Float-&#50976;&#54805;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>단 정밀도(single precision)를 갖는 부동소수점들의 유형이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>아애 함수는 반지름이 주어졌을 때 원의 둘레를 계산한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">circumference</span> <span class="ow">::</span> <span class="kt">Float</span> <span class="ow">-&gt;</span> <span class="kt">Float</span>
@@ -13863,7 +14417,7 @@ mean like really big. <a href="https://hackage.haskell.org/package/base/docs/Pre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">circumference</span> <span class="mf">4.0</span>
@@ -13897,14 +14451,36 @@ mean like really big. <a href="https://hackage.haskell.org/package/base/docs/Pre
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Double"><code>Double</code></a></strong> is a real floating point with double the precision!</p>
+<p><strong>참고</strong></p>
+<ul>
+<li>부동소수점: 실수를 컴퓨터에서 구현하는 일반적인 방식을 따른 수. 실제로는 소숫점 이하가 제한된 유리수임.</li>
+<li>단 정밀도(single precision): 하나의 부동소수점을 계산할 때 사용되는 메모리가 32비트로 제한됨.</li>
+<li>배 정밀도(double precision): 하나의 부동소수점을 계산할 때 사용되는 메모리가 64비트까지 확장됨.</li>
+<li>이외에 부동소수점을 계산할 때 사용하는 메모리의 한계에 따라 다양한 정밀도가 제공됨.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Double-&#50976;&#54805;"><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Double"><code>Double</code></a> &#50976;&#54805;<a class="anchor-link" href="#Double-&#50976;&#54805;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>두 배의 정밀도를 가진 부동소수점들의 유형이다.
+아래 예제를 통해 단 정밀도를 사용할 때와 배 정밀도를 사용할 때의 차이를 확인할 수 있다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">circumference&#39;</span> <span class="ow">::</span> <span class="kt">Double</span> <span class="ow">-&gt;</span> <span class="kt">Double</span>
@@ -13918,7 +14494,7 @@ mean like really big. <a href="https://hackage.haskell.org/package/base/docs/Pre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">circumference&#39;</span> <span class="mf">4.0</span>
@@ -13952,23 +14528,47 @@ mean like really big. <a href="https://hackage.haskell.org/package/base/docs/Pre
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a></strong> is a boolean type. It can have only two values: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:True"><code>True</code></a> and <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a>.</p>
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Char"><code>Char</code></a></strong> represents a character. It's denoted by single quotes. A list of
-characters is a string.</p>
-<p>Tuples are types but they are dependent on their length as well as the
-types of their components, so there is theoretically an infinite number
-of tuple types, which is too many to cover in this tutorial. Note that
-the empty tuple <code>()</code> is also a type which can only have a single value: <code>()</code></p>
-<h2 id="Type-variables">Type variables<a class="anchor-link" href="#Type-variables">&#182;</a></h2><p>What do you think is the type of the <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a> function? Because <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a> takes a
-list of any type and returns the first element, so what could it be?
-Let's check!</p>
+<ol>
+<li><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a></strong>: 부울 유형을 의미<ul>
+<li>오직 두 가지 값만 가짐: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:True"><code>True</code></a>,  <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a>.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Char"><code>Char</code></a></strong>: 문자 유형을 의미<ul>
+<li>작은 따옴표로 표시되어 있음</li>
+<li>문자 리스트는 문자열 유형</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>튜플의 유형<ul>
+<li>튜플 역시 유형을 가지고 있음</li>
+<li>원소들의 유형과 튜플의 길이에 따라 유형이 달라지기 때문에 이론적으로 튜플에는 무한정 많은 유형이 있어, 이 튜토리얼에서 다루기에는 너무 많음.</li>
+<li>비어있는 튜플 <code>()</code>은 하나의 값만 가질 있는 유형이라는 것만 기억</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.4-&#50976;&#54805;-&#48320;&#49688;(Type-variables)">1.4 &#50976;&#54805; &#48320;&#49688;(Type variables)<a class="anchor-link" href="#1.4-&#50976;&#54805;-&#48320;&#49688;(Type-variables)">&#182;</a></h3><hr>
+<p><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a> 함수의 유형은 무엇이라고 생각하는가?</p>
+<ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a>는 아무 유형의 리스트를 받아와 첫 번째 원소를 반환해줌</li>
+</ul>
+<p><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a> 의 유형을 확인해보자</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="n">head</span>
@@ -13978,131 +14578,41 @@ Let's check!</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<style>/* Styles used for the Hoogle display in the pager */
-.hoogle-doc {
-display: block;
-padding-bottom: 1.3em;
-padding-left: 0.4em;
-}
-.hoogle-code {
-display: block;
-font-family: monospace;
-white-space: pre;
-}
-.hoogle-text {
-display: block;
-}
-.hoogle-name {
-color: green;
-font-weight: bold;
-}
-.hoogle-head {
-font-weight: bold;
-}
-.hoogle-sub {
-display: block;
-margin-left: 0.4em;
-}
-.hoogle-package {
-font-weight: bold;
-font-style: italic;
-}
-.hoogle-module {
-font-weight: bold;
-}
-.hoogle-class {
-font-weight: bold;
-}
-.get-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-display: block;
-white-space: pre-wrap;
-}
-.show-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-margin-left: 1em;
-}
-.mono {
-font-family: monospace;
-display: block;
-}
-.err-msg {
-color: red;
-font-style: italic;
-font-family: monospace;
-white-space: pre;
-display: block;
-}
-#unshowable {
-color: red;
-font-weight: bold;
-}
-.err-msg.in.collapse {
-padding-top: 0.7em;
-}
-.highlight-code {
-white-space: pre;
-font-family: monospace;
-}
-.suggestion-warning { 
-font-weight: bold;
-color: rgb(200, 130, 0);
-}
-.suggestion-error { 
-font-weight: bold;
-color: red;
-}
-.suggestion-name {
-font-weight: bold;
-}
-</style><span class='get-type'>head :: forall a. [a] -> a</span>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/box.png" title="box" style="float:left;margin-right:2em;" /> Hmmm! What is this <code>a</code>? Is it
-a type? Remember that we previously stated that types are written in
-capital case, so it can't exactly be a type. Because it's not in capital
-case it's actually a <em>type variable</em>. That means that <code>a</code> can be of any
-type. This is much like generics in other languages, only in Haskell
-it's much more powerful because it allows us to easily write very
-general functions if they don't use any specific behavior of the types
-in them. Functions that have type variables are called <em>polymorphic
-functions</em>. The type declaration of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a> states that it takes a list of
-any type and returns one element of that type.</p>
-<p>Although type variables can have names longer than one character, we
-usually give them names of a, b, c, d …</p>
-<p>Remember <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fst"><code>fst</code></a>? It returns the first component of a pair. Let's examine
-its type.</p>
+<p><code>a</code>는 무엇일까?</p>
+<ul>
+<li><code>a</code>는 유형이다. (X)<ul>
+<li>이유: 앞에서 언급했 듯이 유형의 첫 글자는 대문자로 써야 함.</li>
+</ul>
+</li>
+<li>첫 글자가 대문자가 아니므로 <code>a</code>를 <em>유형 변수(type variable)</em> 라고 함.<ul>
+<li>즉, <code>a</code>는 모든 유형이 다 될 수 있다는 의미</li>
+</ul>
+</li>
+<li>다른 언어에서의 generics과 유사하지만, 하스켈에서는 더 중요한 역할을 함.<ul>
+<li>이유: because it allows us to easily write very general functions if they don't use any specific behavior of the types in them.</li>
+</ul>
+</li>
+</ul>
+<p>유형 변수를 가지고 있는 함수를 <em>다형성 함수(polymorphic functions)</em> 라고 부름.</p>
+<ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a>의 유형 선언을 보면 어떤 유형의 리스트를 받아와 그 유형의 원소 하나를 반환한다고 나와있음</li>
+</ul>
+<p>유형 변수의 이름은 한 글자 이상일 수 있지만, 보통 a, b, c, d …로 이름을 붙임</p>
+<p>이제 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fst"><code>fst</code></a>의 유형을 확인해보자.</p>
+<ul>
+<li><code>fst</code>: 쌍에서 첫 번째 원소를 반환해주는 함수</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="n">fst</span>
@@ -14112,132 +14622,39 @@ its type.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<style>/* Styles used for the Hoogle display in the pager */
-.hoogle-doc {
-display: block;
-padding-bottom: 1.3em;
-padding-left: 0.4em;
-}
-.hoogle-code {
-display: block;
-font-family: monospace;
-white-space: pre;
-}
-.hoogle-text {
-display: block;
-}
-.hoogle-name {
-color: green;
-font-weight: bold;
-}
-.hoogle-head {
-font-weight: bold;
-}
-.hoogle-sub {
-display: block;
-margin-left: 0.4em;
-}
-.hoogle-package {
-font-weight: bold;
-font-style: italic;
-}
-.hoogle-module {
-font-weight: bold;
-}
-.hoogle-class {
-font-weight: bold;
-}
-.get-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-display: block;
-white-space: pre-wrap;
-}
-.show-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-margin-left: 1em;
-}
-.mono {
-font-family: monospace;
-display: block;
-}
-.err-msg {
-color: red;
-font-style: italic;
-font-family: monospace;
-white-space: pre;
-display: block;
-}
-#unshowable {
-color: red;
-font-weight: bold;
-}
-.err-msg.in.collapse {
-padding-top: 0.7em;
-}
-.highlight-code {
-white-space: pre;
-font-family: monospace;
-}
-.suggestion-warning { 
-font-weight: bold;
-color: rgb(200, 130, 0);
-}
-.suggestion-error { 
-font-weight: bold;
-color: red;
-}
-.suggestion-name {
-font-weight: bold;
-}
-</style><span class='get-type'>fst :: forall a b. (a, b) -> a</span>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We see that <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fst"><code>fst</code></a> takes a tuple which contains two types and returns an
-element which is of the same type as the pair's first component. That's
-why we can use <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fst"><code>fst</code></a> on a pair that contains any two types. Note that just
-because <code>a</code> and <code>b</code> are different type variables, they don't have to be
-different types. It just states that the first component's type and the
-return value's type are the same.</p>
-<p><a name="typeclasses-101"></a></p>
-<h2 id="Typeclasses-101">Typeclasses 101<a class="anchor-link" href="#Typeclasses-101">&#182;</a></h2><p><img src="img/classes.png" title="class" style="float:right;margin-left:2em;" /></p>
-<p>A typeclass is a sort of interface that defines some behavior. If a type
-is a part of a typeclass, that means that it supports and implements the
-behavior the typeclass describes. A lot of people coming from OOP get
-confused by typeclasses because they think they are like classes in
-object oriented languages. Well, they're not. You can think of them kind
-of as Java interfaces, only better.</p>
-<p>What's the type signature of the <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a> function?</p>
+<p><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fst"><code>fst</code></a>는 두 가지 유형을 가진 튜플을 받아와 첫 번째 원소와 같은 유형을 가진 원소를 반환</p>
+<ul>
+<li><code>a</code>, <code>b</code>가 서로 다른 유형 변수라 해서 두 변수가 서로 다른 유형일 필요는 없음<ul>
+<li>단지, 첫 번째 원소의 유형과 반환값의 유형이 동일하다는 것을 의미</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2.-&#50976;&#54805;-&#53364;&#47000;&#49828;(Typeclasses)">2. &#50976;&#54805; &#53364;&#47000;&#49828;(Typeclasses)<a class="anchor-link" href="#2.-&#50976;&#54805;-&#53364;&#47000;&#49828;(Typeclasses)">&#182;</a></h1><hr>
+<p>유형 클래스(typeclass): 일부 동작을 정의하는 일종의 인터페이스(interface)</p>
+<ul>
+<li>유형이 유형 클래스의 한 부분이라면, 이것은 유형 클래스가 설명하는 동작을 지원하고 구현한다는 것을 의미</li>
+<li>객체 지향 언어에서의 클래스와 비슷하다고 생각하기 때문에, 객체 지향 언어를 사용하던 사람들이 유형 클래스를 혼란스러워함</li>
+<li>유형 클래스는 객체 지향 언어에서의 클래스와는 다름. 자바의 인터페이스라고 생각하면 편할 것</li>
+</ul>
+<p><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a> 함수의 유형은 무엇인가?</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="p">(</span><span class="o">==</span><span class="p">)</span>
@@ -14247,142 +14664,52 @@ of as Java interfaces, only better.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<style>/* Styles used for the Hoogle display in the pager */
-.hoogle-doc {
-display: block;
-padding-bottom: 1.3em;
-padding-left: 0.4em;
-}
-.hoogle-code {
-display: block;
-font-family: monospace;
-white-space: pre;
-}
-.hoogle-text {
-display: block;
-}
-.hoogle-name {
-color: green;
-font-weight: bold;
-}
-.hoogle-head {
-font-weight: bold;
-}
-.hoogle-sub {
-display: block;
-margin-left: 0.4em;
-}
-.hoogle-package {
-font-weight: bold;
-font-style: italic;
-}
-.hoogle-module {
-font-weight: bold;
-}
-.hoogle-class {
-font-weight: bold;
-}
-.get-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-display: block;
-white-space: pre-wrap;
-}
-.show-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-margin-left: 1em;
-}
-.mono {
-font-family: monospace;
-display: block;
-}
-.err-msg {
-color: red;
-font-style: italic;
-font-family: monospace;
-white-space: pre;
-display: block;
-}
-#unshowable {
-color: red;
-font-weight: bold;
-}
-.err-msg.in.collapse {
-padding-top: 0.7em;
-}
-.highlight-code {
-white-space: pre;
-font-family: monospace;
-}
-.suggestion-warning { 
-font-weight: bold;
-color: rgb(200, 130, 0);
-}
-.suggestion-error { 
-font-weight: bold;
-color: red;
-}
-.suggestion-name {
-font-weight: bold;
-}
-</style><span class='get-type'>(==) :: forall a. Eq a => a -> a -> Bool</span>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Note</strong>: the equality operator, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a> is a function. So are <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-43-"><code>+</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-42-"><code>*</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-45-"><code>-</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-47-"><code>/</code></a> and
-pretty much all operators. If a function is comprised only of special
-characters, it's considered an infix function by default. If we want to
-examine its type, pass it to another function or call it as a prefix
-function, we have to surround it in parentheses.</p>
+<blockquote><p><strong>참고</strong>: 동등성 연산자인 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a>도 함수임. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-43-"><code>+</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-42-"><code>*</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-45-"><code>-</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-47-"><code>/</code></a>,
+등 많은 연산자들이 있음. 만약 함수가 특수 문자로만 구성된 경우, 이 함수는 중위 함수로 간주됨. 이 함수의 유형을 알고 싶거나, 다른 함수에 전달하거나, 전위 함수로 부르고 싶다면, 괄호로 묶어서 사용하면 됨.</p>
 </blockquote>
-<p>Interesting. We see a new thing here, the <code>=&gt;</code> symbol. Everything before
-the <code>=&gt;</code> symbol is called a <em>class constraint</em>. We can read the previous
-type declaration like this: the equality function takes any two values
-that are of the same type and returns a <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a>. The type of those two
-values must be a member of the <code>Eq</code> class (this was the class constraint).</p>
-<p>The <code>Eq</code> typeclass provides an interface for testing for equality. Any
-type where it makes sense to test for equality between two values of
-that type should be a member of the <code>Eq</code> class. All standard Haskell types
-except for <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:IO"><code>IO</code></a> (the type for dealing with input and output) and functions
-are a part of the <code>Eq</code> typeclass.</p>
-<p>The <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:elem"><code>elem</code></a> function has a type of <code>(Eq a) =&gt; a -&gt; [a] -&gt; Bool</code> because it
-uses <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a> over a list to check whether some value we're looking for is in
-it.</p>
-<p>Some basic typeclasses:</p>
-<p><strong><code>Eq</code></strong> is used for types that support equality testing. The functions its
-members implement are <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a> and <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-47--61-"><code>/=</code></a>. So if there's an <code>Eq</code> class constraint
-for a type variable in a function, it uses <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a> or <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-47--61-"><code>/=</code></a> somewhere inside its
-definition. All the types we mentioned previously except for functions
-are part of <code>Eq</code>, so they can be tested for equality.</p>
+<ul>
+<li>클래스 제약<ul>
+<li><code>=&gt;</code> 기호 전에 오는 모든 것을 <em>클래스 제약(class constraint)</em> 이라고 함.</li>
+<li>이전의 유형 선언에서 동등성 함수는 같은 유형의 두 개의 값을 가져와 비교 결과를 부울 유형으로 리턴한다는 내용이 있었음<ul>
+<li>두 값의 유형이 반드시 <code>Eq</code> 클래스의 구성원이어야 함. 이것이 클래스 제약.<ul>
+<li><code>Eq</code> 유형 클래스는 동등성 테스트를 위한 인터페이스를 제공</li>
+<li>해당 유형의 두 값 사이에서 동등성을 테스트하는 것이 적합한 모든 유형은 <code>Eq</code> 클래스의 구성원이야야 함.</li>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:IO"><code>IO</code></a> (입출력 처리 유형)와 함수를 제외한 모든 표준 하스켈 유형은 <code>Eq</code> 유형 클래스의 일부임.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>클래스 제약의 예시: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:elem"><code>elem</code></a> 함수<ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:elem"><code>elem</code></a> 함수는 <code>(Eq a) =&gt; a -&gt; [a] -&gt; Bool</code> 유형을 가짐</li>
+<li>이유: <code>elem</code> 함수는 입력된 값이 리스트에 있는지 살펴볼 때 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a>를 사용하기 때문</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.1-&#44592;&#48376;&#51201;&#51064;-&#50976;&#54805;-&#53364;&#47000;&#49828;">2.1 &#44592;&#48376;&#51201;&#51064; &#50976;&#54805; &#53364;&#47000;&#49828;<a class="anchor-link" href="#2.1-&#44592;&#48376;&#51201;&#51064;-&#50976;&#54805;-&#53364;&#47000;&#49828;">&#182;</a></h3><hr>
+<ol>
+<li><strong><code>Eq</code></strong>  <ul>
+<li>동등성 테스트를 지원하는 유형</li>
+<li>구성원이 구현하는 기능: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-47--61-"><code>/=</code></a></li>
+<li>함수에서 유형 변수에 <code>Eq</code> 제약이 있다면, 함수의 정의 부분에서 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a> 또는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-47--61-"><code>/=</code></a>을 사용한다는 의미</li>
+<li>이전에 언급한 유형 중 함수를 제외하고는 모두 <code>Eq</code>의 일부이므로, 동등성 테스트 사용 가능</li>
+</ul>
+</li>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span>
@@ -14392,30 +14719,10 @@ are part of <code>Eq</code>, so they can be tested for equality.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">5</span> <span class="o">/=</span> <span class="mi">5</span>
@@ -14425,30 +14732,10 @@ are part of <code>Eq</code>, so they can be tested for equality.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="sc">&#39;a&#39;</span> <span class="o">==</span> <span class="sc">&#39;a&#39;</span>
@@ -14458,30 +14745,10 @@ are part of <code>Eq</code>, so they can be tested for equality.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="s">&quot;Ho Ho&quot;</span> <span class="o">==</span> <span class="s">&quot;Ho Ho&quot;</span>
@@ -14491,30 +14758,10 @@ are part of <code>Eq</code>, so they can be tested for equality.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mf">3.432</span> <span class="o">==</span> <span class="mf">3.432</span>
@@ -14524,38 +14771,20 @@ are part of <code>Eq</code>, so they can be tested for equality.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord"><code>Ord</code></a></strong> is for types that have an ordering.</p>
+<ol>
+<li><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord"><code>Ord</code></a></strong> : 순서를 가지고 있는 유형을 위한 것</li>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="p">(</span><span class="o">&gt;</span><span class="p">)</span>
@@ -14565,124 +14794,31 @@ are part of <code>Eq</code>, so they can be tested for equality.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<style>/* Styles used for the Hoogle display in the pager */
-.hoogle-doc {
-display: block;
-padding-bottom: 1.3em;
-padding-left: 0.4em;
-}
-.hoogle-code {
-display: block;
-font-family: monospace;
-white-space: pre;
-}
-.hoogle-text {
-display: block;
-}
-.hoogle-name {
-color: green;
-font-weight: bold;
-}
-.hoogle-head {
-font-weight: bold;
-}
-.hoogle-sub {
-display: block;
-margin-left: 0.4em;
-}
-.hoogle-package {
-font-weight: bold;
-font-style: italic;
-}
-.hoogle-module {
-font-weight: bold;
-}
-.hoogle-class {
-font-weight: bold;
-}
-.get-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-display: block;
-white-space: pre-wrap;
-}
-.show-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-margin-left: 1em;
-}
-.mono {
-font-family: monospace;
-display: block;
-}
-.err-msg {
-color: red;
-font-style: italic;
-font-family: monospace;
-white-space: pre;
-display: block;
-}
-#unshowable {
-color: red;
-font-weight: bold;
-}
-.err-msg.in.collapse {
-padding-top: 0.7em;
-}
-.highlight-code {
-white-space: pre;
-font-family: monospace;
-}
-.suggestion-warning { 
-font-weight: bold;
-color: rgb(200, 130, 0);
-}
-.suggestion-error { 
-font-weight: bold;
-color: red;
-}
-.suggestion-name {
-font-weight: bold;
-}
-</style><span class='get-type'>(>) :: forall a. Ord a => a -> a -> Bool</span>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>All the types we covered so far except for functions are part of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord"><code>Ord</code></a>.
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord"><code>Ord</code></a> covers all the standard comparing functions such as <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-62-"><code>&gt;</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-60-"><code>&lt;</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-62--61-"><code>&gt;=</code></a> and
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-60--61-"><code>&lt;=</code></a>. The <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:compare"><code>compare</code></a> function takes two <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord"><code>Ord</code></a> members of the same type and
-returns an ordering. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ordering"><code>Ordering</code></a> is a type that can be <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:GT"><code>GT</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:LT"><code>LT</code></a> or <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:EQ"><code>EQ</code></a>,
-meaning <em>greater than</em>, <em>lesser than</em> and <em>equal</em>, respectively.</p>
-<p>To be a member of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord"><code>Ord</code></a>, a type must first have membership in the
-prestigious and exclusive <code>Eq</code> club.</p>
+<ul>
+<li>함수를 제외하고 지금까지 다룬 모든 유형은 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord"><code>Ord</code></a>의 일부임</li>
+</ul>
+<ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord"><code>Ord</code></a>은 모든 표준 비교 함수를 다룸.<ul>
+<li>예시1: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-62-"><code>&gt;</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-60-"><code>&lt;</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-62--61-"><code>&gt;=</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-60--61-"><code>&lt;=</code></a></li>
+<li>예시2. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:compare"><code>compare</code></a>: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord"><code>Ord</code></a>에서 같은 유형의 두 개의 멤버를 가져와 순서를 반환</li>
+<li>예시3. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ordering"><code>Ordering</code></a>: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:GT"><code>GT</code></a> (<em>greater than</em>) 또는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:LT"><code>LT</code></a> (<em>lesser than</em>) 또는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:EQ"><code>EQ</code></a> (<em>equal</em>)가 될 수 있는 유형</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord"><code>Ord</code></a>의 멤버가 되기 위해서는 먼저 <code>Eq</code>에 포함되어 있어야함.</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="s">&quot;Abrakadabra&quot;</span> <span class="o">&lt;</span> <span class="s">&quot;Zebra&quot;</span>
@@ -14692,30 +14828,10 @@ prestigious and exclusive <code>Eq</code> club.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="s">&quot;Abrakadabra&quot;</span> <span class="p">`</span><span class="n">compare</span><span class="p">`</span> <span class="s">&quot;Zebra&quot;</span>
@@ -14725,30 +14841,10 @@ prestigious and exclusive <code>Eq</code> club.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>LT</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">5</span> <span class="o">&gt;=</span> <span class="mi">2</span>
@@ -14758,30 +14854,10 @@ prestigious and exclusive <code>Eq</code> club.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">5</span> <span class="p">`</span><span class="n">compare</span><span class="p">`</span> <span class="mi">3</span>
@@ -14791,41 +14867,28 @@ prestigious and exclusive <code>Eq</code> club.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>GT</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Members of <strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Show"><code>Show</code></a></strong> can be presented as strings. All types covered so far
-except for functions are a part of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Show"><code>Show</code></a>. The most used function that
-deals with the <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Show"><code>Show</code></a> typeclass is show. It takes a value whose type is a
-member of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Show"><code>Show</code></a> and presents it to us as a string.</p>
+<ol>
+<li><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Show"><code>Show</code></a></strong><ul>
+<li><code>Show</code>의 멤버는 문자열로 표시할 수 있음</li>
+<li>함수를 제외한 모든 유형은 <code>Show</code>의 일부</li>
+<li><code>Show</code> 클래스를 다루는 함수 중에 가장 많이 사용되는 함수 show임.<ul>
+<li>show는 <code>Show</code>의 멤버 유형을 가지는 값을 가져와 이 값을 문자열로 보여줌</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">show</span> <span class="mi">3</span>
@@ -14835,30 +14898,10 @@ member of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#34;3&#34;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">show</span> <span class="mf">5.334</span>
@@ -14868,30 +14911,10 @@ member of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#34;5.334&#34;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">show</span> <span class="kt">True</span>
@@ -14901,39 +14924,24 @@ member of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#34;True&#34;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Read"><code>Read</code></a></strong> is sort of the opposite typeclass of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Show"><code>Show</code></a>. The <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:read"><code>read</code></a> function takes
-a string and returns a type which is a member of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Read"><code>Read</code></a>.</p>
+<ol>
+<li><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Read"><code>Read</code></a></strong><ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Show"><code>Show</code></a>와 정반대되는 클래스</li>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:read"><code>read</code></a> 함수는 하나의 문자열을 받아와 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Read"><code>Read</code></a> 멤버의 유형으로 반환해줌.</li>
+</ul>
+</li>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">read</span> <span class="s">&quot;True&quot;</span> <span class="o">||</span> <span class="kt">False</span>
@@ -14943,30 +14951,10 @@ a string and returns a type which is a member of <a href="https://hackage.haskel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">read</span> <span class="s">&quot;8.2&quot;</span> <span class="o">+</span> <span class="mf">3.8</span>
@@ -14976,30 +14964,10 @@ a string and returns a type which is a member of <a href="https://hackage.haskel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>12.0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">read</span> <span class="s">&quot;5&quot;</span> <span class="o">-</span> <span class="mi">2</span>
@@ -15009,30 +14977,10 @@ a string and returns a type which is a member of <a href="https://hackage.haskel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>3</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">read</span> <span class="s">&quot;[1,2,3,4]&quot;</span> <span class="o">++</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -15042,63 +14990,24 @@ a string and returns a type which is a member of <a href="https://hackage.haskel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>[1,2,3,4,3]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So far so good. Again, all types covered so far are in this typeclass.
-But what happens if we try to do just <code>read "4"</code>?</p>
+<p>지금까지 적용된 모든 유형은 이 유형 클래스 안에 있음. <code>read "4"</code>를 실행하면 어떻게 될까?</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">read</span> <span class="s">&quot;4&quot;</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-Prelude.read: no parse</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -15109,20 +15018,23 @@ Prelude.read: no parse</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>What GHC is telling us here is that it doesn't know what we want in
-return. Notice that in the previous uses of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:read"><code>read</code></a> we did something with
-the result afterwards. That way, GHC could infer what kind of result we
-wanted out of our <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:read"><code>read</code></a>. If we used it as a boolean, it knew it had to
-return a <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a>. But now, it knows we want some type that is part of the
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Read"><code>Read</code></a> class, it just doesn't know which one. Let's take a look at the
-type signature of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:read"><code>read</code></a>.</p>
+<p>결과: GHC는 무엇을 원하는지 모르겠다고 반환함.</p>
+<ul>
+<li>이전에 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:read"><code>read</code></a> 사용법에 주목해보면, <code>read</code>의 결과를 가지고 무언가를 했음.</li>
+<li>이 방법을 통해, GHC는 우리가 원하는 결과를 추론할 수 있었을 것<ul>
+<li>만약 부울 유형으로 사용한다면, <code>read</code>는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a> 유형으로 반환해주어야 한다는 것을 알았을 것.</li>
+</ul>
+</li>
+<li>하지만 이제, GHC는 어떤 유형인지는 모르지만 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Read"><code>Read</code></a> 클래스의 일부분의 어떤 유형을 원한다는 것은 알고 있음.</li>
+</ul>
+<p><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:read"><code>read</code></a>의 유형(type signature)에 대해 살펴보자.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="n">read</span>
@@ -15132,123 +15044,27 @@ type signature of <a href="https://hackage.haskell.org/package/base/docs/Prelude
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<style>/* Styles used for the Hoogle display in the pager */
-.hoogle-doc {
-display: block;
-padding-bottom: 1.3em;
-padding-left: 0.4em;
-}
-.hoogle-code {
-display: block;
-font-family: monospace;
-white-space: pre;
-}
-.hoogle-text {
-display: block;
-}
-.hoogle-name {
-color: green;
-font-weight: bold;
-}
-.hoogle-head {
-font-weight: bold;
-}
-.hoogle-sub {
-display: block;
-margin-left: 0.4em;
-}
-.hoogle-package {
-font-weight: bold;
-font-style: italic;
-}
-.hoogle-module {
-font-weight: bold;
-}
-.hoogle-class {
-font-weight: bold;
-}
-.get-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-display: block;
-white-space: pre-wrap;
-}
-.show-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-margin-left: 1em;
-}
-.mono {
-font-family: monospace;
-display: block;
-}
-.err-msg {
-color: red;
-font-style: italic;
-font-family: monospace;
-white-space: pre;
-display: block;
-}
-#unshowable {
-color: red;
-font-weight: bold;
-}
-.err-msg.in.collapse {
-padding-top: 0.7em;
-}
-.highlight-code {
-white-space: pre;
-font-family: monospace;
-}
-.suggestion-warning { 
-font-weight: bold;
-color: rgb(200, 130, 0);
-}
-.suggestion-error { 
-font-weight: bold;
-color: red;
-}
-.suggestion-name {
-font-weight: bold;
-}
-</style><span class='get-type'>read :: forall a. Read a => String -> a</span>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>See? It returns a type that's part of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Read"><code>Read</code></a> but if we don't try to use it
-in some way later, it has no way of knowing which type. That's why we
-can use explicit <strong>type annotations</strong>. Type annotations are a way of
-explicitly saying what the type of an expression should be. We do that
-by adding <code>::</code> at the end of the expression and then specifying a type.
-Observe:</p>
+<ul>
+<li><code>read</code>는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Read"><code>Read</code></a>의 일부분의 유형을 반환</li>
+<li>하지만 어떤 방법으로도 <code>read</code>를 사용하지 않는다면, 어떤 유형인지 알 수 없음.</li>
+</ul>
+<p>그렇기 때문에 우리는 명시적으로 <strong>유형 주석(type annotations)</strong> 을 사용할 수 있음.</p>
+<ul>
+<li>유형 주석: 표현식이 어떤 유형이 되어야하는지를 명시적으로 표현해주는 방법</li>
+<li>표현식의 끝에 <code>::</code>를 추가한 후 유형을 지정</li>
+</ul>
+<p>유형 주석에 대해 살펴보자:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">read</span> <span class="s">&quot;5&quot;</span> <span class="ow">::</span> <span class="kt">Int</span>
@@ -15258,30 +15074,10 @@ Observe:</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>5</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">read</span> <span class="s">&quot;5&quot;</span> <span class="ow">::</span> <span class="kt">Float</span>
@@ -15291,30 +15087,10 @@ Observe:</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>5.0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="n">read</span> <span class="s">&quot;5&quot;</span> <span class="ow">::</span> <span class="kt">Float</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
@@ -15324,30 +15100,10 @@ Observe:</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>20.0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">read</span> <span class="s">&quot;[1,2,3,4]&quot;</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span>
@@ -15357,30 +15113,10 @@ Observe:</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>[1,2,3,4]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">read</span> <span class="s">&quot;(3, &#39;a&#39;)&quot;</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Char</span><span class="p">)</span>
@@ -15390,50 +15126,37 @@ Observe:</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>(3,&#39;a&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Most expressions are such that the compiler can infer what their type is
-by itself. But sometimes, the compiler doesn't know whether to return a
-value of type <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a> or <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Float"><code>Float</code></a> for an expression like <code>read "5"</code>. To see what
-the type is, Haskell would have to actually evaluate <code>read "5"</code>. But since
-Haskell is a statically typed language, it has to know all the types
-before the code is compiled (or in the case of GHCI, evaluated). So we
-have to tell Haskell: "Hey, this expression should have this type, in
-case you don't know!".</p>
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Enum"><code>Enum</code></a></strong> members are sequentially ordered types — they can be enumerated.
-The main advantage of the <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Enum"><code>Enum</code></a> typeclass is that we can use its types in
-list ranges. They also have defined successors and predecessors, which
-you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:succ"><code>succ</code></a> and <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:pred"><code>pred</code></a> functions. Types in this class: <code>()</code>,
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Char"><code>Char</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ordering"><code>Ordering</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integer"><code>Integer</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Float"><code>Float</code></a> and <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Double"><code>Double</code></a>.</p>
+<p>대부분의 표현식은 컴파일러가 스스로 표현식의 유형이 무엇인지 추론 가능. 하지만 가끔 컴파일러가 반환값을 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a> 유형으로 해야할지, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Float"><code>Float</code></a> 유형으로 해야할지 모르겠을 때가 있음</p>
+<ul>
+<li>표현식 예시: <code>read "5"</code></li>
+<li>표현식이 무슨 유형인지 알기 위해 하스켈은 실제로 <code>read "5"</code>를 평가해야함</li>
+<li>하지만 하스켈은 정적인 유형의 언어이기 때문에, 코드가 컴파일되기 전에 모든 유형을 알고 있어야 함(GHCI의 경우 모든 유형을 평가해야함)</li>
+<li>따라서, 하스켈에게 이 표현식은 이 유형을 가져야 한다고 알려줘야함</li>
+</ul>
+<ol>
+<li><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Enum"><code>Enum</code></a></strong> <ul>
+<li><code>Enum</code>의 멤버들은 열거할 수 있도록 순차적으로 정렬된 유형임.</li>
+<li>장점: 리스트의 ranges에서 이 유형을 사용할 수 있음</li>
+<li><code>Enum</code>은 후계값(successors)과 전임값(predecessors)를 정의하고 있음<ul>
+<li>후계값과 전임값은 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:succ"><code>succ</code></a> 함수와 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:pred"><code>pred</code></a> 함수를 사용해 얻을 수 있음</li>
+</ul>
+</li>
+<li><code>Enum</code> 클래스의 유형: <code>()</code>,
+<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bool"><code>Bool</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Char"><code>Char</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ordering"><code>Ordering</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integer"><code>Integer</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Float"><code>Float</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Double"><code>Double</code></a>.</li>
+</ul>
+</li>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="o">..</span><span class="sc">&#39;e&#39;</span><span class="p">]</span>
@@ -15443,30 +15166,10 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#34;abcde&#34;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="kt">LT</span> <span class="o">..</span> <span class="kt">GT</span><span class="p">]</span>
@@ -15476,30 +15179,10 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>[LT,EQ,GT]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span> <span class="o">..</span> <span class="mi">5</span><span class="p">]</span>
@@ -15509,30 +15192,10 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>[3,4,5]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">succ</span> <span class="sc">&#39;B&#39;</span>
@@ -15542,31 +15205,16 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#39;C&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bounded"><code>Bounded</code></a></strong> members have an upper and a lower bound.</p>
+<ol>
+<li><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bounded"><code>Bounded</code></a></strong><ul>
+<li><code>Bounded</code>의 멤버는 상한과 하한을 가짐</li>
+</ul>
+</li>
+</ol>
 
 </div>
 </div>
@@ -15574,7 +15222,10 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Jupyter Note:</strong> Parentheses resolve ambiguity in the following expressions, see <a href="https://github.com/gibiansky/IHaskell/issues/509">IHaskell Issue #509 The type signature for ‘minBound’ lacks an accompanying binding</a></p>
+<blockquote><p><strong>참고:</strong> 괄호는 아래 표현식에서 모호성을 해결해줌</p>
+<ul>
+<li><a href="https://github.com/gibiansky/IHaskell/issues/509">IHaskell Issue #509 The type signature for ‘minBound’ lacks an accompanying binding</a> 참고</li>
+</ul>
 </blockquote>
 
 </div>
@@ -15582,7 +15233,7 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="n">minBound</span> <span class="ow">::</span> <span class="kt">Int</span><span class="p">)</span>
@@ -15592,30 +15243,10 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>-9223372036854775808</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="n">maxBound</span> <span class="ow">::</span> <span class="kt">Char</span><span class="p">)</span>
@@ -15625,30 +15256,10 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#39;\1114111&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="n">maxBound</span> <span class="ow">::</span> <span class="kt">Bool</span><span class="p">)</span>
@@ -15658,30 +15269,10 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="n">minBound</span> <span class="ow">::</span> <span class="kt">Bool</span><span class="p">)</span>
@@ -15691,40 +15282,23 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:minBound"><code>minBound</code></a> and <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:maxBound"><code>maxBound</code></a> are interesting because they have a type of
-<code>(Bounded a) =&gt; a</code>. In a sense they are polymorphic constants.</p>
-<p>All tuples are also part of <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bounded"><code>Bounded</code></a> if the components are also in it.</p>
+<ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:minBound"><code>minBound</code></a>과 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:maxBound"><code>maxBound</code></a>는 <code>(Bounded a) =&gt; a</code> 유형임. 어떤 의미에서 보면 이 둘은 다형성 상수(polymorphic constants)라 할 수 있음</li>
+</ul>
+<ul>
+<li>원소가 있는 모든 튜플은 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Bounded"><code>Bounded</code></a>의 일부</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="n">maxBound</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Char</span><span class="p">))</span>
@@ -15734,39 +15308,28 @@ you can get with the <a href="https://hackage.haskell.org/package/base/docs/Prel
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>(True,9223372036854775807,&#39;\1114111&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Num"><code>Num</code></a></strong> is a numeric typeclass. Its members have the property of being able
-to act like numbers. Let's examine the type of a number.</p>
+<ol>
+<li><p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Num"><code>Num</code></a></strong></p>
+<ul>
+<li>숫자형의 유형 클래스</li>
+<li><p><code>Num</code>의 멤버는 숫자처럼 행동할 수 있는 성질을 가지고 있음</p>
+</li>
+<li><p>숫자의 유형을 확인</p>
+</li>
+</ul>
+</li>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="mi">20</span>
@@ -15776,119 +15339,23 @@ to act like numbers. Let's examine the type of a number.</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<style>/* Styles used for the Hoogle display in the pager */
-.hoogle-doc {
-display: block;
-padding-bottom: 1.3em;
-padding-left: 0.4em;
-}
-.hoogle-code {
-display: block;
-font-family: monospace;
-white-space: pre;
-}
-.hoogle-text {
-display: block;
-}
-.hoogle-name {
-color: green;
-font-weight: bold;
-}
-.hoogle-head {
-font-weight: bold;
-}
-.hoogle-sub {
-display: block;
-margin-left: 0.4em;
-}
-.hoogle-package {
-font-weight: bold;
-font-style: italic;
-}
-.hoogle-module {
-font-weight: bold;
-}
-.hoogle-class {
-font-weight: bold;
-}
-.get-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-display: block;
-white-space: pre-wrap;
-}
-.show-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-margin-left: 1em;
-}
-.mono {
-font-family: monospace;
-display: block;
-}
-.err-msg {
-color: red;
-font-style: italic;
-font-family: monospace;
-white-space: pre;
-display: block;
-}
-#unshowable {
-color: red;
-font-weight: bold;
-}
-.err-msg.in.collapse {
-padding-top: 0.7em;
-}
-.highlight-code {
-white-space: pre;
-font-family: monospace;
-}
-.suggestion-warning { 
-font-weight: bold;
-color: rgb(200, 130, 0);
-}
-.suggestion-error { 
-font-weight: bold;
-color: red;
-}
-.suggestion-name {
-font-weight: bold;
-}
-</style><span class='get-type'>20 :: forall p. Num p => p</span>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It appears that whole numbers are also polymorphic constants. They can
-act like any type that's a member of the <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Num"><code>Num</code></a> typeclass.</p>
+<ul>
+<li>모든 숫자가 다형성 상수임을 보여주고 있음<ul>
+<li>모든 숫자는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Num"><code>Num</code></a> 클래스의 멤버 유형처럼 사용할 수 있음</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">20</span> <span class="ow">::</span> <span class="kt">Int</span>
@@ -15898,30 +15365,10 @@ act like any type that's a member of the <a href="https://hackage.haskell.org/pa
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>20</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">20</span> <span class="ow">::</span> <span class="kt">Integer</span>
@@ -15931,30 +15378,10 @@ act like any type that's a member of the <a href="https://hackage.haskell.org/pa
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>20</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">20</span> <span class="ow">::</span> <span class="kt">Float</span>
@@ -15964,30 +15391,10 @@ act like any type that's a member of the <a href="https://hackage.haskell.org/pa
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>20.0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">20</span> <span class="ow">::</span> <span class="kt">Double</span>
@@ -15997,39 +15404,21 @@ act like any type that's a member of the <a href="https://hackage.haskell.org/pa
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>20.0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Those are types that are in the <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Num"><code>Num</code></a> typeclass. If we examine the type of
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-42-"><code>*</code></a>, we'll see that it accepts all numbers.</p>
+<ul>
+<li>위의 유형은 모두 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Num"><code>Num</code></a> 클래스에 포함되어 있음.</li>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-42-"><code>*</code></a>의 유형을 확인해보면, <code>*</code>이 모든 숫자를 받을 수 있다는 것을 확인 가능</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -16039,135 +15428,65 @@ act like any type that's a member of the <a href="https://hackage.haskell.org/pa
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<style>/* Styles used for the Hoogle display in the pager */
-.hoogle-doc {
-display: block;
-padding-bottom: 1.3em;
-padding-left: 0.4em;
-}
-.hoogle-code {
-display: block;
-font-family: monospace;
-white-space: pre;
-}
-.hoogle-text {
-display: block;
-}
-.hoogle-name {
-color: green;
-font-weight: bold;
-}
-.hoogle-head {
-font-weight: bold;
-}
-.hoogle-sub {
-display: block;
-margin-left: 0.4em;
-}
-.hoogle-package {
-font-weight: bold;
-font-style: italic;
-}
-.hoogle-module {
-font-weight: bold;
-}
-.hoogle-class {
-font-weight: bold;
-}
-.get-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-display: block;
-white-space: pre-wrap;
-}
-.show-type {
-color: green;
-font-weight: bold;
-font-family: monospace;
-margin-left: 1em;
-}
-.mono {
-font-family: monospace;
-display: block;
-}
-.err-msg {
-color: red;
-font-style: italic;
-font-family: monospace;
-white-space: pre;
-display: block;
-}
-#unshowable {
-color: red;
-font-weight: bold;
-}
-.err-msg.in.collapse {
-padding-top: 0.7em;
-}
-.highlight-code {
-white-space: pre;
-font-family: monospace;
-}
-.suggestion-warning { 
-font-weight: bold;
-color: rgb(200, 130, 0);
-}
-.suggestion-error { 
-font-weight: bold;
-color: red;
-}
-.suggestion-name {
-font-weight: bold;
-}
-</style><span class='get-type'>(*) :: forall a. Num a => a -> a -> a</span>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It takes two numbers of the same type and returns a number of that type.
-That's why <code>(5 :: Int) * (6 :: Integer)</code> will result in a type error
-whereas <code>5 * (6 :: Integer)</code> will work just fine and produce an <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integer"><code>Integer</code></a>
-because <code>5</code> can act like an <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integer"><code>Integer</code></a> or an <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a>.</p>
-<p>To join <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Num"><code>Num</code></a>, a type must already be friends with <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Show"><code>Show</code></a> and <code>Eq</code>.</p>
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integral"><code>Integral</code></a></strong> is also a numeric typeclass. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Num"><code>Num</code></a> includes all numbers,
-including real numbers and integral numbers, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integral"><code>Integral</code></a> includes only
-integral (whole) numbers. In this typeclass are <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a> and <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integer"><code>Integer</code></a>.</p>
-<p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Floating"><code>Floating</code></a></strong> includes only floating point numbers, so <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Float"><code>Float</code></a> and <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Double"><code>Double</code></a>.</p>
-<p>A very useful function for dealing with numbers is <strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fromIntegral"><code>fromIntegral</code></a></strong>. It has
-a type declaration of <code>fromIntegral :: (Num b, Integral a) =&gt; a -&gt; b</code>.
-From its type signature we see that it takes an integral number and
-turns it into a more general number. That's useful when you want
-integral and floating point types to work together nicely. For instance,
-the <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:length"><code>length</code></a> function has a type declaration of <code>length :: [a] -&gt; Int</code>
-instead of having a more general type of
-<code>(Num b) =&gt; length :: [a] -&gt; b</code>.
-I think that's there for historical reasons or something, although in
-my opinion, it's pretty stupid. Anyway, if we try to get a length of a
-list and then add it to <code>3.2</code>, we'll get an error because we tried to add
-together an <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a> and a floating point number. So to get around this, we
-do <code>fromIntegral (length [1,2,3,4]) + 3.2</code> and it all works out.</p>
-<p>Notice that <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fromIntegral"><code>fromIntegral</code></a> has several class constraints in its type
-signature. That's completely valid and as you can see, the class
-constraints are separated by commas inside the parentheses.</p>
+<ul>
+<li><code>(5 :: Int) * (6 :: Integer)</code>를 실행하면 유형 오류가 발생<ul>
+<li>이유: <code>*</code>은 같은 유형의 두 숫자를 받아와 반환값으로 같은 유형의 숫자를 반환해줌</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>반면에 <code>5 * (6 :: Integer)</code>는 잘 작동하며 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integer"><code>Integer</code></a> 유형으로 값을 반환<ul>
+<li>이유: <code>5</code>는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integer"><code>Integer</code></a> 또는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a>에서 모두 작동할 수 있기 때문</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><code>Num</code>에 들어오기 위해서는 이미 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Show"><code>Show</code></a>와 <code>Eq</code>에 포함되어 있어야 함. </li>
+</ul>
+<ol>
+<li><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integral"><code>Integral</code></a></strong><ul>
+<li>숫자형의 유형 클래스</li>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Num"><code>Num</code></a>이 모든 숫자(실수와 정수)를 포함하고 있다면, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integral"><code>Integral</code></a>은 정수만 포함</li>
+<li>종류: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Integer"><code>Integer</code></a></li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Floating"><code>Floating</code></a></strong><ul>
+<li>부동 소수점 숫자만 포함하고 있는 유형 클래스</li>
+<li>종류: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Float"><code>Float</code></a>, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Double"><code>Double</code></a></li>
+</ul>
+</li>
+</ol>
+<h3 id="2.3-&#49707;&#51088;&#47484;-&#45796;&#47336;&#45716;-&#54632;&#49688;">2.3 &#49707;&#51088;&#47484; &#45796;&#47336;&#45716; &#54632;&#49688;<a class="anchor-link" href="#2.3-&#49707;&#51088;&#47484;-&#45796;&#47336;&#45716;-&#54632;&#49688;">&#182;</a></h3><hr>
+<ul>
+<li><p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fromIntegral"><code>fromIntegral</code></a></strong>: 숫자를 다루는데 유용한 함수</p>
+<ul>
+<li><code>fromIntegral</code>의 유형 선언: <code>fromIntegral :: (Num b, Integral a) =&gt; a -&gt; b</code></li>
+<li>정수를 받아와 일반적인 숫자로 반환해줌.</li>
+<li><p>정수와 부동 소수점 유형이 동시에 원활하게 작동하길 원할 때 유용하게 사용</p>
+<ul>
+<li>예를 들어, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:length"><code>length</code></a> 함수의 유형 선언은 더 일반적인 유형을 사용하는 <code>(Num b) =&gt; length :: [a] -&gt; b</code> 대신에 <code>length :: [a] -&gt; Int</code>를 사용.</li>
+</ul>
+</li>
+<li><p>만약 리스트의 길이를 구하고, 길이에 <code>3.2</code>를 더하고자 한다면, 에러가 발생할 것</p>
+<ul>
+<li>이유: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#t:Int"><code>Int</code></a>에 부동 소수점 숫자를 함께 추가하려고 했기 때문        </li>
+<li>위 계산을 하고 싶다면, <code>fromIntegral (length [1,2,3,4]) + 3.2</code>로 실행하면 잘 작동함</li>
+</ul>
+</li>
+<li><p><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fromIntegral"><code>fromIntegral</code></a>은 <code>fromIntegral</code>의 type signature에 몇 가지 클래스 제약을 가지고 있음</p>
+<ul>
+<li>클래스 제약은 괄호 안에 콤마로 구분</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
