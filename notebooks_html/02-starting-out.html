@@ -13017,6 +13017,25 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            /*preferredFont: "TeX",*/
+            /*availableFonts: ["TeX", "STIX"],*/
+            styles: {
+                scale: 100,
+                ".MathJax_Display": {
+                    "font-size": "100%",
+                }
+            }
+        }
+    });
+</script>
+    
+    </style>
 
 
 <style type="text/css">
@@ -13084,23 +13103,19 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>참고</strong></p>
+<p><strong><em>아래 주피터 노트북은 James Brock의 <a href="https://github.com/jamesdbrock/learn-you-a-haskell-notebook">learn-you-a-haskell-notebook</a>을 기본틀로 사용합니다.</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고:</strong> 린팅(linting) 기능 끄기</p>
 <ul>
-<li><p>아래 주피터 노트북은 James Brock의 
-<a href="https://github.com/jamesdbrock/learn-you-a-haskell-notebook">learn-you-a-haskell-notebook</a>을 
-기본틀로 사용합니다.</p>
-</li>
-<li><p>린팅(linting) 기능 끄기</p>
-<ul>
-<li>린팅(linting)<ul>
-<li>IHaskell에서 HLint라고 불리는 린터(linter)에 의해 보다 적절하다고 판단하는 표현식을 제안하는 기능</li>
-<li>보다 세련된 표현식(expression)을 제안하는 도구임. 하지만 반드시 필요한 기능은 아님.</li>
-</ul>
-</li>
-<li>린팅 기능을 켜놓은 상태에서 함수를 정의하거나 실행해보면 껐을 때와의 차이점을 알 수 있음.</li>
+<li>린팅(linting): IHaskell에서 HLint라고 불리는 린터(linter)에 의해 보다 적절하다고 판단하는 표현식을 제안하는 기능</li>
+<li>보다 세련된 표현식(expression)을 제안하는 도구이지만 반드시 필요한 기능은 아니다.</li>
 <li>참조: <a href="https://github.com/gibiansky/IHaskell/wiki#opt-no-lint">IHaskell의 린팅 기능 설정하기</a></li>
-</ul>
-</li>
 </ul>
 
 </div>
@@ -15602,17 +15617,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>앞서 언급하였듯이 <code>[1,2,3,4]</code>는 <code>1 : 2 : 3 : 4 : []</code>를 간단하게 표현한 것에 불과함. 
-여기서 <code>(:)</code> 는 콘스(cons) 연산자라고 불리며 리스트를 생성하는 <strong>리스트 생성자</strong> 역할을 수행함.
-생성자에 대해서는 나중에 자세히 다룸.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>cons 함수는 하나의 값과 그 값과 동일한 유형을 갖는 항목으로 구성된 리스트를 인자로 받아 새로운 리스트를 생성함.</p>
+<p>앞서 언급하였듯이 <code>[1,2,3,4]</code>는 <code>1 : 2 : 3 : 4 : []</code>를 간단하게 표현한 것에 불과하다.
+여기서 <code>(:)</code> 는 <strong>콘스(cons)</strong> 라고 불리는 연산자이며 하나의 값을 
+이미 생성된 리스트의 맨 앞에 추가하는 방식으로 새로운 리스트를 생성하는 
+<strong>리스트 생성자</strong> 역할을 수행하는 함수이다.
+생성자에 대해서는 나중에 자세히 다룬다.</p>
 
 </div>
 </div>
@@ -15653,7 +15662,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>cons 함수는 일반적으로 중위함수로 사용됨.</p>
+<p>cons 함수는 일반적으로 중위 함수로 사용된다.</p>
 
 </div>
 </div>
@@ -15690,17 +15699,6 @@ div#notebook {
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>문자와 문자열을 cons 함수에 적용하면 문자열이 반환됨.</p>
-<ul>
-<li>공백도 하나의 문자임.</li>
-</ul>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -15746,9 +15744,9 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>리스트의 각 항목은 왼편으로부터 0, 1, 2, 등으로 시작하는 위치정보를 가지며,
-그 위치정보를 각 항목의 <strong>인덱스</strong>(index) 라 부름.
+그 위치정보를 각 항목의 <strong>인덱스</strong>(index) 라 부른다.
 인덱스가 주어졌을 때 해당 인덱스가 가리키는 항목을 확인하는 작업이 <strong>인덱싱</strong>(indexing)이며,
-인덱싱 함수를 <a href="https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:-33--33-"><code>(!!)</code></a> 로 표기함.</p>
+인덱싱 함수를 <code>(!!)</code>로 표기한다.</p>
 
 </div>
 </div>
@@ -15822,11 +15820,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>주의사항</strong></p>
-<ul>
-<li>인덱스는 0부터 시작함. 즉, 맨 왼편에 위치한 항목의 인덱스는 0이며, 그 오른편의 항목의 인덱스는 1임.
-  따라서 마지막 항목의 인덱스는 항목의 수에서 1을 뺀 값임.</li>
-</ul>
+<p><strong>주의사항:</strong>
+인덱스는 0부터 시작한다. 
+즉, 맨 왼편에 위치한 항목의 인덱스가 0이며, 
+그 오른편의 항목의 인덱스는 1이다.
+따라서 마지막 항목의 인덱스는 항목의 수에서 1을 뺀 값이다.</p>
 
 </div>
 </div>
@@ -15900,9 +15898,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>인덱싱을 리스트에 포함된 항목 개수보다 같거나 큰 인덱스에 대해 적용하면 오류 발생함.</li>
-</ul>
+<p>인덱싱을 리스트에 포함된 항목 개수보다 같거나 큰 인덱스에 대해 적용하면 오류가 발생한다.</p>
 
 </div>
 </div>
@@ -15941,11 +15937,9 @@ Prelude.!!: index too large</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>리스트가 포함할 수 있는 항목의 유형에 아무런 제한이 없음.
-  즉, 리스트로 구성된 리스트를 작성할 수 있음.</li>
-</ul>
-<p><strong>주의:</strong> 리스트의 길이가 다르다고 해서 다른 유형의 값이 되는 것은 아님.</p>
+<p>리스트의 항목은 하스켈이 지원하는 임의의 유형의 값을 가질 수 있다. 
+예를 들어, 리스트로 구성된 리스트를 작성할 수 있다.
+여기서 주의할 점은 리스트의 길이가 다르다고 해서 다른 유형의 값이 되는 것은 아니라는 사실이다.</p>
 
 </div>
 </div>
@@ -15956,19 +15950,8 @@ Prelude.!!: index too large</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">b</span> <span class="ow">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">b</span>
+<span class="nf">b</span>
 </pre></div>
 
     </div>
@@ -15998,7 +15981,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">b</span> <span class="o">++</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
@@ -16031,7 +16014,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="kt">:</span> <span class="n">b</span>
@@ -16064,7 +16047,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">b</span> <span class="o">!!</span> <span class="mi">2</span>
@@ -16091,19 +16074,6 @@ Prelude.!!: index too large</pre>
 
 </div>
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre></pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -16111,12 +16081,10 @@ Prelude.!!: index too large</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>리스트의 항목으로 사용되는 리스트는 서로 길이가 다를 수는 있지만 유형이 다를 수는 없다.</p>
 <ul>
-<li>리스트 안의 리스트는 길이가 다를 수는 있지만 타입이 다를 수는 없음. <ul>
 <li><code>[1,2]</code>: 정수 리스트</li>
 <li><code>['a','b']</code>: 문자 리스트, 즉, 문자열</li>
-</ul>
-</li>
 </ul>
 
 </div>
@@ -16124,7 +16092,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">]]</span>
@@ -16160,16 +16128,11 @@ Prelude.!!: index too large</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>리스트에 포함된 항목들을 서로 비교할 수 있다면 리스트 사이의 사전식 비교가 가능해짐.</p>
 <ul>
-<li><p>리스트에 포함된 항목들을 서로 비교할 수 있다면 리스트 사이의 사전식 비교가 가능해짐.</p>
-<ul>
-<li>비교 연산자: <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-60-"><code>&lt;</code></a>,
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-60--61-"><code>&lt;=</code></a>, 
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-62-"><code>&gt;</code></a>,
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-62--61-"><code>&gt;=</code></a></li>
-</ul>
+<li><p>비교 연산자: <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code></p>
 </li>
-<li><p>사전식 비교: 두 리스트의 첫째 항목끼리 비교하고 같을 경우 둘째 항목, 같은 경우 셋째 항목 등등으로 비교하기</p>
+<li><p>사전식 비교: 두 리스트의 첫째 항목끼리 비교하고 같을 경우 둘째 항목, 같은 경우 셋째 항목 등등으로 비교</p>
 </li>
 </ul>
 
@@ -16178,7 +16141,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
@@ -16211,7 +16174,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -16245,14 +16208,14 @@ Prelude.!!: index too large</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>공리스트가 가장 작은 리스트임.</p>
+<p>리스트 중에서 공리스트(empty list)가 크기가 가장 작다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">[]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -16286,14 +16249,14 @@ Prelude.!!: index too large</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>따라서 다음이 성립함.</p>
+<p>이것이 아래 부등식이 성립하는 이유이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -16327,14 +16290,14 @@ Prelude.!!: index too large</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>두 리스트의 항목이 모두 등가(equal)이면 두 리스트 또한 등가임.</p>
+<p>두 리스트의 모든 항목이 동치(equal)이면 두 리스트 또한 동치이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>
@@ -16368,14 +16331,14 @@ Prelude.!!: index too large</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>참고:</strong> 린팅 기능을 다시 켜면 아래와 <code>3 * 1</code> 대신에 <code>3</code>을 사용할 것을 권장함.</p>
+<p><strong>참고:</strong> 린팅 기능을 다시 켜면 아래와 <code>3 * 1</code> 대신에 <code>3</code>을 사용할 것을 권장한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">opt</span> <span class="n">lint</span>
@@ -16388,7 +16351,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>
@@ -16515,14 +16478,14 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>위와 같은 추천이 굳이 필요하지 않기에 린팅 기능을 다시 끄겠음.</p>
+<p>위와 같은 추천이 굳이 필요하지 않기에 앞으로 특별한 경우가 아니면 린팅 기능을 사용하지 않는다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">opt</span> <span class="n">no</span><span class="o">-</span><span class="n">lint</span>
@@ -16543,14 +16506,14 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트의 머리(첫째 항목) 반환.</p>
+<p>리스트의 머리(첫째 항목)를 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">head</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -16591,14 +16554,14 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트의 머리를 제외한 나머지 항목으로 이루어진 리스트 반환.</p>
+<p>리스트의 머리를 제외한 나머지 항목으로 이루어진 리스트를 반환환다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">tail</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -16639,14 +16602,14 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트의 가장 오른편에 위치한, 즉, 가장 마지막 항목 반환.</p>
+<p>리스트의 가장 오른편에 위치한, 즉, 가장 마지막 항목을 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">last</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -16687,14 +16650,14 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트의 마지막 항목을 제외한 항목으로 이루어진 리스트 반환</p>
+<p>리스트의 마지막 항목을 제외한 항목으로 이루어진 리스트를 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">init</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -16728,7 +16691,7 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>head</code>, <code>tail</code>, <code>last</code>, <code>init</code> 네 함수의 기능을 그림으로 표현해보면 다음과 같음.</p>
+<p><code>head</code>, <code>tail</code>, <code>last</code>, <code>init</code> 네 함수의 기능을 그림으로 표현해보면 다음과 같다.</p>
 <p><img src="img/listmonster.png" title="list monster" style=""/></p>
 
 </div>
@@ -16737,26 +16700,19 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>주의사항:</strong> 공리스트에 대해 앞서 소개한 네 개의 함수 모두 오류 발생시킴.</p>
-<ul>
-<li><p>이유: 첫째 항목, 또는 마지막 항목이 존재하지 않기 때문.</p>
-</li>
-<li><p>이런 오류는 컴파일 과정에서 발각되지 않음. 
-  따라서 공리스트로부터 특정 항목을 요구하는 위와 같은 함수를 사용할 때 오류발생에 대한 예방조치를 취해야 함.</p>
-</li>
-<li><p>오류예방을 위해 간단하게는 <code>error</code> 함수와  <code>Maybe</code> 유형을 활용할 수 있으며, 이후에 자세히 다룸.</p>
-<ul>
-<li>참고: <a href="https://www.stackbuilders.com/news/errors-and-exceptions-in-haskell#:~:text=In%20Haskell%2C%20we%20have%20error,or%20that%20is%20not%20readable.">하스켈의 오류와 예외</a></li>
-</ul>
-</li>
-</ul>
+<p><strong>주의사항:</strong> 공리스트에 대해 앞서 소개한 네 개의 함수 모두 오류를 발생시킨다.
+이유는 네 함수 모두 첫째 항목 또는 마지막 항목의 존재를 요구하기 때문이다.
+이런 오류는 컴파일 과정에서 발각되지 않기에 위 함수들을 사용할 때 오류발생에 대한 예방조치를 
+취해야 한다.
+이후에 <code>error</code> 함수와  <code>Maybe</code> 유형을 활용하여 간단한 방식으로 오류를 예방하는 방식을
+다룰 것이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">head</span> <span class="kt">[]</span>
@@ -16787,7 +16743,7 @@ Prelude.head: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">tail</span> <span class="kt">[]</span>
@@ -16818,7 +16774,7 @@ Prelude.tail: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">last</span> <span class="kt">[]</span>
@@ -16849,7 +16805,7 @@ Prelude.last: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">init</span> <span class="kt">[]</span>
@@ -16888,14 +16844,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트의 길이, 즉, 리스트에 포함된 항목의 수 반환.</p>
+<p>리스트의 길이, 즉, 리스트에 포함된 항목의 수를 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">length</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -16928,7 +16884,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">length</span> <span class="kt">[]</span>
@@ -16969,19 +16925,16 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트가 비어있는지 확인함. 
-비어있으면 
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:True"><code>True</code></a>, 
-그렇지 않으면 
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a> 
-반환.</p>
+<p>리스트가 비어있는지 여부를 확인한다. 
+즉, 공리스트이면 <code>True</code>,
+그렇지 않으면 <code>False</code>를 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">null</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -17014,7 +16967,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">null</span> <span class="kt">[]</span>
@@ -17048,14 +17001,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트 이름을 <code>xs</code>라 할 때, <code>xs == []</code> 와 동일한 값 반환.</p>
+<p>리스트 이름을 <code>xs</code>라 할 때, <code>xs == []</code> 와 동일한 값을 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">null</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="kt">[]</span><span class="p">)</span>
@@ -17088,7 +17041,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">null</span> <span class="kt">[]</span> <span class="o">==</span> <span class="p">(</span><span class="kt">[]</span> <span class="o">==</span> <span class="kt">[]</span><span class="p">)</span>
@@ -17129,14 +17082,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트에 포함된 항목들의 순서를 거꾸로 해서 갖는 리스트 반환.</p>
+<p>주어진 리스트에 포함된 항목들의 순서를 거꾸로 해서 갖는 리스트를 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">reverse</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -17177,17 +17130,15 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트에서 지정한 수만큼의 항목만을 선택하여 만든 리스트 반환.</p>
-<ul>
-<li>항목은 0번 인덱스부터 지정한 수만큼 차례대로 선택</li>
-</ul>
+<p>리스트에서 지정한 수만큼의 항목만을 선택하여 만든 리스트를 반환한다.
+단, 항목은 0번 인덱스부터 지정한 수만큼 차례대로 선택한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">3</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -17220,7 +17171,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">1</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -17254,16 +17205,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>지정한 수가 리스트의 길이보다 크면 리스트 전체 반환</li>
-</ul>
+<p>지정한 수가 리스트의 길이보다 크면 리스트 전체를 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">5</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
@@ -17297,16 +17246,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>0개를 선택하라 하면 공리스트 반환</li>
-</ul>
+<p>0개를 선택하라 하면 공리스트를 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">0</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
@@ -17347,17 +17294,15 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>take</code> 함수와는 달리 지정한 수만큼의 항목을 제외한 나머지 항목들로 이루어진 리스트 반환</p>
-<ul>
-<li>제외되는 항목은 0번 인덱스부터 지정한 수만큼 차례대로 선택</li>
-</ul>
+<p><code>take</code> 함수와는 달리 지정한 수만큼의 항목을 제외한 나머지 항목들로 이루어진 리스트를 반환한다.
+제외되는 항목은 0번 인덱스부터 지정한 수만큼 차례대로 선택된다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">drop</span> <span class="mi">3</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
@@ -17390,7 +17335,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">drop</span> <span class="mi">0</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -17423,7 +17368,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">drop</span> <span class="mi">100</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -17464,14 +17409,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>지정된 순서에 따라 크기를 비교할 수 있는 값으로 이루어진 리스트에서 가장 큰/작은 항목 반환</p>
+<p>지정된 순서에 따라 크기를 비교할 수 있는 값으로 이루어진 리스트에서 가장 큰/작은 항목을 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">minimum</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
@@ -17504,7 +17449,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">maximum</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -17545,14 +17490,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트에 포함된 항목들의 합/곱 반환</p>
+<p>리스트에 포함된 항목들의 합/곱을 반환한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">sum</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
@@ -17579,26 +17524,13 @@ Prelude.init: empty list</pre>
 
 </div>
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre></pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">product</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
@@ -17631,7 +17563,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">product</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
@@ -17672,15 +17604,15 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트의 항목으로 포함되었는지 여부를 확인해줌.
-원래 전위함수이지만 중위함수로 사용하면 보다 이해하기 쉬움.</p>
+<p>리스트의 항목으로 포함되었는지 여부를 확인해준다.
+원래 전위 함수이지만 중위 함수로 사용하면 함수의 기능을 보다 쉽게 이해할 수 있다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">4</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
@@ -17713,7 +17645,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">10</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
@@ -17747,7 +17679,8 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>지금까지 리스트와 관련된 기초 함수들을 살펴보았음. 보다 다양한 함수는 리스트 관련 모듈을 소개할 때 좀 더 다룰 것임.</p>
+<p>지금까지 리스트와 관련된 기초 함수들을 살펴보았다. 
+보다 다양한 함수는 나중에 리스트 관련 모듈을 소개할 때 좀 더 다룰 것이다.</p>
 
 </div>
 </div>
@@ -17763,20 +17696,20 @@ Prelude.init: empty list</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>하스켈에서 제공하는 레인지(range) 기능을 이용하여 특정 구간 내에서 특정 규칙을 따르는 
-값로 이루어진 리스트를 간단하게 정의할 수 있음.
-단, 리스트의 항목에 사용되는 값들은 정수, 문자 등 열거될 수 있는(enumerable) 특성을 가져야 함.</p>
+값들로 이루어진 리스트를 간단하게 정의할 수 있다.
+단, 리스트의 항목에 사용되는 값들은 정수, 문자 등 <strong>열거될 수 있는(enumerable)</strong> 특성을 가져야 한다.</p>
 <ul>
 <li>정수: 1, 2, 3, 4 ...</li>
 <li>문자: A, B, C, ..., Z, a, b, c, ... z 등등</li>
 </ul>
-<p>아래 리스트는 1부터 20까지의 자연수를 모두 포함하는 리스트를 레인지 기능을 이용하여 정의한 것임.</p>
+<p>아래 리스트는 1부터 20까지의 자연수를 모두 포함하는 리스트를 레인지로 정의한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="prompt input_prompt">In&nbsp;[114]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">20</span><span class="p">]</span>
@@ -17810,14 +17743,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>a부터 z까지의 모든 소문자 알파벳으로 구성된 리스트는 다음과 같음.</p>
+<p><code>a</code>부터 <code>z</code>까지의 모든 소문자 알파벳으로 구성된 리스트는 다음과 같다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[116]:</div>
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="o">..</span><span class="sc">&#39;z&#39;</span><span class="p">]</span>
@@ -17851,14 +17784,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>K부터 Z까지 모든 대문자 알파벳으로 구성된 리스트는 다음과 같음.</p>
+<p><code>K</code>부터 <code>Z</code>까지 모든 대문자 알파벳으로 구성된 리스트는 다음과 같다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="sc">&#39;K&#39;</span><span class="o">..</span><span class="sc">&#39;Z&#39;</span><span class="p">]</span>
@@ -17893,8 +17826,8 @@ Prelude.init: empty list</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>주의사항:</strong> 
-반면에 문자열 열거할 수 없음.
-이유는, 예를 들어, <code>"Haskell"</code> 다음에 어떤 문자열이 위치하는지 정할 수 없기 때문임.</p>
+문자열은 열거 기능이 없다. 
+예를 들어, <code>"Haskell"</code> 다음에 어떤 문자열이 위치하는지 정할 수 없다.</p>
 
 </div>
 </div>
@@ -17909,15 +17842,16 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>예를 들어, 1부터 20 사이의 짝수를 원한다면 아래와 같이 보폭을 2로 하는 레인지로 정의하면 됨.
-처음 두 요소를 적절 보폭(step)으로 지정하면 됨.</p>
+<p>예를 들어, 1부터 20 까지의 수 중에서 짝수만으로 이루어진 리스트를 원한다면 
+아래와 같이 보폭을 2로 하는 레인지로 정의하면 된다.
+보폭은 첫 두 항목의 차이로 지정한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="o">..</span><span class="mi">20</span><span class="p">]</span>
@@ -17951,14 +17885,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3부터 20 사이의 3의 배수로 이루어진 레인지는 다음과 같음.</p>
+<p>3부터 20 사이의 3의 배수로 이루어진 레인지는 다음과 같다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[118]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="o">..</span><span class="mi">20</span><span class="p">]</span>
@@ -17993,14 +17927,14 @@ Prelude.init: empty list</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>20부터 1까지의 숫자를 가진 리스트를 생성하려면 
-아래와 같이 해야 함.</p>
+아래와 같이 해야한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="prompt input_prompt">In&nbsp;[119]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">19</span><span class="o">..</span><span class="mi">1</span><span class="p">]</span>
@@ -18034,14 +17968,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>보폭을 지정하지 않은 의도치 않은 결과가 아래와 같이 나올 수 있음.</p>
+<p>보폭을 지정하지 않으면 의도치 않은 결과가 나올 수 있다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="prompt input_prompt">In&nbsp;[120]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">20</span><span class="o">..</span><span class="mi">1</span><span class="p">]</span>
@@ -18075,15 +18009,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>또한 아래처럼 증감 규칙이 달라지는 배열을 레인지로 정의할 수는 없음.
-이유는 레인지를 정의할 때 하나의 보폭만 활용할 수 있기 때문임.</p>
+<p>또한 아래처럼 보폭이 달라지는 리스트를 레인지로 정의할 수 없다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[122]:</div>
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="o">...</span><span class="mi">100</span><span class="p">]</span>
@@ -18115,16 +18048,16 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>주의사항:</strong> 부동소수점을 레인지와 함께 사용할 때는 주의해야 함.
-이유는 컴퓨터 자체가 부동소수점을 엄밀하게 다루지 못하기 때문임.
-따라서 부동소수점을 레인지와 함께 사용하는 것은 권장되지 않음.</p>
+<p><strong>주의사항:</strong> 부동소수점을 레인지와 함께 사용할 때는 많은 주의를 기울여야 한다.
+이유는 컴퓨터 자체가 부동소수점을 엄밀하게 다루지 못하기 때문이며,
+따라서 부동소수점을 레인지와 함께 사용하는 것은 기본적으로 권장되지 않는다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="prompt input_prompt">In&nbsp;[122]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span> <span class="o">..</span> <span class="mi">1</span><span class="p">]</span>
@@ -18158,33 +18091,57 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.4-&#51648;&#50672;&#49457;(Laziness),-&#47924;&#54620;-&#47532;&#49828;&#53944;,-&#51312;&#44148;&#51228;&#49884;&#48277;">2.4 &#51648;&#50672;&#49457;(Laziness), &#47924;&#54620; &#47532;&#49828;&#53944;, &#51312;&#44148;&#51228;&#49884;&#48277;<a class="anchor-link" href="#2.4-&#51648;&#50672;&#49457;(Laziness),-&#47924;&#54620;-&#47532;&#49828;&#53944;,-&#51312;&#44148;&#51228;&#49884;&#48277;">&#182;</a></h2>
+<h2 id="2.4-&#47924;&#54620;-&#47532;&#49828;&#53944;,-&#51648;&#50672;&#49457;,-&#51312;&#44148;&#51228;&#49884;&#48277;">2.4 &#47924;&#54620; &#47532;&#49828;&#53944;, &#51648;&#50672;&#49457;, &#51312;&#44148;&#51228;&#49884;&#48277;<a class="anchor-link" href="#2.4-&#47924;&#54620;-&#47532;&#49828;&#53944;,-&#51648;&#50672;&#49457;,-&#51312;&#44148;&#51228;&#49884;&#48277;">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>레인지를 활용할 때 상한 값을 지정하지 않으면 
-길이가 무한인 리스트(infinite list)가 생성됨.
-무한 리스트를 조심해서 다루지 않으면 무한반복 실행이 발생할 수 있음.
-하지만 하스켈의 지연성(laziness)을 활용하면 무한 리스트를 매우 유용하게 활용할 수 있음.</p>
-<p>예를 들어, 하스켈은 리스트의 항목을 정말로 활용해야 할 때까지 구체적으로 확인하지 않음.
-이와같은 계산방식이 <strong>지연 계산(lazy evaluation)</strong> 이며,
-프로그래밍언어의 이와같은 성질을 <strong>지연성(laziness)</strong> 이라 부름.</p>
-<p>예를 들어, 13단에서 <code>13x1</code> 부터 <code>13x9</code>까지의 값을 
-다음처럼 생성할 수 있음.</p>
-<ul>
-<li>이유: <code>take</code> 함수가 9개의 항목만 요구하기 때문에 9개의 항목을 확인한 후에는 더 이상 다른 
-  항목을 확인하지 않기 때문임.</li>
-</ul>
+<h3 id="&#47924;&#54620;-&#47532;&#49828;&#53944;">&#47924;&#54620; &#47532;&#49828;&#53944;<a class="anchor-link" href="#&#47924;&#54620;-&#47532;&#49828;&#53944;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>레인지를 활용할 때 상한을 지정하지 않으면 
+길이가 무한인 리스트(infinite list)가 정의된다.
+예를 들어, 아래 레인지는 0, 1, 2, ... 등 모든 자연수를 항목으로 갖는 무한 리스트를 생성한다.</p>
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="p">]</span>
+</pre></div>
+<p>그런데 무한 리스트는 당연히 조심해서 다루어야 한다.
+그렇지 않으면 무한반복 실행이 발생할 수 있는데,
+위 정의를 직접 실행하는 일은 피해야 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51648;&#50672;&#49457;">&#51648;&#50672;&#49457;<a class="anchor-link" href="#&#51648;&#50672;&#49457;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>하스켈은 리스트의 항목을 정말로 활용해야 할 때까지 구체적으로 확인하지 않는다.
+이와같은 계산방식이 <strong>지연 계산(lazy evaluation)</strong>이며,
+이런 방식을 지원하는 프로그래밍언어의 <strong>지연성(laziness)</strong>이라 부른다.
+하스켈의 <strong>지연성(laziness)</strong>을 적절하게 활용하면 
+무한 리스트의 효용성을 극대화할 수 있는데,
+이는 하스켈만의 매우 독특한 특성이다.</p>
+<p>예를 들어, 13단에서 <code>13 * 1</code> 부터 <code>13 * 9</code>까지의 값을 다음처럼 생성할 수 있는데
+이유는 <code>take</code> 함수가 요구하는 첫 9개의 항목을 확인한 다음에 계산을 먼추기 때문이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[124]:</div>
+<div class="prompt input_prompt">In&nbsp;[123]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">9</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">26</span><span class="o">..</span><span class="p">]</span>
@@ -18218,14 +18175,14 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>위 방식이 아래보다 다루기 쉬움.</p>
+<p>아래와 같이 할 수도 있지만 위 방식이 보다 다루기 쉽다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="prompt input_prompt">In&nbsp;[124]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">26</span><span class="o">..</span><span class="mi">13</span><span class="o">*</span><span class="mi">9</span><span class="p">]</span>
@@ -18261,11 +18218,11 @@ Prelude.init: empty list</pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>참고: 적극 계산(eager evaluation)</strong></p>
 <ul>
-<li>지연 계산에 대비되는 개념임.
-예를 들어, <code>take 9 [13, 26...]</code>을 적극 계산 방식으로 계산하려 하면 계산이 멈추지 않음.
-이유는 <code>take</code> 함수가 먼저 두 개의 인자를 정확하게 파악하려 하기에 둘째 인자인 무한 리스트의 
-모든 항목을 확인하는 과정을 거쳐야 하기 때문임.</li>
-<li>C, 자바, 파이썬 등은 기본적으로 적극 계산 방식을 사용함.</li>
+<li>지연 계산에 대비되는 개념이다. 
+  예를 들어, <code>take 9 [13, 26...]</code>을 적극 계산 방식으로 계산하려 하면 계산이 멈추지 않을 것이다.
+  이유는 <code>take</code> 함수가 먼저 두 개의 인자를 정확하게 파악하려 하기에 둘째 인자인 무한 리스트의 
+  모든 항목을 확인하는 과정을 거쳐야 하기 때문이다.</li>
+<li>C, 자바, 파이썬 등은 기본적으로 적극 계산 방식을 사용한다.</li>
 </ul>
 
 </div>
@@ -18274,23 +18231,21 @@ Prelude.init: empty list</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>아래 두 함수는 무한 리스트를 생성하여 반환함:</p>
+<p>아래 두 함수 모두 무한 리스트를 생성하여 반환한다.</p>
 <ul>
-<li><p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:cycle"><code>cycle</code></a></strong>:
-  하나의 리스트를 무한 반복시킴.</p>
+<li><p><code>cycle</code>: 하나의 리스트를 무한 반복시킨 리스트 생성.</p>
 </li>
-<li><p><strong><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:repeat"><code>repeat</code></a></strong>: 
-  하나의 값으로 이루어진 무한 리스트 생성.</p>
+<li><p><code>repeat</code>: 하나의 값으로 이루어진 무한 리스트 생성.</p>
 </li>
 </ul>
-<p>위 두 함수가 생성한 무한 리스트를 <code>take</code> 함수를 이용하여 유용하게 활용할 수 있음.</p>
+<p>위 두 함수가 반환한 무한 리스트를 위에서처럼 <code>take</code> 함수를 이용하여 유용하게 활용할 수 있다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
+<div class="prompt input_prompt">In&nbsp;[125]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">10</span> <span class="p">(</span><span class="n">cycle</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
@@ -18323,7 +18278,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">12</span> <span class="p">(</span><span class="n">cycle</span> <span class="s">&quot;LOL &quot;</span><span class="p">)</span>
@@ -18356,7 +18311,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">10</span> <span class="p">(</span><span class="n">repeat</span> <span class="mi">5</span><span class="p">)</span>
@@ -18391,15 +18346,14 @@ Prelude.init: empty list</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>참고:</strong> 동일한 항목으로 이루어진 유한(finite) 리스트를 생성하려면
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:replicate"><code>replicate</code></a> 
-함수를 사용하는 것이 보다 간단함.</p>
+<code>replicate</code> 함수를 사용는 것이 보다 간단하다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">replicate</span> <span class="mi">10</span> <span class="mi">5</span>
@@ -18442,39 +18396,28 @@ Prelude.init: empty list</pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>수학에서 집합을 정의할 때 사용하는 조건제시법 기술을 
 리스트를 생성할 때 활용할 수 있으며, 
-레인지보다 
-훨씬 다양한 리스트를 쉽게 생성할 수 있음.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트에 조건제시법을 적용하는 방법은 집합을 정의할 때와 사실상 동일함. 
+레인지보다 훨씬 다양한 리스트를 쉽게 생성할 수 있도록 도와주다.</p>
+<p>리스트에 조건제시법을 적용하는 방법은 집합을 정의할 때와 사실상 동일하다.
 예를 들어, 
-1부터 시작해서 10개의 짝수를 포함하는 집합을 생성하려면 다음과 같이 함.</p>
-$$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
-<li>파이프(<code>|</code>) 왼편에 위치한 표현식은 집합에 포함될 원소의 값을 표현하는 수식.</li>
-<li>$x$는 원소의 값을 표현하는 수식에 사용되는 변수.</li>
-<li>$\mathbb{N}$은 주어진 집합</li>
-<li>$x \le 10$은 집합 원소로 포함될 조건을 담은 수식.</li>
+1부터 시작해서 10개의 짝수를 포함하는 집합을 조건제시법으로 정의하면 아래와 같다.</p>
+$$
+\{\, 2 x \mid x \in \mathbb{N}, x \le 10\, \}
+$$<p>위 조건제시법에 사용된 기호와 수식의 역할은 다음과 같다.</p>
+<ul>
+<li>막대기 모양의 기호 (<code>|</code>, 파이프라 부르기도 함) 왼편에 위치한 \
+  표현식 $2 x$ 는 집합에 포함될 원소의 값을 표현하는 수식</li>
+<li>$x$ 는 원소의 값을 표현하는 수식에 사용되는 변수</li>
+<li>$\mathbb{N}$ 은 주어진 집합</li>
+<li>$x \le 10$ 은 집합 원소로 포함될 조건을 담은 수식</li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>위 집합을 하스켈의 리스트로 다음과 같이 정의할 수 있음.</p>
+<p>위 집합을 하스켈의 리스트로 다음과 같이 정의할 수 있다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]]</span>
@@ -18509,9 +18452,9 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>주의사항:</strong> 형식적으로는 아래와 같이 앞서 정의한 집합과 사실상 
-동일하게 정의할 수도 있음. 하지만 아래 정의를 실행하면
-무한반복에 빠짐. 
-이유는 0보다 큰 모든 자연수에 대해 10보다 같거나 작은지 여부를 검사하기 때문임.</p>
+동일하게 정의할 수도 있다. 
+하지만 아래 정의를 실행하면 무한반복에 빠진다.
+이유는 모든 양의 정수에 대해 10보다 같거나 작은지 여부를 검사하기 때문이다.</p>
 <div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">],</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">]</span>
 </pre></div>
 
@@ -18521,8 +18464,49 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>앞서 살펴본 대로 하스켈의 지연 계산 특성과 <code>take</code> 함수를 활용하여 
-10개의 2의 배수를 구하는 문제는 아래 방식으로도 가능함.</p>
+<p>앞서 살펴본 대로 하스켈의 지연성과 <code>take</code> 함수를 활용하여 
+10개의 2의 배수를 구하는 문제는 아래 방식으로도 가능하다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">10</span> <span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">],</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>[2,4,6,8,10,12,14,16,18,20]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>물론 아래 방식이 보다 간단하다.</p>
 
 </div>
 </div>
@@ -18563,9 +18547,11 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>하지만 참(<code>True</code>) 또는 거짓(<code>False</code>)을 갖는 부울 조건식(조건 표현식)을 활용하여 보다 다양한 리스트를 생성할 수 있음.
-예를 들어, 두 배가 된 원소들 중에서 12 이상인 값들만 항목으로 갖는 리스트를
-다음처럼 생성함.</p>
+<p>방금 살펴본 대로 
+참(<code>True</code>) 또는 거짓(<code>False</code>)으로 계산될 수 있는
+부울 조건식(조건 표현식)을 활용하여 보다 다양한 리스트를 생성할 수 있다.
+예를 들어, 1부터 10까지 수를 두 배한 값들 중에서 12 이상인 값들만 항목으로 갖는 리스트를
+다음처럼 생성한다.</p>
 
 </div>
 </div>
@@ -18607,7 +18593,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>50부터 100까지의 정수 중에서 7로 나누었을 때 나머지가 3인 정수들로 이루어진 리스트는
-<code>mod</code> 함수를 활용함.</p>
+<code>mod</code> 함수를 활용하면 된다.</p>
 
 </div>
 </div>
@@ -18655,18 +18641,10 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>조건을 사용해 리스트의 항목을 걸러내는 작업을 <strong>필터링(filtering)</strong> 이라 부름.
-여러 개의 조건을 사용해서 필터링을 진행할 수 있음.
-즉, 여러 개의 조건이 모두 만족되어야 한다는 것을 의미함.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>예를 들어, 0~20까지의 모든 정수 중에서 13, 15, 19를 제외한 
-정수만을 담은 리스트는 다음과 같음.</p>
+<p>조건식을 사용해 리스트의 항목을 걸러내는 작업을 <strong>필터링(filtering)</strong> 이라 부른다.
+여러 개의 조건식이 사용되면 언급된 모든 조건식이 참이 되어야 한다.
+예를 들어, 0~20까지의 모든 정수 중에서 13, 15, 19를 제외한 
+정수만을 담은 리스트는 다음과 같다.</p>
 
 </div>
 </div>
@@ -18707,10 +18685,9 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><em>예제</em></strong></p>
 <p>리스트에 포함된 항목들을 대상으로 모든 짝수를 제거하면서 동시에 
 10보다 큰 홀수는 <code>"BANG!"</code>으로, 10보다 작은 홀수는 <code>"BOOM!"</code>으로 
-변경해주는 함수 <code>boomBangs</code>을 아래처럼 정의할 수 있음.</p>
+변경해주는 함수 <code>boomBangs</code>을 아래처럼 정의할 수 있다.</p>
 
 </div>
 </div>
@@ -18731,14 +18708,12 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>위 함수의 본체에 사용된 표현식과 함수는 다음과 같음.</p>
+<p>위 함수의 본체에 사용된 표현식과 함수는 다음과 같다.</p>
 <ul>
 <li><code>if</code> 표현식. 명령문 아니기에 가능함의 유의할 것.</li>
-<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:odd"><code>odd</code></a> 함수:
-  홀수일 경우 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:True"><code>True</code></a>,
-  짝수일 경우 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a> 반환.</li>
+<li><code>odd</code> 함수: 홀수이면 참, 아니면 거짓 반환</li>
 </ul>
-<p>7부터 13까지의 정수에 대한 결과는 다음과 같음.</p>
+<p>7부터 13까지의 정수를 담은 리스트에 대한 결과는 다음과 같다.</p>
 
 </div>
 </div>
@@ -18786,17 +18761,9 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>파이프(<code>|</code>) 왼편에 사용되는 항목 표현식에 여러 개의 변수가 활용될 수 있음.
-이런 경우 파이프 오른 편에 각각의 변수에 대한 조건식이 포함되어야 함.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><em>예제</em></strong></p>
-<p>아래 조건제시법은 12개의 항목을 갖는 리스트 생성.</p>
+<p>파이프(<code>|</code>) 왼편에 사용되는 항목 표현식에 여러 개의 변수가 활용될 수 있다.
+이런 경우 파이프 오른편에 각각의 변수에 대한 조건식이 포함되어야 한다.</p>
+<p>예를 들어, 아래 조건제시법은 12개의 항목을 갖는 리스트를 생성한다.</p>
 
 </div>
 </div>
@@ -18837,7 +18804,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>9개의 항목이 만들어지는 순서에 주의할 것.</p>
+<p>여기서 12개의 항목이 만들어지는 순서는 다음과 같다.</p>
 <ul>
 <li>먼저 <code>x</code>가 2일 때, <code>y</code>값을 8, 10, 11, 15에 대해 곱한 값들이 맨 처음 네 자리를 차지함.</li>
 <li>다음은 <code>x</code>가 5일 때, <code>y</code>값을 8, 10, 11, 15에 대해 곱한 값들이 그 다음  네 자리를 차지함.</li>
@@ -18850,7 +18817,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>만약 곱셈의 결과가 50 이상인 경우만 알고 싶다면 아래 코드처럼 작성하면 됨.</p>
+<p>만약 곱셈의 결과가 50 이상인 경우만 알고 싶다면 아래 코드처럼 작성하면 된다.</p>
 
 </div>
 </div>
@@ -18891,9 +18858,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><em>예제</em></strong></p>
 <p>형용사를 포함한 리스트와 명사를 포함한 리스트를 결합한
-리스트는 다음과 같음.</p>
+리스트는 다음과 같다.</p>
 
 </div>
 </div>
@@ -18936,10 +18902,12 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong><em>예제</em>: 밑줄 활용</strong></p>
-<p>조건제시법에 사용되는 변수의 이름이 중요하지 않은 경우 
-밑줄(<code>_</code>)을 활용함.
-아래와 같이 리스트의 길이를 반환하는 함수를 직접 정의할 수 있음.</p>
+<p><strong>참고: 밑줄 활용</strong></p>
+<p>조건제시법에 사용되는 변수의 이름이 중요하지 않은 경우 밑줄(<code>_</code>)을 활용한다.
+밑줄(<code>_</code>)은 이름으로 사용되지 못하기 때문에 파이프 왼편 수식에서 사용될 수 없다.</p>
+<p>예를 들어, 아래 정의에서 리스트의 항목은 리스트 <code>xs</code> 항목을 가리키는 
+변수와 상관없이 무조건 숫자 1로 지정되며,
+1이 모두 <code>xs</code> 길이만큼 포함된다.</p>
 
 </div>
 </div>
@@ -18960,21 +18928,9 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>밑줄(<code>_</code>)은 이름이 없기에 파이프 왼편에서 사용할 수 없음.</li>
-<li>즉, 리스트의 항목은 리스트 <code>xs</code> 항목을 가리키는 변수와 상관없이 무조건 숫자 1로 지정됨. </li>
-<li>하지만 리스트 <code>xs</code> 길이만큼 정수 1을 항목으로 갖는 리스트가 생성됨.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>참고:</strong> 밑줄을 언더바(underbar)라고 부르는 경우가 
-있는데 옳지 않은 표현임.
-밑줄의 영어 표현은 언더스코어(underscore)임.</p>
+있는데 옳지 않은 표현이다.
+밑줄의 영어 표현은 언더스코어(underscore)이다.</p>
 
 </div>
 </div>
@@ -18989,10 +18945,10 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>문자열도 리스트이기 때문에, 문자열을 처리하고 생성하는데 리스트 조건제시법을 
-사용할 수 있음. 
+<p>문자열도 리스트이기에, 문자열을 처리하고 생성하는데 리스트 조건제시법을 
+사용할 수 있다.
 아래 함수는 문자열에 포함된 문자 중에서 대문자 알파벳만 선택해서 
-새로운 리스트를 생성함.</p>
+새로운 리스트를 생성한다.</p>
 
 </div>
 </div>
@@ -19086,9 +19042,9 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>중첩 리스트를 조건제시법에 활용하려면 
-중첩된 조건제시법을 사용해야 함.
-아래 예제는 정수들의 리스트로 이루어진 이중 리스트에서 홀수를 제거하는 방법을 보여줌.</p>
+<p>중첩 리스트를 조건제시법과 함께 활용하기 위해 
+중첩 조건제시법을 사용한다.
+아래 예제는 정수들의 리스트로 이루어진 이중 리스트에서 홀수를 제거하는 방법을 보여준다.</p>
 
 </div>
 </div>
@@ -19131,10 +19087,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>먼저 <code>xs</code>를 기준으로 삼아야 함. 즉, 바깥쪽에 위치한 파이프의 왼편이 기준 변수가 됨.</li>
-<li>이후 <code>xs</code>에 포함된 항목들 중에서 짝수만 선택하는 조건제시법이 사용됨.</li>
-</ul>
+<p>먼저 <code>xs</code>를 기준으로 삼는다. 즉, 바깥쪽에 위치한 파이프의 오른편에 사용된 변수가 먼저 사용된다.
+이후 <code>xs</code>에 포함된 항목들 중에서 짝수만 선택하는 조건제시법이 사용되었다.</p>
 
 </div>
 </div>
@@ -19143,9 +19097,11 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>참고:</strong> 
-리스트 조건제시법을 여러 줄에 거쳐 작성할 수 있음. 특히 중첩된 경우와 같이 리스트 조건 제시법이 길어질 경우에는 여러 줄로 나누어서 작성하는 것이 좋음.</p>
-<p>예를 들어, 아래 조건제시법은 <code>xxs</code>에서 길이가 8보다 큰 리스트에 대해서만
-선태과정이 작동함. 따라서 <code>xxs</code>의 둘째 항목은 전혀 고려되지 않음.</p>
+리스트 조건제시법을 여러 줄에 거쳐 작성할 수 있다. 
+특히 중첩된 경우와 같이 리스트 조건제시법이 길어질 경우에는 여러 줄로 나누어서 작성하는
+것이 권장된다.
+예를 들어, 아래 조건제시법은 <code>xxs</code>에서 길이가 8보다 큰 리스트에 대해서만
+선택 과정이 작동한다.</p>
 
 </div>
 </div>
@@ -19194,8 +19150,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>튜플 또한 여러 개의 값을 묶어 하나의 값으로 다루는 기능을 제공함.
-튜플과 리스트의 차이점은 다음과 같음.</p>
+<p>튜플 또한 여러 개의 값을 묶어 하나의 값으로 다루는 기능을 제공한다.
+튜플과 리스트의 차이점은 다음과 같다.</p>
 <table>
 <thead><tr>
 <th>리스트</th>
@@ -19208,12 +19164,12 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <td>소괄호 사용</td>
 </tr>
 <tr>
-<td>포함된 항목의 유형이 동일함</td>
-<td>서로 다른 유형의 항목이 포함될 수 있음</td>
+<td>포함된 항목의 유형이 동일</td>
+<td>서로 다른 유형의 항목 포함 가능</td>
 </tr>
 <tr>
-<td>유형이 포함된 항목의 유형에만 의존하며 길이와는 무관함</td>
-<td>유형이 길이가 다르면 유형도 달라짐</td>
+<td>유형이 리스트의 길이와 무관</td>
+<td>유형이 길이에 의존</td>
 </tr>
 <tr>
 <td>무한 리스트 가능</td>
@@ -19221,7 +19177,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </tr>
 <tr>
 <td>길이가 0 또는 1인 리스트 가능</td>
-<td>길이가 2 이상이어야 함</td>
+<td>길이가 2 이상</td>
 </tr>
 </tbody>
 </table>
@@ -19240,7 +19196,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>2차원 벡터를 리스트를 이용하여 다음과 같음.</p>
+<p>2차원 벡터를 리스트를 이용하여 다음과 같이 정의할 수 있다.</p>
 
 </div>
 </div>
@@ -19281,8 +19237,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>하지만 위 값의 유형은 다음과 같은 리스트도 포함함.
-이유는 리스트의 유형은 길이와 무관하기 때문임.</p>
+<p>하지만 위 값의 유형은 다음과 같은 리스트도 포함한다.
+이유는 리스트의 유형은 길이와 무관하기 때문이다.</p>
 
 </div>
 </div>
@@ -19323,16 +19279,16 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>이런 단점을 튜플을 이용하면 해결 가능함.
-이유는 튜플의 유형은 튜플의 길이에도 의존하기 때문임.
+<p>튜플을 이용하여 이런 단점을 해결할 수 있다.
+이유는 튜플의 유형은 튜플의 길이에도 의존하기 때문이다.
 예를 들어,</p>
 <div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 <p>와</p>
 <div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
-<p>는 서로 다른 유형을 가짐.
-따라서 아래와 같은 튜플 리스트는 허용되지 않음.</p>
+<p>는 서로 다른 유형의 튜플이다. 
+따라서 아래와 같은 튜플 리스트는 허용되지 않는다.</p>
 
 </div>
 </div>
@@ -19376,9 +19332,10 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>또한 <code>[(1,2),("One",2)]</code>와 같은 리스트도 만들 수 없음.
+<p>또한 <code>[(1,2),("One",2)]</code>와 같은 리스트도 만들 수 없다.
 이유는 리스트의 첫 번째 항목은 숫자로 구성된 튜플이지만, 
-두 번째 항목은 문자열과 숫자로 구성된 튜플이기 때문.</p>
+두 번째 항목은 문자열과 숫자로 구성된 튜플이라서 
+두 튜플의 유형이 다르기 때문이다.</p>
 
 </div>
 </div>
@@ -19394,10 +19351,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>임의의 유형의 값이 튜플의 항목으로 사용될 수 있음.<ul>
-<li>위 예제에서 보았듯이 리스트도 튜플의 항목으로 사용될 수 있음.</li>
-</ul>
-</li>
+<li>임의의 유형의 값이 튜플의 항목으로 사용될 수 있다.
+  위 예제에서 보았듯이, 예를 들어, 리스트도 튜플의 항목으로 사용될 수 있다.</li>
 </ul>
 
 </div>
@@ -19440,27 +19395,17 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>튜플의 길이는 임의로 길어도 됨. 단, 무한 튜플은 허용되지 않음.</p>
+<li><p>튜플의 길이는 임의로 길어도 된다. 단, 무한 튜플은 허용되지 않는다.</p>
 </li>
-<li><p>데이터에 포함되어야 하는 원소의 수를 미리 알고 있는 경우 튜플 사용 권장.</p>
+<li><p>데이터에 포함되어야 하는 원소의 수를 미리 알고 있는 경우 튜플 사용을 권장한다.</p>
 </li>
-<li><p>리스트와 달리 길이를 달리할 수 없기 때문에 보다 안정적으로 데이터를 저장할 수 있음.</p>
-<ul>
-<li>데이터를 임의적으로 추가하거나 삭제할 수 없음.</li>
-</ul>
+<li><p>리스트와 달리 길이를 달리할 수 없기 때문에 보다 안정적으로 데이터를 저장할 수 있다.
+  즉, 데이터를 임의적으로 추가하거나 삭제할 수 없다.</p>
 </li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>튜플의 길이는 2 이상이어야 함. 
-  즉, 길이가 1인 튜플은 존재하지 않음.
-  하나의 값을 소괄호로 감싸면 단순히 값을 구분하기 위한 용도로 인식됨.   </li>
+<li><p>튜플의 길이는 2 이상이어야 한다.</p>
+</li>
+<li>길이가 1인 튜플은 존재하지 않는다.
+  하나의 값을 소괄호로 감싸면 단순히 값을 구분하기 위한 용도로 인식된다.   </li>
 </ul>
 
 </div>
@@ -19503,10 +19448,11 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>항목을 전혀 갖지 않은 튜플은 없음. </li>
+<li>항목을 전혀 갖지 않은 튜플도 없다. </li>
 </ul>
-<p><strong>주의사항:</strong> <code>()</code>는 하스켈에서 단 하나의 값으로만 구성된 유닛(unit) 유형 또는 그 유형의 유일한 값을 가리킴. 
-나중에 자세히 살펴 볼 예정임.</p>
+<p><strong>주의사항:</strong> <code>()</code>는 하스켈에서 단 하나의 값으로만 구성된 유닛(unit) 유형 
+또는 그 유형의 유일한 값을 가리킨다. 
+유닛 유형은 나중에 다시 살펴볼 것이다.</p>
 
 </div>
 </div>
@@ -19516,7 +19462,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>튜플의 항목에 대해 동치성/크기 비교를 할 수 있으면 
-  튜플 자체도 동치성/크기 비교가 가능함.</li>
+  튜플 자체도 동치성/크기 비교가 가능하다.</li>
 </ul>
 
 </div>
@@ -19592,8 +19538,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>단, 길이가 다른 커플은 비교 불가능.
-  이유는 서로 유형이 다르기 때문임.</li>
+<li>길이가 다른 커플은 비교 불가능이다. 
+  이유는 서로 유형이 다르기 때문이다.</li>
 </ul>
 
 </div>
@@ -19644,7 +19590,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>튜플을 활용하는 함수 세 개를 소개함.</p>
+<p>튜플을 활용하는 함수 세 개를 소개한다.</p>
 
 </div>
 </div>
@@ -19659,7 +19605,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>길이가 2인 튜플의 첫째 항목을 반환함.</p>
+<p>길이가 2인 튜플의 첫째 항목을 반환한다.</p>
 
 </div>
 </div>
@@ -19740,7 +19686,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>길이가 2인 튜플의 둘째 항목 반환.</p>
+<p>길이가 2인 튜플의 둘째 항목을 반환한다.</p>
 
 </div>
 </div>
@@ -19815,8 +19761,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>참고:</strong> 
-<code>fst</code> 함수와 <code>snd</code> 함수는 길이가 3 이상인 경우에는 사용할 수 없음.
-나중에 임의의 길이의 튜플에서 항목을 선택하는 방법에 대해 알아볼 것임.</p>
+<code>fst</code> 함수와 <code>snd</code> 함수는 길이가 3 이상인 튜플에는 적용할 수 없다.
+나중에 임의의 길이의 튜플에서 항목을 선택하는 방법에 대해 알아볼 것이다.</p>
 
 </div>
 </div>
@@ -19831,13 +19777,11 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>두 개의 리스트가 주어졌을 때 각 리스트의 항목으로 구성된 길이가 2인 튜플들의 리스트를 생성함.</p>
-<ul>
-<li>각 튜플의 항목은 각 리스트에서 동일한 인덱스를 가져야 함.
-  즉, 첫째 항목끼리, 둘째 항목 끼리 등등으로 튜플을 생성하여 리스트에 포함시킴.</li>
-</ul>
-<p>두 개의 리스트를 특정 방식으로 결합하거나 두 리스트의 항목을 동시에 
-차례대로 확인할 때 매우 유용함.</p>
+<p>두 개의 리스트가 주어졌을 때 각 리스트의 항목으로 구성된 길이가 2인 튜플들의 리스트를 반환한다.</p>
+<p>각 튜플의 항목은 각 리스트에서 동일한 인덱스를 가져야 한다.
+즉, 첫째 항목끼리, 둘째 항목 끼리 등등으로 튜플을 생성하여 리스트에 포함시킨다.
+두 개의 리스트를 특정 방식으로 결합하거나 두 리스트의 항목을 동시에 
+차례대로 확인할 때 매우 유용하다.</p>
 
 </div>
 </div>
@@ -19878,7 +19822,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>사용되는 두 리스트의 유형이 달라도 됨.</p>
+<p>사용되는 두 리스트의 유형과 상관없이 작동한다.</p>
 
 </div>
 </div>
@@ -19919,7 +19863,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>두 리스트의 길이가 다르면 짧은 길이에 맞추어 순서쌍을 생성함.</p>
+<p>두 리스트의 길이가 다르면 짧은 길이에 맞추어 순서쌍을 생성한다.</p>
 
 </div>
 </div>
@@ -19960,8 +19904,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>즉, 보다 긴 리스트는 짧은 리스트의 길이에 맞춰 잘려서 버려짐. 
-따라서 하스켈의 지연성으로 인해 무한 리스트와 유한 리스트를 <code>zip</code>으로 압축할 수 있음.</p>
+<p>즉, 보다 긴 리스트는 짧은 리스트의 길이에 맞춰 잘려버려진다. 
+따라서 하스켈의 지연성을 이횽하면 무한 리스트와 유한 리스트를 <code>zip</code>으로 압축할 수 있다.</p>
 
 </div>
 </div>
@@ -20010,8 +19954,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>각 변의 길의가 정수인 직각삼각형 중에서 세 변의 길이의 합이 24인 직각삼각형을 찾아야 함.
-단, 모든 변의 길이는 10 이하임.</p>
+<p>각 변의 길의가 정수인 직각삼각형 중에서 세 변의 길이의 합이 24인 직각삼각형을 찾아보자.
+단, 모든 변의 길이는 10 이하이다.</p>
 
 </div>
 </div>
@@ -20027,12 +19971,10 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>조건제시법을 활용할 수 있음. 
-이어지는 설명은 사용되는 조건식을 추가하는 방식으로 문제를 해결함.</p>
-<ul>
-<li>먼저 변의 길이가 10보다 작거나 같은 삼각형의 세 변으로 구성된
-  튜플들의 리스트를 조건제시법으로 아래와 같이 정의함.</li>
-</ul>
+<p>조건제시법을 활용할 수 있다. 
+이어지는 설명은 사용되는 조건식을 추가하는 방식으로 조건제시법을 이용한다.</p>
+<p>먼저 변의 길이가 10보다 작거나 같은 삼각형의 세 변으로 구성된
+튜플들의 리스트를 조건제시법으로 아래와 같이 정의하자.</p>
 
 </div>
 </div>
@@ -20061,10 +20003,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>이제 피타고라스 정리를 이용하여 직각삼각형의 세 변만 포함하도록 수정할 수 있음.
-또한, 빗변의 길이가 다른 두 변의 길이보다 커야 하는 조건도 자연스럽게 포함시킬 수 있음.</li>
-</ul>
+<p>이제 피타고라스 정리를 이용하여 직각삼각형의 세 변만 포함하도록 수정할 수 있다.
+또한, 빗변의 길이가 다른 두 변의 길이보다 커야 하는 조건도 자연스럽게 포함시킬 수 있다.</p>
 
 </div>
 </div>
@@ -20085,9 +20025,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>마지막으로 삼각형의 둘레가 24라는 조건도 추가하면 됨.</li>
-</ul>
+<p>마지막으로 삼각형의 둘레가 24라는 조건을 추가하면 된다.</p>
 
 </div>
 </div>
@@ -20108,7 +20046,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>결과는 다음과 같음.</p>
+<p>결과는 다음과 같다.</p>
 
 </div>
 </div>
@@ -20149,7 +20087,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>즉, 위 조건을 만족하는 직각삼각형은 하나만 존재함.</p>
+<p>즉, 위 조건을 만족하는 직각삼각형은 하나만 존재한다는 사실을 확인하였다.</p>
 
 </div>
 </div>
@@ -20158,8 +20096,8 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>참고:</strong>
-위 문제를 풀어가는 방식이 함수형 프로그래밍에서 일반적으로 사용되는 문제풀이 패턴임.
-즉, 좀 더 일반적인 해를 설정한 후에 필터링을 원하는 답을 구할 때까지 반복 적용함.</p>
+위 문제를 풀어가는 방식이 함수형 프로그래밍에서 일반적으로 사용되는 문제풀이 패턴이다.
+즉, 좀 더 일반적인 해를 설정한 후에 필터링을 원하는 답을 구할 때까지 반복 적용한다.</p>
 
 </div>
 </div>
