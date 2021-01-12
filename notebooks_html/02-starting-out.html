@@ -13074,19 +13074,6 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13097,7 +13084,45 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>주피터 노트북에서 가장 유용한 단축키 조합은 다음과 같음.</p>
+<p><strong>참고</strong></p>
+<ul>
+<li><p>아래 주피터 노트북은 James Brock의 
+<a href="https://github.com/jamesdbrock/learn-you-a-haskell-notebook">learn-you-a-haskell-notebook</a>을 
+기본틀로 사용합니다.</p>
+</li>
+<li><p>린팅(linting) 기능 끄기</p>
+<ul>
+<li>린팅(linting)<ul>
+<li>IHaskell에서 HLint라고 불리는 린터(linter)에 의해 보다 적절하다고 판단하는 표현식을 제안하는 기능</li>
+<li>보다 세련된 표현식(expression)을 제안하는 도구임. 하지만 반드시 필요한 기능은 아님.</li>
+</ul>
+</li>
+<li>린팅 기능을 켜놓은 상태에서 함수를 정의하거나 실행해보면 껐을 때와의 차이점을 알 수 있음.</li>
+<li>참조: <a href="https://github.com/gibiansky/IHaskell/wiki#opt-no-lint">IHaskell의 린팅 기능 설정하기</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">opt</span> <span class="n">no</span><span class="o">-</span><span class="n">lint</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>주피터 노트북에서 가장 유용한 단축키 조합은 다음과 같다.</p>
 <table>
 <thead><tr>
 <th style="text-align:right">단축키 조합</th>
@@ -13128,44 +13153,14 @@ div#notebook {
 </tbody>
 </table>
 <ul>
-<li><p>코드 셀을 실행시키면 셀 아래에 결과 출력.</p>
+<li><p>코드 셀을 실행시키면 셀 아래에 결과를 출력한다.</p>
 </li>
-<li><p>모든 가능한 단축키 조합은 <kbd>H</kbd>를 누르면 확인 가능.</p>
+<li><p>모든 가능한 단축키 조합은 <kbd>H</kbd>를 누르면 확인 가능하다.</p>
 </li>
 </ul>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>참고:</strong> 린팅(linting) 기능 끄기</p>
-<ul>
-<li>린팅(linting)<ul>
-<li>IHaskell에서 HLint라고 불리는 린터(linter)에 의해 보다 적절하다고 판단하는 표현식을 제안하는 기능</li>
-<li>보다 세련된 표현식(expression)을 제안하는 도구임. 하지만 반드시 필요한 기능은 아님.</li>
-</ul>
-</li>
-<li>린팅 기능을 켜놓은 상태에서 함수를 정의하거나 실행해보면 껐을 때와의 차이점을 알 수 있음.</li>
-<li>참조: <a href="https://github.com/gibiansky/IHaskell/wiki#opt-no-lint">IHaskell의 린팅 기능 설정하기</a></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">opt</span> <span class="n">no</span><span class="o">-</span><span class="n">lint</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13316,7 +13311,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>일반적으로 알려진 연산자 우선순위를 적용함.</p>
+<p>일반적으로 알려진 연산자 우선순위가 적용된다.</p>
 
 </div>
 </div>
@@ -13425,8 +13420,8 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>주의사항</strong></p>
 <ul>
-<li>음수를 사용할 때 괄호로 묶어 주어야 함. </li>
-<li>예를 들어, <code>5 * -3</code>를 실행하면 오류 발생. 반면에 <code>5 * (-3)</code>는 적절하게 실행됨.</li>
+<li>음수를 사용할 때 괄호로 묶어 주어야 한다.</li>
+<li>예를 들어, <code>5 * -3</code> 를 실행하면 오류 발생하지만, <code>5 * (-3)</code> 은 적절하게 실행된다.</li>
 </ul>
 
 </div>
@@ -13442,7 +13437,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>부울대수 연산도 일반적으로 알려진대로 사용하며 부울 연산자는 다음과 같음:</p>
+<p>부울 연산도 일반적으로 알려진대로 사용되며, 부울 연산자는 다음과 같다.</p>
 <table>
 <thead><tr>
 <th style="text-align:right">부울 연산자</th>
@@ -13451,16 +13446,16 @@ div#notebook {
 </thead>
 <tbody>
 <tr>
-<td style="text-align:right"><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-38--38-"><code>&amp;&amp;</code></a></td>
+<td style="text-align:right"><code>&amp;&amp;</code></td>
 <td>그리고(and)</td>
 </tr>
 <tr>
-<td style="text-align:right"><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-124--124-"><code>&#124;&#124;</code></a></td>
+<td style="text-align:right"><code>&#124;&#124;</code></td>
 <td>또는(or)</td>
 </tr>
 <tr>
-<td style="text-align:right"><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:not"><code>not</code></a></td>
-<td><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:True"><code>True</code></a> 또는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a> 부정하기</td>
+<td style="text-align:right"><code>not</code></td>
+<td>부정(negation)</td>
 </tr>
 </tbody>
 </table>
@@ -13643,7 +13638,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>주어진 표현식 두 개가 동일한 값을 표현하는지 검사하기 위해 기호 <code>==</code>와 <code>/=</code>를 사용함.</p>
+<p>주어진 표현식 두 개가 동일한 값을 표현하는지 검사하기 위해 <code>==</code>와 <code>/=</code> 두 기호를 사용한다.</p>
 
 </div>
 </div>
@@ -13849,11 +13844,9 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>주의사항</strong></p>
-<ul>
-<li>연산에 사용되는 값들의 유형(type)에 주의해야 함.</li>
-<li>예를 들어, <code>5 + "llama"</code> 혹은 <code>5 == True</code>를 실행하면 오류 발생</li>
-</ul>
+<p><strong>주의사항:</strong> 
+연산에 사용되는 값들의 유형(type)에 주의해야 한다.
+예를 들어, <code>5 + "llama"</code> 혹은 <code>5 == True</code>를 실행하면 오류가 발생한다.</p>
 
 </div>
 </div>
@@ -13930,19 +13923,29 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>오류가 발생하는 이유는 정수 5와 문자열 <code>"llama"</code>를 서로 더하거나 동치성 검사을 위해 비교할 수 없기 때문이다.</p>
 <ul>
-<li><p>이유: 하스켈 컴파일러(GHC)는 정수 5와 문자열 <code>"llama"</code>를 서로 더하거나 동치성 검사을 위해 비교할 수 없음.</p>
-<ul>
-<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-43-"><code>+</code></a>는동일한 유형(type)을 갖는 값들만 더할 수 있음. </li>
-<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-61--61-"><code>==</code></a>는 동일한 유형(type)을 갖는 값들만을 대상으로 동치성을 검사할 수 있음. </li>
+<li><code>+</code>: 동일한 유형(type)을 갖는 값들만 더할 수 있음. </li>
+<li><code>==</code>: 동일한 유형(type)을 갖는 값들만을 대상으로 동치성을 검사할 수 있음. </li>
 </ul>
-</li>
-<li><p>유형(type)에 대해서는 이후에 자세히 다룸.</p>
-</li>
-<li><p>반면에 <code>5 + 4.0</code>는 계산 가능: <code>5</code>는 문맥에 따라 정수 또는 부동소수점으로 취급될 수 있지만, 
-  <code>4.0</code> 은 정수로 간주될 수 없기에 부동소수점의 합 <code>9.0</code>을 계산함.</p>
-</li>
-</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고:</strong> 유형(type)에 대해서는 이후에 자세히 다룬다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>반면에 <code>5 + 4.0</code>는 연산이 가능하며 <code>9.0</code>으로 계산된다.
+<code>5</code>는 문맥에 따라 정수 또는 부동소수점으로 취급될 수 있는데
+<code>4.0</code> 은 정수로 간주될 수 없기에 부동소수점의 합 <code>9.0</code>을 계산하는 것이다.</p>
 
 </div>
 </div>
@@ -13997,14 +14000,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>앞서 살펴 본 연산 모두 함수를 사용하였음.</p>
-<ul>
-<li>예를 들어, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-42-"><code>*</code></a>은 
-  두 개의 숫자를 받아 두 수의 곱을 반환하는 함수. </li>
-<li><code>+</code>처럼 인자를 양쪽에 표현하는 함수를 <strong>중위 함수</strong> 라 부름.
-  반면에 함수 이름 다음에 인자를 사용하면 <strong>전위 함수</strong> 라 부름.
-  일반적으로 전위 함수를 사용함.</li>
-</ul>
+<p>앞서 살펴 본 연산 모두 함수이다. 
+예를 들어, <code>*</code> 은 두 개의 숫자를 받아 두 수의 곱을 계산하여 반환하는 함수이다.</p>
 
 </div>
 </div>
@@ -14012,22 +14009,21 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#51204;&#50948;-&#54632;&#49688;-&#49324;&#50857;&#48277;">&#51204;&#50948; &#54632;&#49688; &#49324;&#50857;&#48277;<a class="anchor-link" href="#&#51204;&#50948;-&#54632;&#49688;-&#49324;&#50857;&#48277;">&#182;</a></h4><ul>
-<li><p>대부분의 명령형 언어에서 함수는 함수 이름을 작성한 후 괄호 안에 
-  매개변수 또는 인자를 쉼표로 구분해 작성한 후 호출</p>
-<ul>
-<li>예제: <code>foo()</code>, <code>bar(1)</code>, <code>baz(3, "haha")</code>, <code>bar(bar(3))</code></li>
-</ul>
-</li>
-<li><p>하스켈에서는, 함수 이름을 적고 공백을 두고 
-  매개변수 또는 인자를 이어서 작성하며, 각각의 매개변수와 인자는 공백으로 구분함.</p>
-<ul>
-<li>예제: <code>foo</code>, <code>bar 1</code>, <code>baz 3 "haha"</code>, <code>bar (bar 3)</code></li>
-<li><code>bar (bar 3)</code> 의 경우 반드시 괄호를 사용해야 함. 
-  그렇지 않으면 <code>bar</code> 가 하나가 아닌 두 개의 인자를 받는 것으로 인식되어 오류 발생.</li>
-</ul>
-</li>
-</ul>
+<h4 id="&#51204;&#50948;-&#54632;&#49688;-&#45824;-&#51473;&#50948;-&#54632;&#49688;">&#51204;&#50948; &#54632;&#49688; &#45824; &#51473;&#50948; &#54632;&#49688;<a class="anchor-link" href="#&#51204;&#50948;-&#54632;&#49688;-&#45824;-&#51473;&#50948;-&#54632;&#49688;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>+</code> 처럼 인자를 양쪽에 표현하는 함수를 <strong>중위 함수</strong> 라 부른다.
+반면에 함수 이름 다음에 인자를 적용하는 방식으로 사용하는 함수는 <strong>전위 함수</strong> 이다. 
+사칙연산 등 일반적으로 사용되는 함수는 중위 함수로, 기타 일반적인 경우는 전위 함수를 사용한다.</p>
+<p>점위 함수는 함수 이름 다음에 공백을 이용하여 매개변수 또는 인자를 이어서 작성하여 호출한다.</p>
+<div class="highlight"><pre><span></span><span class="nf">foo</span><span class="p">,</span> <span class="n">bar</span> <span class="mi">1</span><span class="p">,</span> <span class="n">baz</span> <span class="mi">3</span> <span class="s">&quot;haha&quot;</span><span class="p">,</span> <span class="n">bar</span> <span class="p">(</span><span class="n">bar</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+<p>위에서 <code>bar (bar 3)</code> 의 경우 반드시 괄호를 사용해야 함에 주의해야 한다. 
+그렇지 않으면 <code>bar</code> 가 하나가 아닌 두 개의 인자를 받는 것으로 인식되어 오류 발생가 발생한다.</p>
 
 </div>
 </div>
@@ -14035,7 +14031,18 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>예를 들어, <code>+1</code>에 해당하는 함수인 <code>succ</code>의 사용법은 다음과 같음.</p>
+<p><strong>참고:</strong> 
+대부분의 명령형 언어에서 함수는 함수 이름을 작성한 후 괄호 안에 매개변수 또는 인자를 쉼표로 구분해 작성한다.</p>
+
+<pre><code>foo(), bar(1), baz(3, "haha"), bar(bar(3))</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>예를 들어, <code>+1</code>에 해당하는 함수인 <code>succ</code>의 사용법은 다음과 같다.</p>
 
 </div>
 </div>
@@ -14076,16 +14083,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>여러 파라미터를 사용하는 함수를 호출하는 것도 간단함.</p>
-<ul>
-<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:min"><code>min</code></a>, 
-  <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:max"><code>max</code></a> 
-  함수는 숫자처럼 순서대로 나열할 수 있는 두 개의 값을 인자로 사용<ul>
-<li><code>min x y</code>: <code>x</code>와 <code>y</code> 중에서 더 작은 것을 되돌려줌</li>
-<li><code>max x y</code>: <code>x</code>와 <code>y</code> 중에서 더 큰 것을 되돌려줌</li>
-</ul>
-</li>
-</ul>
+<p>여러 개의 파라미터/인자를 사용하는 함수를 호출하는 것도 앞서 설명한대로 공백을 이용하여 나열하면 된다. 
+예를 들어, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:min"><code>min</code></a> 과
+<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:max"><code>max</code></a> 
+함수는 숫자처럼 크기 순서가 비교 가능한 두 개의 값을 인자로 사용하며, 
+아래와 같이 호출된다.</p>
 
 </div>
 </div>
@@ -14192,8 +14194,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>함수에 인자를 적용하는 것이 가장 높은 우선순위를 가짐. 
-예를 들어, 아래의 두 표현식은 동일한 결과를 가리킴.</p>
+<h4 id="&#51204;&#50948;-&#54632;&#49688;&#51032;-&#54840;&#52636;-&#50864;&#49440;&#49692;&#50948;">&#51204;&#50948; &#54632;&#49688;&#51032; &#54840;&#52636; &#50864;&#49440;&#49692;&#50948;<a class="anchor-link" href="#&#51204;&#50948;-&#54632;&#49688;&#51032;-&#54840;&#52636;-&#50864;&#49440;&#49692;&#50948;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>전위 함수에 인자를 적용하는 것이 가장 높은 우선순위를 갖는다. 
+예를 들어, 아래의 두 표현식은 동일한 결과를 계산한다.</p>
 
 </div>
 </div>
@@ -14267,11 +14276,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>9x10</code>의 다음 숫자를 알고싶다면, <code>succ 9 * 10</code>로 입력하면 안됨.</p>
-<ul>
-<li><code>succ 9 * 10</code> 는 <code>(succ 9) * 10</code>으로 처리됨.</li>
-<li>91을 얻기 위해서는 <code>succ (9 * 10)</code>로 작성해야함.</li>
-</ul>
+<p>따라서 <code>9 * 10</code>의 다음 수를 알고 싶다면, <code>succ 9 * 10</code>이 아니라 
+<code>succ (9 * 10)</code>로 작성해야한다.</p>
 
 </div>
 </div>
@@ -14345,16 +14351,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#51204;&#50948;/&#51473;&#50948;-&#48320;&#54872;">&#51204;&#50948;/&#51473;&#50948; &#48320;&#54872;<a class="anchor-link" href="#&#51204;&#50948;/&#51473;&#50948;-&#48320;&#54872;">&#182;</a></h3>
+<h3 id="&#51204;&#50948;/&#51473;&#50948;-&#54632;&#49688;-&#48320;&#54872;">&#51204;&#50948;/&#51473;&#50948; &#54632;&#49688; &#48320;&#54872;<a class="anchor-link" href="#&#51204;&#50948;/&#51473;&#50948;-&#54632;&#49688;-&#48320;&#54872;">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>두 개의 인자를 받는 전위 함수를 역따옴표로 감싸서 중위 함수로 사용할 수 있음.
-예를 들어, <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:div"><code>div</code></a> 
-함수는 두 개의 정수를 받아와 정수 사이의 몫 나눗셈을 반홤함.</p>
+<p>두 개의 인자를 받는 전위 함수를 역따옴표로 감싸서 중위 함수로 사용할 수 있다.
+예를 들어, <code>div</code> 함수는 두 개의 정수를 받아와 정수 사이의 몫을 계산하는 나눗셈을 수행한다.</p>
 
 </div>
 </div>
@@ -14395,8 +14400,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>하지만 이렇게 호출하면, 어떤 숫자가 나누는 숫자인지, 나눠지는 숫자인지 혼란이 있을 수 있음. 
-그래서 이 식을 더 명확하게 하기 위해 다음과 같이 호출할 수 있음.</p>
+<p>하지만 이렇게 전위 함수 형식으로 호출하면, 
+누가 누구를 나누는지 혼란스러울 수 있다. 
+그래서 이 식을 더 명확하게 하기 위해 다음과 같이 
+전위 함수를 역 따옴표( &#96; ) 기호로 감싼 후 중위 함수 형식으로 호출할 수 있다.</p>
 
 </div>
 </div>
@@ -14437,7 +14444,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>반면에 임의의 중위 함수를 소괄호로 감싸면 전위 함수로 활용할 수 있음.</p>
+<p>반면에 임의의 중위 함수를 소괄호로 감싸면 전위 함수로 활용할 수 있다.</p>
 
 </div>
 </div>
@@ -14478,7 +14485,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>아래 동치성이 성립하는 이유를 쉽게 파악할 수 있을 것임.</p>
+<p>이제 아래 동치성이 성립하는 이유를 쉽게 파악할 수 있어야 한다.</p>
 
 </div>
 </div>
@@ -14526,10 +14533,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>함수를 호출하는 방법과 유사한 방식으로 함수를 정의함.</p>
+<p>함수를 호출하는 방법과 유사한 방식으로 함수를 정의한다.</p>
 <ul>
-<li>함수 이름 뒤에 공백으로 구분된 매개변수 나열</li>
-<li><p>등호 기호(<code>=</code>) 오른편에 함수의 기능 지정하며, 함수 정의의 일반적인 형식은 다음과 같음:</p>
+<li>함수 이름 뒤에 공백으로 구분된 매개변수 나열한다.</li>
+<li><p>등호 기호(<code>=</code>) 오른편에 함수의 반환값을 지정하며, 함수 정의의 일반적인 형식은 다음과 같다.</p>
 <div class="highlight"><pre><span></span><span class="err">함수이름</span> <span class="err">매개변수</span><span class="mi">1</span> <span class="o">...</span> <span class="err">매개변수</span><span class="n">n</span> <span class="ow">=</span> <span class="err">함수반환값</span>
 </pre></div>
 </li>
@@ -14541,7 +14548,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>예를 들어, 하나의 인자를 받는 함수 정의하는 방법은 다음과 같음.</p>
+<p>예를 들어, 하나의 인자를 받는 함수를 정의하는 방법은 다음과 같다.</p>
 
 </div>
 </div>
@@ -14562,7 +14569,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>지정된 매개변수의 수만큼 인자를 사용하여 함수를 호출하면 됨.</p>
+<p>이제 지정된 매개변수의 수만큼 인자를 사용하여 함수를 호출하면 된다.</p>
 
 </div>
 </div>
@@ -14604,7 +14611,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>+</code>는 정수 뿐만 아니라 부동소수점 등 숫자로 볼 수 있는 모든 값에 대해 
-적용할 수 있기에 부동소수점을 <code>doubleMe</code> 함수에 적용할 수 있음.</p>
+적용할 수 있기에 부동소수점을 <code>doubleMe</code> 함수에 적용할 수 있다.</p>
 
 </div>
 </div>
@@ -14645,7 +14652,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>두 개를 수를 인자로 받아 각 인자의 2배수의 합을 반환하는 함수는 다음과 같이 정의함.</p>
+<p>두 개의 수를 인자로 받아 각 인자의 2배수의 합을 반환하는 함수는 다음과 같이 정의한다.</p>
 
 </div>
 </div>
@@ -14765,8 +14772,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>새로운 함수를 정의할 때, 이전에 만들어둔 함수를 이용해 정의할 수 있음.
-따라서 <code>doubleUs</code>를 아래처럼 재정의할 수 있음.</p>
+<p>새로운 함수를 정의할 때, 이전에 정의한 함수를 이용할 수 있다.
+예를 들어, <code>doubleUs</code>를 아래처럼 재정의할 수 있다.</p>
 
 </div>
 </div>
@@ -14788,10 +14795,11 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>위 정의는 간단한 기능을 수행하는 함수들을 먼저 정의한 후, 
-그 함수들을 결합하여 보다 복잡한 기능을 수행하는 함수를 만드는 전형적인 방식을 보여줌.</p>
-<p><strong>장점:</strong> 코드의 반복을 피할 수 있음.
+그 함수들을 결합하여 보다 복잡한 기능을 수행하는 함수를 만드는 
+하스켈의 전형적인 함수 정의 방식을 보여준다.
+이 방식의 가장 큰 장점은 코드를 반복하여 작성하는 것을 피할 수 있다는 점이다.
 예를 들어, 인자들의 2배수의 합이 아닌 3배수의 합을 구하고자 할 때
-<code>doubleMe</code>는 <code>x + x + x</code>로 재정의하면 <code>doubleUs</code>는 굳이 수정할 필요 없음.</p>
+<code>doubleMe</code> 를 <code>x + x + x</code> 로 재정의하면 <code>doubleUs</code>는 굳이 수정할 필요가 없다.</p>
 
 </div>
 </div>
@@ -14858,17 +14866,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>주의사항</strong></p>
-<ul>
-<li>확장자가 <code>hs</code>인 하스켈 소스코드 파일을 작성한 후 컴파일하여 코드를 실행하는 경우 
-  함수를 정의하는 순서는 아무 상관 없음.<ul>
-<li>예를 들어, 
-<code>doubleUs</code>를 먼저 정의한 후에 <code>doubleMe</code>를 나중에 정의해도 됨.</li>
-</ul>
-</li>
-<li>하지만 주피터 노트북에서는 경우에 따라 순서가 중요할 수 있음.
-  예를 들어 아래와 같이 하나의 셀에서 정의되는 경우 순서가 중요하지 않음.</li>
-</ul>
+<p><strong>주의사항:</strong>
+확장자가 <code>hs</code>인 하스켈 소스코드 파일을 작성한 후 컴파일하여 코드를 실행하는 경우 
+함수를 정의하는 순서는 아무 상관이 없다. 
+예를 들어, <code>doubleUs</code>를 먼저 정의한 후에 <code>doubleMe</code>를 나중에 정의해도 된다.
+하지만 주피터 노트북에서는 경우에 따라 순서가 중요할 수 있다.
+예를 들어 아래와 같이 하나의 셀에서 정의되는 경우 순서가 중요하지 않지만,
+서로 다른 셀을 이용할 때는 정의 순서가 중요하다.</p>
 
 </div>
 </div>
@@ -14911,53 +14915,6 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>반면에 서로 다른 코드셀에서 여러 함수를 작성할 경우 아래와 같이
-  아직 정의되지 않은 함수를 사용하면 오류 발생함.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">undefineDoubleUs</span> <span class="n">x</span> <span class="n">y</span> <span class="ow">=</span> <span class="n">undefineDoubleMe</span> <span class="n">x</span> <span class="o">+</span> <span class="n">undefineDoubleMe</span> <span class="n">y</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-&lt;interactive&gt;:1:24: error:
-    • Variable not in scope: undefineDoubleMe :: t -&gt; a
-    • Perhaps you meant ‘undefineDoubleUs’ (line 1)
-&lt;interactive&gt;:1:45: error:
-    • Variable not in scope: undefineDoubleMe :: t1 -&gt; a
-    • Perhaps you meant ‘undefineDoubleUs’ (line 1)</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="if-&#54364;&#54788;&#49885;">if &#54364;&#54788;&#49885;<a class="anchor-link" href="#if-&#54364;&#54788;&#49885;">&#182;</a></h3>
 </div>
 </div>
@@ -14965,17 +14922,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>100보다 크지 않은 수에 대해서만 2배수를 계산하는 함수는 다음과 같음.</p>
-<ul>
-<li>if 표현식을 한 줄로 표현할 수 있지만, 아래처럼 여러 줄로 표현하는 것이 가독성을 높혀줌.</li>
-</ul>
+<p>100보다 크지 않은 수에 대해서만 2배수를 계산하는 함수는 다음과 같이
+<code>if</code> 표현식을 이용한다. 
+<code>if</code> 표현식을 한 줄로 표현할 수 있지만, 아래처럼 여러 줄로 표현하는 것이 가독성을 높혀준다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">doubleSmallNumber</span> <span class="n">x</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span> 
@@ -14991,40 +14947,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>참고</strong></p>
-<ul>
-<li><p>C, Java, 파이썬 등 명령형 언어에서 <code>if</code> 는 명령문(command)을 작성할 때 사용됨.</p>
-<ul>
-<li>하스켈 명령문은 조금 나중에 다룰 것임. 9장 참조.</li>
-</ul>
-</li>
-<li><p>반면에 하스켈의 if문은 명령문이 아니라 값을 나타내는 <strong>표현식</strong>(statement)임.</p>
-<ul>
-<li>따라서 <code>else</code>가 필수임. 
-  그렇지 않으면 <code>if</code> 조건이 성립하지 않는 경우 값이 정해지지 않는 표현식이 되어 오류 발생함.</li>
-</ul>
-</li>
-<li><p>표현식(expression)은 기본적으로 값을 반환하는 코드 조각임. 
-  예를 들어, <code>5</code>는 5를, <code>4 + 8</code>은 12를, <code>x + y</code>는 <code>x</code>와 <code>y</code>의 합을 반환하는 표현식임.</p>
-</li>
-<li><p>표현식과 명령문에 대한 보다 자세한 설명은 앞으로 조금씩 이루어질 것임.</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>만약 위의 함수에서 생성된 모든 숫자에 1을 더하고 싶다면, 아래의 코드처럼 괄호를 사용해야 함.</p>
+<p>만약 위의 함수에서 생성된 모든 숫자에 1을 더하고 싶다면, 아래의 코드처럼 괄호를 사용해야 한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">doubleSmallNumber&#39;</span> <span class="n">x</span> <span class="ow">=</span> <span class="p">(</span><span class="kr">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="kr">then</span> <span class="n">x</span> <span class="kr">else</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
@@ -15037,7 +14967,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">doubleSmallNumber&#39;</span> <span class="mi">100</span>
@@ -15070,7 +15000,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">doubleSmallNumber&#39;</span> <span class="mi">200</span>
@@ -15104,14 +15034,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>괄호를 생략하면, <code>x</code>가 100보다 크지 않을 경우에만 1을 더해줌.</p>
+<p>괄호를 생략하면, <code>x</code>가 100보다 크지 않을 경우에만 1을 더해준다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">doubleSmallNumber&#39;&#39;</span> <span class="n">x</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="kr">then</span> <span class="n">x</span> <span class="kr">else</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
@@ -15124,7 +15054,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">doubleSmallNumber&#39;&#39;</span> <span class="mi">100</span>
@@ -15157,7 +15087,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">doubleSmallNumber&#39;&#39;</span> <span class="mi">200</span>
@@ -15193,15 +15123,16 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>참고: 아포스트로피(<code>'</code>)</strong></p>
 <p>아포스트로피(<code>'</code>)는 하나의 유효한 문자이며, 함수 또는 매개변수 이름의 끝에 사용할 경우 
-기존에 정의된 함수 또는 매개변수를 조금 수정한 것임을 암시함.</p>
-<p>물론 이름 중간에 임의로 사용할 수도 있음. 단, 아포스트로피로 시작할 수는 없음.</p>
+기존에 정의된 함수 또는 매개변수를 조금 수정한 것임을 암시한다.
+아포스트로피를 또한 함수 또는 매개변수의 이름 중간에 임의로 사용할 수도 있다. 
+단, 아포스트로피로 이름을 시작할 수는 없다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">conanO&#39;Brien</span> <span class="ow">=</span> <span class="s">&quot;It&#39;s a-me, Conan O&#39;Brien!&quot;</span>
@@ -15215,12 +15146,44 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>주의사항</strong></p>
+<p><strong>주의사항:</strong>
+위 함수의 이름에서 Conan의 이름이 소문자로 시작한다.
+모든 함수의 이름은 무조건 소문자로 시작해야 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고: 변수 대 함수</strong></p>
+<p><code>conanO'Brien</code>은 C, 자바, 파이썬 등 명령형 프로그래밍언어에서 매우 중요한
+역할을 수행하는 <strong>변수</strong>가 아니라, 
+아무런 인자 없이 호출되어 <code>"It's a-me, Conan O'Brien!"</code> 라는 문자열을 반환하는 <strong>함수</strong>이다. 
+하스켈은 기본적으로 함수의 매개변수 이외의 변수 개념을 지원하지 않는다. 
+다만 명령형 언어에서 사용하는 변수의 기능을 유사하게 지원하는데, 이에 대해서는 나중에 
+하스켈의 명령문을 다룰 때 자세히 설명할 것이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고: 표현식 대 명령문</strong></p>
 <ul>
-<li>위 함수의 이름에서 Conan의 이름을 소문자로 시작하였음. 이유는 함수는 무조건 소문자로 시작해야 하기 때문임.</li>
-<li><code>conanO'Brien</code>은 C, 자바, 파이썬 등 명령형 프로그래밍언어에서 매우 중요한
-  역할을 수행하는 <strong>변수</strong> 의 이름이 아니라,<br>
-  아무런 인자 없이 호출되어 <code>"It's a-me, Conan O'Brien!"</code> 라는 문자열을 반환하는 함수의 이름임.</li>
+<li><p>표현식(expression)은 기본적으로 값을 반환하는 코드 조각이다.
+  예를 들어, <code>5</code>는 5를, <code>4 + 8</code>은 12를, <code>x + y</code>는 <code>x</code>와 <code>y</code>의 합을 반환하는 표현식이다.</p>
+</li>
+<li><p>C, Java, 파이썬 등 명령형 언어에서 <code>if</code> 는 명령문(command)을 작성할 때 사용된다.
+  따라서 <code>else</code> 문이 선택으로 사용될 수 있다.</p>
+</li>
+<li><p>하스켈의 <code>if</code>는 명령문이 아니라 값을 나타내는 <strong>표현식</strong>(statement)을 작성할 때 사용된다.
+  따라서 <code>else</code>가 필수적으로 항상 함께 해야 한다.
+  그렇지 않으면 <code>if</code> 조건이 성립하지 않는 경우 값이 정해지지 않는 표현식이 되어 오류가 발생한다.</p>
+</li>
+<li><p>하스켈의 표현식과 명령문에 대한 보다 자세한 설명은 앞으로 조금씩 이루어질 것이다.</p>
+</li>
 </ul>
 
 </div>
@@ -15236,9 +15199,9 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트는 하스켈에서 가장 많이 사용되는 데이터 구조이며 수 많은 문제를 모델링하고 해결하기 위해 
-다양한 방법으로 사용될 수 있음.
-여기서는 리스트, 문자열, 리스트 조건제시법의 기본 활용법을 살펴보고자 함.</p>
+<p>리스트는 하스켈에서 가장 많이 사용되는 데이터 구조이며 문제를 모델링하고 해결하기 위해 
+다양한 방법으로 사용될 수 있다. 
+여기서는 리스트, 문자열, 리스트 조건제시법의 기본 활용법을 살펴본다.</p>
 
 </div>
 </div>
@@ -15253,26 +15216,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트는 동일한 유형의 값을 하나로 묶어서 다루는 자료구조임.</p>
-<ul>
-<li>리스트는 대괄호로 표시하고 리스트의 항목으로 포함된 값은 서로 쉼표로 구분됨.</li>
-<li>하나의 리스트에 포함되는 항목은 모두 동일한 유형을 가져야 함.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>예를 들어, 정수로 이루어진 리스트를 반환하는 함수를 다음과 같이 정의함.</p>
+<p>리스트는 여러 개의 값을 하나로 묶어서 다루는 데이터 구조이다.
+리스트에 포함되는 여러 개의 값들 모두 동일한 유형의 값이어야 하며,
+서로 쉼표로 구분된 상태에서 대괄호로 감싸인다.
+예를 들어, 정수로 이루어진 리스트를 반환하는 함수를 다음과 같이 정의한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lostNumbers</span> <span class="ow">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">42</span><span class="p">]</span>
@@ -15286,18 +15240,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>참고:</strong> 대화형 GHC 컴파일러인 GHCi에서 이름을 바로 정의하려면 <code>let</code> 키워드를 사용해야 함.
-반면에 하스켈 소스코드에서는 그럴 필요 없음.</p>
-<ul>
-<li>주피터 노트북에서 이름을 정의하는 경우 <code>let</code> 키워드 사용은 단순히 선택사항일 뿐임.</li>
-</ul>
+<p><strong>참고:</strong> 대화형 GHC 컴파일러인 GHCi에서 이름을 바로 정의하려면 <code>let</code> 키워드를 사용해야 한다.
+반면에 하스켈 소스코드에서는 그럴 필요가 없다. 
+주피터 노트북에서는 <code>let</code> 키워드 사용은 선택사항이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">lostNumbers</span> <span class="ow">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">42</span><span class="p">]</span>
@@ -15310,7 +15262,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lostNumbers</span>
@@ -15344,17 +15296,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>주의사항:</strong> 정수와 실수로 이루어진 리스트 또는 정수와 문자로 이루어진 리스트는 허영되지 않음.</p>
-<ul>
-<li>만약 <code>[1,2,'a',3,'b','c',4]</code>을 시도한다면, 하스켈은 작은 따옴표 사이에 표기된 문자가 숫자가 아니라고 오류을 발생시킴.</li>
-</ul>
+<p>정수와 실수로 이루어진 리스트 또는 정수와 문자로 이루어진 리스트는 허영되지 않는다.
+만약 <code>[1,2,'a',3,'b','c',4]</code>을 시도한다면, 하스켈은 작은 따옴표 사이에 표기된 문자가 숫자가 아니라고 오류을 발생시킨다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -15390,7 +15340,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>참고:</strong> 다음 세 개의 리스트는 서로 다른 리스트를 나타냄.</p>
+<p><strong>참고:</strong> 다음 세 개의 리스트는 서로 다른 리스트를 나타낸다.</p>
 <div class="highlight"><pre><span></span><span class="kt">[]</span><span class="p">,</span> <span class="p">[</span><span class="kt">[]</span><span class="p">],</span> <span class="p">[</span><span class="kt">[]</span><span class="p">,</span><span class="kt">[]</span><span class="p">,</span><span class="kt">[]</span><span class="p">]</span>
 </pre></div>
 <ul>
@@ -15412,12 +15362,12 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>문자열은 문자들의 리스트로 처리됨.</p>
+<p>문자열은 문자로 구성된 리스트이다.</p>
 <ul>
-<li>문자 유형(<code>Char</code>): <code>'a'</code>, <code>'b'</code>, <code>'c'</code>, <code>'X'</code>, <code>'Y'</code>, <code>'Z'</code> 등 작은 따옴표로 감싸는 하나의 기호들의 유형. 나중에 좀 더 자세히 다룸.</li>
-<li>문자열: <code>"hello"</code>, <code>"Haskell"</code> 등 큰 따옴표로 감싸는 문자들의 나열.</li>
-<li>하지만, 예를 들어, <code>"hello"</code>는 단지 <code>['h','e','l','l','o']</code>를 예쁘게 포장한 것에 불과함.
-  즉, 문자열의 유형이 따로 존재하지는 않음.</li>
+<li>문자 유형(<code>Char</code>): <code>'a'</code>, <code>'b'</code>, <code>'c'</code>, <code>'X'</code>, <code>'Y'</code>, <code>'Z'</code> 등 작은 따옴표로 감싸는 하나의 기호들의 유형이다.</li>
+<li>문자열: <code>"hello"</code>, <code>"Haskell"</code> 등 큰 따옴표로 감싸는 문자들의 나열을 가리킨다.
+  하지만, 예를 들어, <code>"hello"</code>는 단지 <code>['h','e','l','l','o']</code>를 예쁘게 포장한 것에 불과하다.
+  따라서 문자열의 유형이 따로 존재하는 것이 아님에 주의해야 한다.</li>
 </ul>
 
 </div>
@@ -15425,7 +15375,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="s">&quot;hello&quot;</span> <span class="o">==</span> <span class="p">[</span><span class="sc">&#39;h&#39;</span><span class="p">,</span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;o&#39;</span><span class="p">]</span>
@@ -15458,7 +15408,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="s">&quot;Haskell&quot;</span> <span class="o">==</span> <span class="p">[</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;s&#39;</span><span class="p">,</span><span class="sc">&#39;k&#39;</span><span class="p">,</span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">]</span>
@@ -15499,7 +15449,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>리스트를 다루는 기초적인 함수는 다음과 같음.</p>
+<p>리스트를 다루는 기초적인 함수들을 살펴보고자 한다.</p>
 
 </div>
 </div>
@@ -15514,16 +15464,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>중위 함수 
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-43--43-"><code>++</code></a> 는 
-리스트 두 개를 이어붙혀서 새로운 리스트 생성하여 반환함.</p>
+<p><code>++</code> 는 리스트 두 개를 이어붙혀서 새로운 리스트를 생성하여 반환하는 중위 함수이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">++</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
@@ -15557,24 +15505,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>주의사항</strong></p>
-<ul>
-<li><p><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-43--43-"><code>++</code></a>
-  연산자의 첫째 인자로 사용되는 리스트가 많은 항목을 가진 경우 연산이 오래 걸릴 수 있음.</p>
-<ul>
-<li><p>이유는, 예를 들어, <code>[1,2,3] ++ [4]</code>를 계산하기 위해 내부적으로 아래와 같은 과정을 거치기 때문임:</p>
+<p><strong>주의사항:</strong>
+<code>++</code> 연산자의 첫째 인자로 사용되는 리스트가 많은 항목을 가진 경우 연산이 오래 걸릴 수 있다. 
+이유는, 예를 들어, <code>[1,2,3] ++ [4]</code>를 계산하기 위해 내부적으로 아래와 같은 과정을 거치기 때문이다.
+마지막 줄에 있는 표현식이 바로 <code>[1,2,3,4]</code> 이다.</p>
 <div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">++</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="ow">=&gt;</span> <span class="mi">1</span> <span class="kt">:</span> <span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">++</span> <span class="p">[</span><span class="mi">4</span><span class="p">])</span>
                <span class="ow">=&gt;</span> <span class="mi">1</span> <span class="kt">:</span> <span class="mi">2</span> <span class="kt">:</span> <span class="p">([</span><span class="mi">3</span><span class="p">]</span> <span class="o">++</span> <span class="p">[</span><span class="mi">4</span><span class="p">])</span>
                <span class="ow">=&gt;</span> <span class="mi">1</span> <span class="kt">:</span> <span class="mi">2</span> <span class="kt">:</span> <span class="mi">3</span> <span class="kt">:</span> <span class="p">(</span><span class="kt">[]</span> <span class="o">++</span> <span class="p">[</span><span class="mi">4</span><span class="p">])</span>
                <span class="ow">=&gt;</span> <span class="mi">1</span> <span class="kt">:</span> <span class="mi">2</span> <span class="kt">:</span> <span class="mi">3</span> <span class="kt">:</span> <span class="mi">4</span> <span class="kt">:</span> <span class="kt">[]</span>
 </pre></div>
-</li>
-<li><p>마지막 줄에 있는 표현식이 바로 <code>[1,2,3,4]</code> 임.</p>
-</li>
-</ul>
-</li>
-<li>참고: <a href="https://hackage.haskell.org/package/base-4.14.1.0/docs/src/GHC.Base.html#%2B%2B"><code>(++)</code>의 정의</a></li>
-</ul>
 
 </div>
 </div>
@@ -15582,14 +15521,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>문자열이 리스트로 정의되었기에 문자열에서 리스트 관련 함수를 사용할 수 있음.</p>
+<p>문자열이 리스트로 정의되었기에 문자열에서 리스트 관련 함수를 사용할 수 있다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="s">&quot;hello&quot;</span> <span class="o">++</span> <span class="s">&quot; &quot;</span> <span class="o">++</span> <span class="s">&quot;world&quot;</span>
@@ -15622,7 +15561,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="sc">&#39;G&#39;</span><span class="p">,</span><span class="sc">&#39;o&#39;</span><span class="p">]</span> <span class="o">++</span> <span class="p">[</span><span class="sc">&#39;o&#39;</span><span class="p">,</span><span class="sc">&#39;d&#39;</span><span class="p">]</span> <span class="o">++</span> <span class="p">[</span><span class="sc">&#39;!&#39;</span><span class="p">]</span>
@@ -15680,7 +15619,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="kt">:</span><span class="p">)</span> <span class="mi">1</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -15721,7 +15660,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">1</span> <span class="kt">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -15765,7 +15704,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="sc">&#39;A&#39;</span><span class="kt">:</span><span class="s">&quot; SMALL CAT&quot;</span>
@@ -15816,7 +15755,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="s">&quot;Steve Buscemi&quot;</span> <span class="o">!!</span> <span class="mi">6</span>
@@ -15849,7 +15788,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mf">9.4</span><span class="p">,</span><span class="mf">33.2</span><span class="p">,</span><span class="mf">96.2</span><span class="p">,</span><span class="mf">11.2</span><span class="p">,</span><span class="mf">23.25</span><span class="p">]</span> <span class="o">!!</span> <span class="mi">1</span>
@@ -15894,7 +15833,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mf">9.4</span><span class="p">,</span><span class="mf">33.2</span><span class="p">,</span><span class="mf">96.2</span><span class="p">,</span><span class="mf">11.2</span><span class="p">,</span><span class="mf">23.25</span><span class="p">]</span> <span class="o">!!</span> <span class="mi">0</span>
@@ -15927,7 +15866,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mf">9.4</span><span class="p">,</span><span class="mf">33.2</span><span class="p">,</span><span class="mf">96.2</span><span class="p">,</span><span class="mf">11.2</span><span class="p">,</span><span class="mf">23.25</span><span class="p">]</span> <span class="o">!!</span> <span class="p">(</span><span class="mi">5</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -15970,7 +15909,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mf">9.4</span><span class="p">,</span><span class="mf">33.2</span><span class="p">,</span><span class="mf">96.2</span><span class="p">,</span><span class="mf">11.2</span><span class="p">,</span><span class="mf">23.25</span><span class="p">]</span> <span class="o">!!</span> <span class="mi">5</span>
@@ -16013,7 +15952,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">b</span> <span class="ow">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
@@ -16026,7 +15965,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">b</span>
@@ -16059,7 +15998,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">b</span> <span class="o">++</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
@@ -16092,7 +16031,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="kt">:</span> <span class="n">b</span>
@@ -16125,7 +16064,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">b</span> <span class="o">!!</span> <span class="mi">2</span>
@@ -16152,6 +16091,19 @@ Prelude.!!: index too large</pre>
 
 </div>
 
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre></pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -16172,7 +16124,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">]]</span>
@@ -16226,7 +16178,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
@@ -16259,7 +16211,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -16300,7 +16252,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">[]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -16341,7 +16293,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -16382,7 +16334,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>
@@ -16423,7 +16375,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">opt</span> <span class="n">lint</span>
@@ -16436,7 +16388,7 @@ Prelude.!!: index too large</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>
@@ -16570,7 +16522,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">opt</span> <span class="n">no</span><span class="o">-</span><span class="n">lint</span>
@@ -16598,7 +16550,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">head</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -16646,7 +16598,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">tail</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -16694,7 +16646,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">last</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -16742,7 +16694,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">init</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -16804,7 +16756,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">head</span> <span class="kt">[]</span>
@@ -16835,7 +16787,7 @@ Prelude.head: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">tail</span> <span class="kt">[]</span>
@@ -16866,7 +16818,7 @@ Prelude.tail: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">last</span> <span class="kt">[]</span>
@@ -16897,7 +16849,7 @@ Prelude.last: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">init</span> <span class="kt">[]</span>
@@ -16943,7 +16895,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">length</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -16976,7 +16928,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">length</span> <span class="kt">[]</span>
@@ -17029,7 +16981,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">null</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -17062,7 +17014,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">null</span> <span class="kt">[]</span>
@@ -17103,7 +17055,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">null</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="kt">[]</span><span class="p">)</span>
@@ -17130,26 +17082,13 @@ Prelude.init: empty list</pre>
 
 </div>
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre></pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">null</span> <span class="kt">[]</span> <span class="o">==</span> <span class="p">(</span><span class="kt">[]</span> <span class="o">==</span> <span class="kt">[]</span><span class="p">)</span>
@@ -17197,7 +17136,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">reverse</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -17248,7 +17187,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">3</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -17281,7 +17220,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">1</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -17324,7 +17263,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">5</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
@@ -17367,7 +17306,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">0</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
@@ -17418,7 +17357,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">drop</span> <span class="mi">3</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
@@ -17451,7 +17390,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">drop</span> <span class="mi">0</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -17484,7 +17423,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">drop</span> <span class="mi">100</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -17532,7 +17471,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">minimum</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
@@ -17565,7 +17504,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">maximum</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -17613,7 +17552,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">sum</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
@@ -17640,13 +17579,26 @@ Prelude.init: empty list</pre>
 
 </div>
 
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre></pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">product</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
@@ -17679,7 +17631,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">product</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
@@ -17728,7 +17680,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">4</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
@@ -17755,26 +17707,13 @@ Prelude.init: empty list</pre>
 
 </div>
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre></pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="prompt input_prompt">In&nbsp;[114]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">10</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
@@ -17837,7 +17776,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[116]:</div>
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">20</span><span class="p">]</span>
@@ -17878,7 +17817,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="o">..</span><span class="sc">&#39;z&#39;</span><span class="p">]</span>
@@ -17919,7 +17858,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="sc">&#39;K&#39;</span><span class="o">..</span><span class="sc">&#39;Z&#39;</span><span class="p">]</span>
@@ -17978,7 +17917,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[118]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="o">..</span><span class="mi">20</span><span class="p">]</span>
@@ -18019,7 +17958,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="prompt input_prompt">In&nbsp;[119]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="o">..</span><span class="mi">20</span><span class="p">]</span>
@@ -18061,7 +18000,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="prompt input_prompt">In&nbsp;[120]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">19</span><span class="o">..</span><span class="mi">1</span><span class="p">]</span>
@@ -18102,7 +18041,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[122]:</div>
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">20</span><span class="o">..</span><span class="mi">1</span><span class="p">]</span>
@@ -18144,7 +18083,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="prompt input_prompt">In&nbsp;[122]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="o">...</span><span class="mi">100</span><span class="p">]</span>
@@ -18185,7 +18124,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[124]:</div>
+<div class="prompt input_prompt">In&nbsp;[123]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span> <span class="o">..</span> <span class="mi">1</span><span class="p">]</span>
@@ -18245,7 +18184,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="prompt input_prompt">In&nbsp;[124]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">9</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">26</span><span class="o">..</span><span class="p">]</span>
@@ -18286,7 +18225,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
+<div class="prompt input_prompt">In&nbsp;[125]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">26</span><span class="o">..</span><span class="mi">13</span><span class="o">*</span><span class="mi">9</span><span class="p">]</span>
@@ -18351,7 +18290,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">10</span> <span class="p">(</span><span class="n">cycle</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
@@ -18384,7 +18323,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">12</span> <span class="p">(</span><span class="n">cycle</span> <span class="s">&quot;LOL &quot;</span><span class="p">)</span>
@@ -18417,7 +18356,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">10</span> <span class="p">(</span><span class="n">repeat</span> <span class="mi">5</span><span class="p">)</span>
@@ -18460,7 +18399,7 @@ Prelude.init: empty list</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">replicate</span> <span class="mi">10</span> <span class="mi">5</span>
@@ -18535,7 +18474,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[130]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]]</span>
@@ -18590,7 +18529,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="prompt input_prompt">In&nbsp;[131]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">take</span> <span class="mi">10</span> <span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">]]</span>
@@ -18633,7 +18572,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[133]:</div>
+<div class="prompt input_prompt">In&nbsp;[132]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">],</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">&gt;=</span> <span class="mi">12</span><span class="p">]</span>
@@ -18675,7 +18614,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[134]:</div>
+<div class="prompt input_prompt">In&nbsp;[133]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span> <span class="n">x</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">50</span><span class="o">..</span><span class="mi">100</span><span class="p">],</span> <span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">3</span><span class="p">]</span>
@@ -18734,7 +18673,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[135]:</div>
+<div class="prompt input_prompt">In&nbsp;[134]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span> <span class="n">x</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">10</span><span class="o">..</span><span class="mi">20</span><span class="p">],</span> <span class="n">x</span> <span class="o">/=</span> <span class="mi">13</span><span class="p">,</span> <span class="n">x</span> <span class="o">/=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">x</span> <span class="o">/=</span> <span class="mi">19</span><span class="p">]</span>
@@ -18778,7 +18717,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[136]:</div>
+<div class="prompt input_prompt">In&nbsp;[135]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">boomBangs</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="kr">then</span> <span class="s">&quot;BOOM!&quot;</span> <span class="kr">else</span> <span class="s">&quot;BANG!&quot;</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="n">odd</span> <span class="n">x</span><span class="p">]</span>
@@ -18806,7 +18745,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[137]:</div>
+<div class="prompt input_prompt">In&nbsp;[136]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">boomBangs</span> <span class="p">[</span><span class="mi">7</span><span class="o">..</span><span class="mi">13</span><span class="p">]</span>
@@ -18864,7 +18803,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="prompt input_prompt">In&nbsp;[137]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">y</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">]]</span>
@@ -18918,7 +18857,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[139]:</div>
+<div class="prompt input_prompt">In&nbsp;[138]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">y</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">]</span>
@@ -18961,7 +18900,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[140]:</div>
+<div class="prompt input_prompt">In&nbsp;[139]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">nouns</span> <span class="ow">=</span> <span class="p">[</span><span class="s">&quot;hobo&quot;</span><span class="p">,</span><span class="s">&quot;frog&quot;</span><span class="p">,</span><span class="s">&quot;pope&quot;</span><span class="p">]</span>
@@ -19007,33 +18946,13 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[141]:</div>
+<div class="prompt input_prompt">In&nbsp;[140]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">length&#39;</span> <span class="n">xs</span> <span class="ow">=</span> <span class="n">sum</span> <span class="p">[</span><span class="mi">1</span> <span class="o">|</span> <span class="kr">_</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">]</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre></pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -19080,7 +18999,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[142]:</div>
+<div class="prompt input_prompt">In&nbsp;[141]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">removeNonUppercase</span> <span class="n">str</span> <span class="ow">=</span> <span class="p">[</span> <span class="n">c</span> <span class="o">|</span> <span class="n">c</span> <span class="ow">&lt;-</span> <span class="n">str</span><span class="p">,</span> <span class="n">c</span> <span class="p">`</span><span class="n">elem</span><span class="p">`</span> <span class="p">[</span><span class="sc">&#39;A&#39;</span><span class="o">..</span><span class="sc">&#39;Z&#39;</span><span class="p">]]</span>
@@ -19093,7 +19012,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[143]:</div>
+<div class="prompt input_prompt">In&nbsp;[142]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">removeNonUppercase</span> <span class="s">&quot;Hahaha! Ahahaha!&quot;</span>
@@ -19126,7 +19045,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[144]:</div>
+<div class="prompt input_prompt">In&nbsp;[143]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">removeNonUppercase</span> <span class="s">&quot;IdontLIKEFROGS&quot;</span>
@@ -19176,7 +19095,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[145]:</div>
+<div class="prompt input_prompt">In&nbsp;[144]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">xxs</span> <span class="ow">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
@@ -19233,7 +19152,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[146]:</div>
+<div class="prompt input_prompt">In&nbsp;[145]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span> <span class="p">[</span> <span class="n">x</span> <span class="o">|</span> <span class="n">x</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="n">even</span> <span class="n">x</span> <span class="p">]</span> <span class="o">|</span> <span class="n">xs</span> <span class="ow">&lt;-</span> <span class="n">xxs</span><span class="p">,</span>
@@ -19328,7 +19247,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[147]:</div>
+<div class="prompt input_prompt">In&nbsp;[146]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">11</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
@@ -19370,7 +19289,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[148]:</div>
+<div class="prompt input_prompt">In&nbsp;[147]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
@@ -19420,7 +19339,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[149]:</div>
+<div class="prompt input_prompt">In&nbsp;[148]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
@@ -19486,7 +19405,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[150]:</div>
+<div class="prompt input_prompt">In&nbsp;[149]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="sc">&#39;a&#39;</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[[</span><span class="sc">&#39;c&#39;</span><span class="p">,</span><span class="sc">&#39;d&#39;</span><span class="p">],[</span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="sc">&#39;f&#39;</span><span class="p">,</span><span class="sc">&#39;g&#39;</span><span class="p">]])</span>
@@ -19549,7 +19468,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[151]:</div>
+<div class="prompt input_prompt">In&nbsp;[150]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="sc">&#39;a&#39;</span> <span class="o">==</span> <span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">)</span>
@@ -19605,7 +19524,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[152]:</div>
+<div class="prompt input_prompt">In&nbsp;[151]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
@@ -19638,7 +19557,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[153]:</div>
+<div class="prompt input_prompt">In&nbsp;[152]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -19682,7 +19601,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[154]:</div>
+<div class="prompt input_prompt">In&nbsp;[153]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
@@ -19747,7 +19666,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[155]:</div>
+<div class="prompt input_prompt">In&nbsp;[154]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">fst</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
@@ -19780,7 +19699,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[156]:</div>
+<div class="prompt input_prompt">In&nbsp;[155]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">fst</span> <span class="p">(</span><span class="s">&quot;Wow&quot;</span><span class="p">,</span> <span class="kt">False</span><span class="p">)</span>
@@ -19828,7 +19747,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[157]:</div>
+<div class="prompt input_prompt">In&nbsp;[156]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">snd</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
@@ -19861,7 +19780,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[158]:</div>
+<div class="prompt input_prompt">In&nbsp;[157]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">snd</span> <span class="p">(</span><span class="s">&quot;Wow&quot;</span><span class="p">,</span> <span class="kt">False</span><span class="p">)</span>
@@ -19925,7 +19844,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[159]:</div>
+<div class="prompt input_prompt">In&nbsp;[158]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">zip</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
@@ -19966,7 +19885,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[160]:</div>
+<div class="prompt input_prompt">In&nbsp;[159]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">zip</span> <span class="p">[</span><span class="mi">1</span> <span class="o">..</span> <span class="mi">5</span><span class="p">]</span> <span class="p">[</span><span class="s">&quot;one&quot;</span><span class="p">,</span> <span class="s">&quot;two&quot;</span><span class="p">,</span> <span class="s">&quot;three&quot;</span><span class="p">,</span> <span class="s">&quot;four&quot;</span><span class="p">,</span> <span class="s">&quot;five&quot;</span><span class="p">]</span>
@@ -20007,7 +19926,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[161]:</div>
+<div class="prompt input_prompt">In&nbsp;[160]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">zip</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="p">[</span><span class="s">&quot;im&quot;</span><span class="p">,</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;turtle&quot;</span><span class="p">]</span>
@@ -20049,7 +19968,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[162]:</div>
+<div class="prompt input_prompt">In&nbsp;[161]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">zip</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">]</span> <span class="p">[</span><span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;cherry&quot;</span><span class="p">,</span> <span class="s">&quot;mango&quot;</span><span class="p">]</span>
@@ -20120,7 +20039,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[163]:</div>
+<div class="prompt input_prompt">In&nbsp;[162]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">triangles</span> <span class="ow">=</span> <span class="p">[</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span> <span class="o">|</span> <span class="n">c</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">],</span> <span class="n">b</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">],</span> <span class="n">a</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]</span> <span class="p">]</span>
@@ -20152,7 +20071,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[164]:</div>
+<div class="prompt input_prompt">In&nbsp;[163]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">rightTriangles</span> <span class="ow">=</span> <span class="p">[</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span> <span class="o">|</span> <span class="n">c</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">],</span> <span class="n">b</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="n">c</span><span class="p">],</span> <span class="n">a</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="n">b</span><span class="p">],</span> <span class="n">a</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">^</span><span class="mi">2</span> <span class="o">==</span> <span class="n">c</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span>
@@ -20175,7 +20094,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[165]:</div>
+<div class="prompt input_prompt">In&nbsp;[164]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">rightTriangles&#39;</span> <span class="ow">=</span> <span class="p">[</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span> <span class="o">|</span> <span class="n">c</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">],</span> <span class="n">b</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="n">c</span><span class="p">],</span> <span class="n">a</span> <span class="ow">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="n">b</span><span class="p">],</span> <span class="n">a</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">^</span><span class="mi">2</span> <span class="o">==</span> <span class="n">c</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span> <span class="o">==</span> <span class="mi">24</span><span class="p">]</span>
@@ -20196,7 +20115,7 @@ $$\{\, 2 \cdot x \mid x \in \mathbb{N}, x \le 10\, \}$$<ul>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[166]:</div>
+<div class="prompt input_prompt">In&nbsp;[165]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">rightTriangles&#39;</span>
