@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>04-syntax-in-functions</title>
+<title>04-syntax-in-functions_kr</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13096,17 +13096,27 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Syntax-in-Functions">Syntax in Functions<a class="anchor-link" href="#Syntax-in-Functions">&#182;</a></h1><h2 id="Pattern-matching">Pattern matching<a class="anchor-link" href="#Pattern-matching">&#182;</a></h2><p><img src="img/pattern.png" title="four!" style="float:right;margin-left:2em;" /></p>
-<p>This chapter will cover some of Haskell's cool syntactic constructs and
-we'll start with pattern matching. Pattern matching consists of
-specifying patterns to which some data should conform and then checking
-to see if it does and deconstructing the data according to those
-patterns.</p>
-<p>When defining functions, you can define separate function bodies for
-different patterns. This leads to really neat code that's simple and
-readable. You can pattern match on any data type — numbers, characters,
-lists, tuples, etc. Let's make a really trivial function that checks if
-the number we supplied to it is a seven or not.</p>
+<h1 id="4&#51109;-&#54632;&#49688;&#51032;-&#44396;&#47928;">4&#51109; &#54632;&#49688;&#51032; &#44396;&#47928;<a class="anchor-link" href="#4&#51109;-&#54632;&#49688;&#51032;-&#44396;&#47928;">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>아래 주피터 노트북은 James Brock의 <a href="https://github.com/jamesdbrock/learn-you-a-haskell-notebook">learn-you-a-haskell-notebook</a>을 기본틀로 사용합니다.</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고:</strong> 린팅(linting) 기능 끄기</p>
+<ul>
+<li>린팅(linting): IHaskell에서 HLint라고 불리는 린터(linter)에 의해 보다 적절하다고 판단하는 표현식을 제안하는 기능</li>
+<li>보다 세련된 표현식(expression)을 제안하는 도구임. 하지만 반드시 필요한 기능은 아니다</li>
+<li>참조: <a href="https://github.com/gibiansky/IHaskell/wiki#opt-no-lint">IHaskell의 린팅 기능 설정하기</a></li>
+</ul>
 
 </div>
 </div>
@@ -13114,6 +13124,105 @@ the number we supplied to it is a seven or not.</p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">opt</span> <span class="n">no</span><span class="o">-</span><span class="n">lint</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고: 주피터랩 단축키</strong></p>
+<p>주피터랩에서 가장 유용한 단축키 조합은 다음과 같다.</p>
+<table>
+<thead><tr>
+<th style="text-align:right">단축키 조합</th>
+<th>실행결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><kbd>Shift</kbd>+<kbd>Enter</kbd></td>
+<td>선택한 셀을 실행하고 다음 셀로 이동</td>
+</tr>
+<tr>
+<td style="text-align:right"><kbd>Ctrl</kbd>+<kbd>Enter</kbd></td>
+<td>선택한 셀을 실행. 다음 셀로 이동하지 않음</td>
+</tr>
+<tr>
+<td style="text-align:right"><kbd>Alt</kbd>+<kbd>Enter</kbd></td>
+<td>선택한 셀을 실행하고 선택한 셀 뒤에 새로운 셀 삽입</td>
+</tr>
+<tr>
+<td style="text-align:right"><kbd>Enter</kbd></td>
+<td>선택한 셀 편집</td>
+</tr>
+<tr>
+<td style="text-align:right"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd></td>
+<td>커서 위치에서 셀 분할</td>
+</tr>
+</tbody>
+</table>
+<p>모든 가능한 단축키 조합은 왼편 사이드바에 위치한 돋보기 아이콘을 눌러 확인하거나 검색할 수 있다. 
+주피터랩의 단축키 설정 및 주요 단축키에 대한 자세한 설명은 
+<a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html#https://jupyterlab.readthedocs.io/en/stable/user/interface.html#">주피터랩 인터페이스</a>를
+참조할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.1-&#54056;&#53556;-&#47588;&#52845;(Pattern-Matching)">4.1 &#54056;&#53556; &#47588;&#52845;(Pattern Matching)<a class="anchor-link" href="#4.1-&#54056;&#53556;-&#47588;&#52845;(Pattern-Matching)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>앞서 함수를 정의하는 기본적인 방식을 다뤘다.
+여기서는 구문 분석(syntax analysis)과 가드(guard), 지역 함수(local function) 등의 
+기능을 이용하여 함수를 보다 효율적으로 정의하는 방법을 설명한다.
+먼저 패턴 매칭에 대해 알아본다.</p>
+<p><strong>패턴</strong>은 유형의 값이 가질 수 있는 <strong>정형화된 양식</strong>을 의미하며,
+그 양식에 따라 함수의 값을 다르게 지정하도록 하는 기능이 <strong>패턴 매칭</strong>이다. 
+함수의 인자로 사용되는 값이 가질 수 있는 패턴에 따라 함수의 본문을 따로따로 
+정의하면 코드가 보다 깔끔해지고 가독성이 높아진다.
+하스켈에서 패턴 매칭은 숫자, 문자, 리스트, 튜플 등 
+모든 <strong>자료형(data type)</strong>에 대해허용된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고:</strong> 자료형(data type)과 유형(type)은 구분되어야 한다.
+자료형은 모두 하스켈의 유형인 반면에,
+예를 들어, 함수의 유형은 일반적으로 자료형이 아니다. 
+앞서 언급된 자료형 이외에 다른 자료형에 대해서는 나중에 자세히 다룬다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>예제</strong></p>
+<p>함수의 인자가 7인지 여부를 판단하여 다른 문자열을 반환하는 함수는 다음과 같다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Integral</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
@@ -13129,22 +13238,828 @@ the number we supplied to it is a seven or not.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When you call <code>lucky</code>, the patterns will be checked from top to bottom and
-when it conforms to a pattern, the corresponding function body will be
-used. The only way a number can conform to the first pattern here is if
-it is 7. If it's not, it falls through to the second pattern, which
-matches anything and binds it to <code>x</code>. This function could have also been
-implemented by using an if statement. But what if we wanted a function
-that says the numbers from 1 to 5 and says <code>"Not between 1 and 5"</code> for any
-other number? Without pattern matching, we'd have to make a pretty
-convoluted if then else tree. However, with it:</p>
+<p><code>lucky</code> 함수를 인자와 함께 호출하면 아래 과정이 차례대로 수행된다.</p>
+<ul>
+<li>사용된 인자에 대한 패턴 매칭은 함수의 정의에서 먼저 언급된 경우부터 순서대로, 
+  즉, 위에서부터 아래로 각 패턴을 확인하면서 실행된다.</li>
+<li>지정된 인자의 패턴에 부합하지 않으면 다음 패턴으로 넘어가고,
+  부합되는 패턴을 찾으면 거기서 지정된 함수의 본문을 실행한다.    </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>예를 들어, 인자가 7이면 첫 번째 패턴에 부합한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky</span> <span class="mi">7</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;LUCKY NUMBER SEVEN!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>만약 7이 아니면, 두 번째 패턴으로 넘어간다.
+그리고 이 패턴은 어떤 숫자에 대해서도 매칭이 이루어지도록 설정되어 있다.
+이와 같이 임의의 매개 변수 형식으로 지정된 패턴은 어떤 값에 대해서도 매칭되며,
+그 값을 해당 변수가 가리키게 된다.
+여기서는 물론 7이 아닌 모든 다른 수에 대해서 작동한다.
+이유는 7은 이전 패턴에서 걸러지기 때문이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky</span> <span class="mi">17</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Sorry, you&#39;re out of luck, pal!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky</span> <span class="mi">33</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Sorry, you&#39;re out of luck, pal!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>만약에 패터 매칭 순서를 아래처럼 바꾸면 모든 숫자가 첫 번째 패턴 매칭에서 처리된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">notLucky</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Integral</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">notLucky</span> <span class="n">x</span> <span class="ow">=</span> <span class="s">&quot;Sorry, you&#39;re out of luck, pal!&quot;</span>
+<span class="nf">notLucky</span> <span class="mi">7</span> <span class="ow">=</span> <span class="s">&quot;notLucky NUMBER SEVEN!&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>심지어 7도 첫 번째 패턴에 매칭되어 버린다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">notLucky</span> <span class="mi">7</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Sorry, you&#39;re out of luck, pal!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>lucky</code> 함수를 정의할 때 지정된 유형을 보면 
+<code>Integral</code> 유형 클래스가 클래스 제약으로 사용되었다.
+따라서 <code>Int</code> 또는 <code>Integer</code> 등 정수형 값만 인자로 사용되며,
+아래와 같이 7.0을 사용하면 오류가 발생한다.</p>
+<div class="highlight"><pre><span></span><span class="nf">lucky</span> <span class="mf">7.0</span>
+</pre></div>
+<p>부동소수점에 대해서도 작동하게 하려면 <code>lucky</code> 함수의 유형을 보다 일반화해야 한다.
+그런데 어떻게 유형을 지정해야할지 모를 때는 아래와 같이 유형을 지정하지 않으면서
+함수를 정의하면 된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky&#39;</span> <span class="mi">7</span> <span class="ow">=</span> <span class="s">&quot;LUCKY NUMBER SEVEN!&quot;</span>
+<span class="nf">lucky&#39;</span> <span class="n">x</span> <span class="ow">=</span> <span class="s">&quot;Sorry, you&#39;re out of luck, pal!&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>lucky'</code> 함수의 유형은 하스켈이 자동으로 유추해낸다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="n">lucky&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>/* Styles used for the Hoogle display in the pager */
+.hoogle-doc {
+display: block;
+padding-bottom: 1.3em;
+padding-left: 0.4em;
+}
+.hoogle-code {
+display: block;
+font-family: monospace;
+white-space: pre;
+}
+.hoogle-text {
+display: block;
+}
+.hoogle-name {
+color: green;
+font-weight: bold;
+}
+.hoogle-head {
+font-weight: bold;
+}
+.hoogle-sub {
+display: block;
+margin-left: 0.4em;
+}
+.hoogle-package {
+font-weight: bold;
+font-style: italic;
+}
+.hoogle-module {
+font-weight: bold;
+}
+.hoogle-class {
+font-weight: bold;
+}
+.get-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+display: block;
+white-space: pre-wrap;
+}
+.show-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+margin-left: 1em;
+}
+.mono {
+font-family: monospace;
+display: block;
+}
+.err-msg {
+color: red;
+font-style: italic;
+font-family: monospace;
+white-space: pre;
+display: block;
+}
+#unshowable {
+color: red;
+font-weight: bold;
+}
+.err-msg.in.collapse {
+padding-top: 0.7em;
+}
+.highlight-code {
+white-space: pre;
+font-family: monospace;
+}
+.suggestion-warning { 
+font-weight: bold;
+color: rgb(200, 130, 0);
+}
+.suggestion-error { 
+font-weight: bold;
+color: red;
+}
+.suggestion-name {
+font-weight: bold;
+}
+</style><span class='get-type'>lucky' :: forall a. (Eq a, Num a) => a -> [Char]</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>lucky'</code> 함수는 동치성 검사가 가능한 <code>Num</code> 유형 클래스에 포함되는 유형의 값을 인자로 사용한다.
+다행히도 부동소수점의 유형인 <code>Float</code>, <code>Double</code> 등이 모두 해당되어 아래 계산이 정상적으로 작동한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky&#39;</span> <span class="mf">7.0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;LUCKY NUMBER SEVEN!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky&#39;</span> <span class="mi">7</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;LUCKY NUMBER SEVEN!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky&#39;</span> <span class="mf">33.1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Sorry, you&#39;re out of luck, pal!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54056;&#53556;-&#47588;&#52845;-vs.-if-&#54364;&#54788;&#49885;">&#54056;&#53556; &#47588;&#52845; vs. if &#54364;&#54788;&#49885;<a class="anchor-link" href="#&#54056;&#53556;-&#47588;&#52845;-vs.-if-&#54364;&#54788;&#49885;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>lucky</code> 함수를 <code>if</code> 표현식 사용하여 정의할 수도 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky</span> <span class="ow">::</span> <span class="kt">Integral</span> <span class="n">a</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">lucky</span> <span class="n">x</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">7</span> <span class="kr">then</span> <span class="s">&quot;LUCKY NUMBER SEVEN!&quot;</span> 
+                    <span class="kr">else</span> <span class="s">&quot;Sorry, you&#39;re out of luck, pal!&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky</span> <span class="mi">7</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;LUCKY NUMBER SEVEN!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">lucky</span> <span class="mi">13</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Sorry, you&#39;re out of luck, pal!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>경우의 수를 하나 늘려보자.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">luckyTwice</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Integral</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">luckyTwice</span> <span class="mi">7</span> <span class="ow">=</span> <span class="s">&quot;Lucky NUMBER SEVEN!&quot;</span>
+<span class="nf">luckyTwice</span> <span class="mi">77</span> <span class="ow">=</span> <span class="s">&quot;Lucky twice NUMBER SEVENTY SEVEN!&quot;</span>
+<span class="nf">luckyTwice</span> <span class="n">x</span> <span class="ow">=</span> <span class="s">&quot;Sorry, you&#39;re out of luck, pal!&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">luckyTwice</span> <span class="mi">7</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Lucky NUMBER SEVEN!&#34;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">luckyTwice</span> <span class="mi">77</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Lucky twice NUMBER SEVENTY SEVEN!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">luckyTwice</span> <span class="mi">13</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Sorry, you&#39;re out of luck, pal!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">luckyTwice</span> <span class="n">x</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">7</span> <span class="kr">then</span> <span class="s">&quot;LUCKY NUMBER SEVEN!&quot;</span> 
+                         <span class="kr">else</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">77</span> <span class="kr">then</span> <span class="s">&quot;Lucky twice NUMBER SEVENTY SEVEN!&quot;</span>
+                                         <span class="kr">else</span> <span class="s">&quot;Sorry, you&#39;re out of luck, pal!&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">luckyTwice</span> <span class="mi">7</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;LUCKY NUMBER SEVEN!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">luckyTwice</span> <span class="mi">77</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Lucky twice NUMBER SEVENTY SEVEN!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">luckyTwice</span> <span class="mi">13</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Sorry, you&#39;re out of luck, pal!&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>작동하긴 한다. 그런데 다루는 경우의 수가 많아 질 수록 <code>if</code> 표현식이 점점 더 복잡해질 것이다.
+예를 들어, 아래 예제와 같은 경우에는 <code>if</code> 표현식은 가급적 사용하지 않아야 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>예제</strong></p>
+<p>인자가 1부터 5까지면 해당 숫자를 문자열로 반환하고, 그렇지 않으면 <code>"Not between 1 and 5"</code> 를
+출력하는 함수를 패턴 매칭을 이용하여 간단하게 정의할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">sayMe</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Integral</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
@@ -13164,62 +14079,24 @@ convoluted if then else tree. However, with it:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that if we moved the last pattern (the catch-all one) to the top,
-it would always say <code>"Not between 1 and 5"</code>, because it would catch all
-the numbers and they wouldn't have a chance to fall through and be
-checked for any other patterns.</p>
-<p>Remember the factorial function we implemented previously? We defined
-the factorial of a number <code>n</code> as <code>product [1..n]</code>. We can also define a
-factorial function <em>recursively</em>, the way it is usually defined in
-mathematics. We start by saying that the factorial of 0 is 1. Then we
-state that the factorial of any positive integer is that integer
-multiplied by the factorial of its predecessor. Here's how that looks
-like translated in Haskell terms.</p>
-
+<h3 id="&#48520;&#50756;&#51204;-&#54056;&#53556;-&#47588;&#52845;">&#48520;&#50756;&#51204; &#54056;&#53556; &#47588;&#52845;<a class="anchor-link" href="#&#48520;&#50756;&#51204;-&#54056;&#53556;-&#47588;&#52845;">&#182;</a></h3>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">factorial</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Integral</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span>
-<span class="nf">factorial</span> <span class="mi">0</span> <span class="ow">=</span> <span class="mi">1</span>
-<span class="nf">factorial</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the first time we've defined a function recursively. Recursion
-is important in Haskell and we'll take a closer look at it later. But in
-a nutshell, this is what happens if we try to get the factorial of, say, 3. 
-It tries to compute <code>3 * factorial 2</code>. The factorial of 2 is
-<code>2 * factorial 1</code>, so for now we have <code>3 * (2 * factorial 1)</code>.
-<code>factorial 1</code> is <code>1 * factorial 0</code>, so we have
-<code>3 * (2 * (1 * factorial 0))</code>. Now here comes the trick — we've defined
-the factorial of 0 to be just 1 and
-because it encounters that pattern before the catch-all one, it just
-returns 1. So the final result is equivalent to <code>3 * (2 * (1 * 1))</code>.
-Had we written the second pattern on top of the first one, it would
-catch all numbers, including 0 and our calculation would never
-terminate. That's why order is important when specifying patterns and
-it's always best to specify the most specific ones first and then the
-more general ones later.</p>
-<p>Pattern matching can also fail. If we define a function like this:</p>
+<p>패턴 매치은 가능한 모든 경우를 다루어야 한다.
+그렇지 않으면 오류가 발생할 수 있다.
+아래 함수는 불완전한 패턴 매칭을 사용한다. 
+<code>a</code>, <code>b</code>, <code>c</code> 이외의 문자에 대한 정의가 누락되어 있기 때문이다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">charName</span> <span class="ow">::</span> <span class="kt">Char</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
@@ -13236,8 +14113,7 @@ more general ones later.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>and then try to call it with an input that we didn't expect, this is
-what happens:</p>
+<p><code>a</code>, <code>b</code>, <code>c</code> 세 문자에 대해서는 잘 작동한다.</p>
 
 </div>
 </div>
@@ -13310,7 +14186,49 @@ what happens:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">charName</span> <span class="sc">&#39;c&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;Cecil&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다른 문자에 대해서는 오류가 발생한다.
+이유는 기타 문자에 대해서는 어떤 패턴 매칭도 정의되어 있지 않기 때문이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">charName</span> <span class="sc">&#39;h&#39;</span>
@@ -13342,14 +14260,120 @@ what happens:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It complains that we have non-exhaustive patterns, and rightfully so.
-When making patterns, we should always include a catch-all pattern so
-that our program doesn't crash if we get some unexpected input.</p>
-<p>Pattern matching can also be used on tuples. What if we wanted to make a
-function that takes two vectors in a 2D space (that are in the form of
-pairs) and adds them together? To add together two vectors, we add their
-x components separately and then their y components separately. Here's
-how we would have done it if we didn't know about pattern matching:</p>
+<p>따라서 패턴 매칭을 활용할 때 항상 '기타'에 해당하는 경우를 맨 마지막 패턴 매칭으로 
+지정하는 것을 잊지 말아야 한다.
+물론 아래와 같이 기타의 경우가 없는 경우도 있기도 하다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">sayTruth</span> <span class="ow">::</span> <span class="kt">Bool</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">sayTruth</span> <span class="kt">True</span>  <span class="ow">=</span> <span class="s">&quot;True&quot;</span>
+<span class="nf">sayTruth</span> <span class="kt">False</span> <span class="ow">=</span> <span class="s">&quot;False&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">sayTruth</span> <span class="p">(</span><span class="n">charName</span> <span class="sc">&#39;c&#39;</span> <span class="o">==</span> <span class="s">&quot;Cecil&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;True&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">sayTruth</span> <span class="p">(</span><span class="mi">7</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;False&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#53916;&#54540;-&#54056;&#53556;-&#47588;&#52845;">&#53916;&#54540; &#54056;&#53556; &#47588;&#52845;<a class="anchor-link" href="#&#53916;&#54540;-&#54056;&#53556;-&#47588;&#52845;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>하스켈의 모든 자료형(data type)에 대해 패턴 매칭을 사용할 수 있다.
+앞서 숫자와 문자에 대한 패턴 매칭을 살펴 보았는데,
+이제 튜플에 대한 패턴 매칭 사용법을 예제를 이용하여 확인한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>예제</strong></p>
+<p>2D 공간에서 두 개의 항목을 가진 튜플의 형태를 띄고 있는 두 개의 벡터을 가져와 두 벡터를 더해주는 함수
+=&gt; 두 개의 벡터를 더하기 위해선 x 항목과 y 항목을 각각 더해야함</p>
+<ol>
+<li>패턴 매칭을 모르는 경우</li>
+</ol>
 
 </div>
 </div>
@@ -13367,12 +14391,113 @@ how we would have done it if we didn't know about pattern matching:</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>/* Styles used for the Hoogle display in the pager */
+.hoogle-doc {
+display: block;
+padding-bottom: 1.3em;
+padding-left: 0.4em;
+}
+.hoogle-code {
+display: block;
+font-family: monospace;
+white-space: pre;
+}
+.hoogle-text {
+display: block;
+}
+.hoogle-name {
+color: green;
+font-weight: bold;
+}
+.hoogle-head {
+font-weight: bold;
+}
+.hoogle-sub {
+display: block;
+margin-left: 0.4em;
+}
+.hoogle-package {
+font-weight: bold;
+font-style: italic;
+}
+.hoogle-module {
+font-weight: bold;
+}
+.hoogle-class {
+font-weight: bold;
+}
+.get-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+display: block;
+white-space: pre-wrap;
+}
+.show-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+margin-left: 1em;
+}
+.mono {
+font-family: monospace;
+display: block;
+}
+.err-msg {
+color: red;
+font-style: italic;
+font-family: monospace;
+white-space: pre;
+display: block;
+}
+#unshowable {
+color: red;
+font-weight: bold;
+}
+.err-msg.in.collapse {
+padding-top: 0.7em;
+}
+.highlight-code {
+white-space: pre;
+font-family: monospace;
+}
+.suggestion-warning { 
+font-weight: bold;
+color: rgb(200, 130, 0);
+}
+.suggestion-error { 
+font-weight: bold;
+color: red;
+}
+.suggestion-name {
+font-weight: bold;
+}
+</style><div class="suggestion-name" style="clear:both;">Use bimap</div><div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Found:</div><div class="highlight-code" id="haskell">(fst a + fst b, snd a + snd b)</div></div><div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Why Not:</div><div class="highlight-code" id="haskell">Data.Bifunctor.bimap ((+) (fst a)) ((+) (snd a)) b</div></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Well, that works, but there's a better way to do it. Let's modify the
-function so that it uses pattern matching.</p>
+<ol>
+<li>패턴 매칭을 사용한 경우</li>
+</ol>
 
 </div>
 </div>
@@ -13394,14 +14519,17 @@ function so that it uses pattern matching.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There we go! Much better. Note that this is already a catch-all pattern.
-The type of <code>addVectors</code> (in both cases) is
-<code>addVectors :: (Num a) =&gt; (a, a) -&gt; (a, a) -&gt; (a, a)</code>,
-so we are guaranteed to get two pairs as
-parameters.</p>
-<p><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fst"><code>fst</code></a> and <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:snd"><code>snd</code></a> extract the components of pairs. But what about triples?
-Well, there are no provided functions that do that but we can make our
-own.</p>
+<ul>
+<li>이 코드는 이 자체로 모든 종류의 패턴과 매칭 됨.<ul>
+<li>이유: <code>addVectors</code>는 두 케이스에서 모두 <code>addVectors :: (Num a) =&gt; (a, a) -&gt; (a, a) -&gt; (a, a)</code>로 작동하고, 따라서 항상 각각 두 개의 항목을 갖는 두 개의 튜플을 인자로 받는게 보장되기 때문</li>
+</ul>
+</li>
+</ul>
+<p><strong>예시 2. 세 개의 항목을 가지는 튜플에서 항목을 출력해주는 함수</strong></p>
+<ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:fst"><code>fst</code></a>와 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:snd"><code>snd</code></a>는 두 개의 항목을 가진 튜플의 항목을 추출해냄.</li>
+<li>세 개의 항목을 가진 튜플에 대해서는 제공되는 함수가 없으므로 만들어 써야함.</li>
+</ul>
 
 </div>
 </div>
@@ -13429,11 +14557,17 @@ own.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>_</code> means the same thing as it does in list comprehensions. It means
-that we really don't care what that part is, so we just write a <code>_</code>.</p>
-<p>Which reminds me, you can also pattern match in list comprehensions.
-Check this out:</p>
+<ul>
+<li><code>_</code> 기호는 리스트 조건 제시법에서 사용했던 것과 같은 의미</li>
+</ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#47532;&#49828;&#53944;-&#51312;&#44148;-&#51228;&#49884;&#48277;&#50640;&#49436;&#51032;-&#54056;&#53556;-&#47588;&#52845;">&#47532;&#49828;&#53944; &#51312;&#44148; &#51228;&#49884;&#48277;&#50640;&#49436;&#51032; &#54056;&#53556; &#47588;&#52845;<a class="anchor-link" href="#&#47532;&#49828;&#53944;-&#51312;&#44148;-&#51228;&#49884;&#48277;&#50640;&#49436;&#51032;-&#54056;&#53556;-&#47588;&#52845;">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13474,23 +14608,32 @@ Check this out:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Should a pattern match fail, it will just move on to the next element.</p>
-<p>Lists themselves can also be used in pattern matching. You can match
-with the empty list <code>[]</code> or any pattern that involves <code>:</code> and the empty
-list. But since <code>[1,2,3]</code> is just syntactic sugar for <code>1:2:3:[]</code>, you can
-also use the former pattern. A pattern like <code>x:xs</code> will bind the head of
-the list to <code>x</code> and the rest of it to <code>xs</code>, even if there's only one element
-so <code>xs</code> ends up being an empty list.</p>
-<blockquote><p><strong>Note:</strong> The <code>x:xs</code> pattern is used a lot, especially with recursive
-functions. But patterns that have <code>:</code> in them only match against lists of
-length 1 or more.</p>
+<ul>
+<li><p>리스트 조건 제시법에서 패턴 매칭을 사용한 경우, 패턴 매칭에 실패하면 다음 원소로 넘어가서 패턴 매칭을 수행</p>
+</li>
+<li><p>리스트는 그 자체로 패턴 매칭에 사용될 수 있음</p>
+</li>
+<li>공리스트 <code>[]</code>, 또는 <code>:</code> 연산과 공리스트를 포함한 어떤 패턴에서든 사용할 수 있음.<ul>
+<li><code>[1,2,3]</code>은 <code>1:2:3:[]</code>의 간단한 표현이므로 좀 더 형식화된 패턴도 사용할 수 있음. </li>
+<li><code>x:xs</code> 같은 패턴은 리스트의 머리를 <code>x</code>로, 그리고 나머지는 <code>xs</code>로 취급함. 만약 해당 리스트에 원소가 하나밖에 없다면 <code>xs</code>는 공리스트가 됨</li>
+</ul>
+</li>
+</ul>
+<blockquote><p><strong>참고:</strong> <code>x:xs</code> 패턴이 주로 이용되고, 특히 재귀 함수에서는 더 많이 이용됨. 하지만 <code>:</code> 연산자를 사용하는 패턴은 길이가 1 이상인 리스트에 대해서만 매칭됨</p>
 </blockquote>
-<p>If you want to bind, say, the first three elements to variables and the
-rest of the list to another variable, you can use something like
-<code>x:y:z:zs</code>. It will only match against lists that have three elements or
-more.</p>
-<p>Now that we know how to pattern match against list, let's make our own
-implementation of the <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a> function.</p>
+<ul>
+<li>처음 세 개의 원소를 변수로 지정하고, 리스트의 나머지 부분을 별도의 변수로 지정하는 것도 <code>x:y:z:zs</code> 형태로 표기하면 됨. 이 표현은 길이가 3 이상인 원소에 대해서만 대응되는 패턴임</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#47532;&#49828;&#53944;&#50640;&#49436;&#51032;-&#54056;&#53556;-&#47588;&#52845;">&#47532;&#49828;&#53944;&#50640;&#49436;&#51032; &#54056;&#53556; &#47588;&#52845;<a class="anchor-link" href="#&#47532;&#49828;&#53944;&#50640;&#49436;&#51032;-&#54056;&#53556;-&#47588;&#52845;">&#182;</a></h3><ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a> 함수를 직접 만들어보면</li>
+</ul>
 
 </div>
 </div>
@@ -13513,7 +14656,7 @@ implementation of the <a href="https://hackage.haskell.org/package/base/docs/Pre
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Checking if it works:</p>
+<p>잘 작동하는 것을 확인 가능</p>
 
 </div>
 </div>
@@ -13587,15 +14730,18 @@ implementation of the <a href="https://hackage.haskell.org/package/base/docs/Pre
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nice! Notice that if you want to bind to several variables (even if one
-of them is just <code>_</code> and doesn't actually bind at all), we have to
-surround them in parentheses. Also notice the <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:error"><code>error</code></a> function that we
-used. It takes a string and generates a runtime error, using that string
-as information about what kind of error occurred. It causes the program
-to crash, so it's not good to use it too much. But calling <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a> on an
-empty list doesn't make sense.</p>
-<p>Let's make a trivial function that tells us some of the first elements
-of the list in (in)convenient English form.</p>
+<ul>
+<li><p>만약 여러 개의 변수를 지정하고 싶다면(변수 중 하나가 <code>_</code>이고 실제로는 전부 변수로 지정되는게 아니라 할지라도), 변수들을 소괄호로 둘러 싸야함</p>
+</li>
+<li><p><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:error"><code>error</code></a> 함수</p>
+<ul>
+<li>이 함수는 문자열을 인자로 받아 런타임 에러를 발생시키고, 해당 문자열을 어떤 종류의 오류가 발생했는지 알려주는 정보로 사용</li>
+<li>이건 프로그램을 중단시키기 때문에 너무 많이 사용하는 것은 좋은 방법이 아님</li>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:head"><code>head</code></a> 함수를 빈 리스트에 사용했을 경우 프로그램은 당연히 오류를 발생시킴.</li>
+</ul>
+</li>
+</ul>
+<p><strong>예시 1. 리스트의 처음 원소들을 영어 형태로 보여주는 함수</strong></p>
 
 </div>
 </div>
@@ -13616,25 +14762,186 @@ of the list in (in)convenient English form.</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>/* Styles used for the Hoogle display in the pager */
+.hoogle-doc {
+display: block;
+padding-bottom: 1.3em;
+padding-left: 0.4em;
+}
+.hoogle-code {
+display: block;
+font-family: monospace;
+white-space: pre;
+}
+.hoogle-text {
+display: block;
+}
+.hoogle-name {
+color: green;
+font-weight: bold;
+}
+.hoogle-head {
+font-weight: bold;
+}
+.hoogle-sub {
+display: block;
+margin-left: 0.4em;
+}
+.hoogle-package {
+font-weight: bold;
+font-style: italic;
+}
+.hoogle-module {
+font-weight: bold;
+}
+.hoogle-class {
+font-weight: bold;
+}
+.get-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+display: block;
+white-space: pre-wrap;
+}
+.show-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+margin-left: 1em;
+}
+.mono {
+font-family: monospace;
+display: block;
+}
+.err-msg {
+color: red;
+font-style: italic;
+font-family: monospace;
+white-space: pre;
+display: block;
+}
+#unshowable {
+color: red;
+font-weight: bold;
+}
+.err-msg.in.collapse {
+padding-top: 0.7em;
+}
+.highlight-code {
+white-space: pre;
+font-family: monospace;
+}
+.suggestion-warning { 
+font-weight: bold;
+color: rgb(200, 130, 0);
+}
+.suggestion-error { 
+font-weight: bold;
+color: red;
+}
+.suggestion-name {
+font-weight: bold;
+}
+</style><div class="suggestion-name" style="clear:both;">Use list literal pattern</div><div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Found:</div><div class="highlight-code" id="haskell">(x : [])</div></div><div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Why Not:</div><div class="highlight-code" id="haskell">[x]</div></div><div class="suggestion-name" style="clear:both;">Use list literal pattern</div><div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Found:</div><div class="highlight-code" id="haskell">(x : y : [])</div></div><div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Why Not:</div><div class="highlight-code" id="haskell">[x, y]</div></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This function is safe because it takes care of the empty list, a
-singleton list, a list with two elements and a list with more than two
-elements. Note that <code>(x:[])</code> and <code>(x:y:[])</code> could be rewritten as <code>[x]</code> and
-<code>[x,y]</code> (because its syntactic sugar, we don't need the parentheses). We
-can't rewrite <code>(x:y:_)</code> with square brackets because it matches any list
-of length 2 or more.</p>
-<p>We already implemented our own <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:length"><code>length</code></a> function using list comprehension.
-Now we'll do it by using pattern matching and a little recursion:</p>
+<ul>
+<li>이 함수는 텅 빈 리스트, 원소가 하나인 리스트, 두 개인 리스트, 그리고 두 개 이상의 리스트에 대해서 모두 확인</li>
+<li><code>(x:[])</code>와 <code>(x:y:[])</code>는 <code>[x]</code>, <code>[x,y]</code>로도 쓸 수 있음. 이 표현은 간략한 표기법이기 때문에, 소괄호는 사용할 필요 없음</li>
+<li><code>(x:y:_)</code>는 크기가 2 이상인 모든 종류의 리스트에 대응되기 때문에 대괄호를 사용하는 표기법으로 바꿔쓸 수 없음</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54056;&#53556;-&#47588;&#52845;&#44284;-&#51116;&#44480;-&#54632;&#49688;">&#54056;&#53556; &#47588;&#52845;&#44284; &#51116;&#44480; &#54632;&#49688;<a class="anchor-link" href="#&#54056;&#53556;-&#47588;&#52845;&#44284;-&#51116;&#44480;-&#54632;&#49688;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>예시: 팩토리얼 함수</strong></p>
+<ul>
+<li><code>n!</code>은 <code>product [1..n]</code>으로 구현했었음</li>
+<li>팩토리얼 함수는 <em>재귀적(recursively)</em> 으로 정의 가능</li>
+<li>팩토리얼을 재귀적으로 정의할 때 <code>0! = 1</code>이라고 정의하는 걸로 시작</li>
+<li>어떤 양수의 팩토리얼은 그 정수와 그 정수보다 1 작은 수 팩토리얼의 곱으로 정의할 수 있음</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">factorial</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Integral</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span>
+<span class="nf">factorial</span> <span class="mi">0</span> <span class="ow">=</span> <span class="mi">1</span>
+<span class="nf">factorial</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>3!를 구하려고 한다면 아래와 같은 과정을 거침:</p>
+<div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="n">factorial</span> <span class="mi">2</span> <span class="ow">=&gt;</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">factorial</span> <span class="mi">1</span><span class="p">)</span>
+                  <span class="ow">=&gt;</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">factorial</span> <span class="mi">0</span><span class="p">))</span>
+                  <span class="ow">=&gt;</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+<ul>
+<li>첫 번째 패턴으로 <code>0! = 1</code>이라고 정의했으므로 <code>factorial 0</code>은 1을 반환</li>
+<li>만약 두 번째 패턴을 먼저 썼다면, 항상 0을 포함한 숫자들과 매칭되기 때문에 계산이 끝나지 않음</li>
+<li>따라서 패턴을 매칭할 때는 순서가 중요함: 가장 명확한 것에 대한 패턴을 앞에 두고, 일반적인 것들에 대한 패턴을 나중에 두는 것이 좋은 방법</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>예시 2. 재귀와 패턴 매칭을 이용한 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:length"><code>length</code></a> 함수</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">length&#39;</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Num</span> <span class="n">b</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="n">b</span>
@@ -13650,27 +14957,44 @@ Now we'll do it by using pattern matching and a little recursion:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is similar to the factorial function we wrote earlier. First we
-defined the result of a known input — the empty list. This is also known
-as the edge condition. Then in the second pattern we take the list apart
-by splitting it into a head and a tail. We say that the length is equal
-to 1 plus the length of the tail. We use <code>_</code> to match the head because we
-don't actually care what it is. Also note that we've taken care of all
-possible patterns of a list. The first pattern matches an empty list and
-the second one matches anything that isn't an empty list.</p>
-<p>Let's see what happens if we call <code>length'</code> on <code>"ham"</code>. First, it will check
-if it's an empty list. Because it isn't, it falls through to the second
-pattern. It matches on the second pattern and there it says that the
-length is <code>1 + length' "am"</code>, because we broke it into a head and a tail
-and discarded the head. O-kay. The <code>length'</code> of <code>"am"</code> is, similarly,
-<code>1 + length' "m"</code>.
-So right now we have <code>1 + (1 + length' "m")</code>. <code>length' "m"</code> is
-<code>1 + length' ""</code> (could also be written as <code>1 + length' []</code>). And we've
-defined <code>length' []</code> to be <code>0</code>. So in the end we have <code>1 + (1 + (1 + 0))</code>.</p>
-<p>Let's implement <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:sum"><code>sum</code></a>. We know that the sum of an empty list is 0. We
-write that down as a pattern. And we also know that the sum of a list is
-the head plus the sum of the rest of the list. So if we write that down,
-we get:</p>
+<ul>
+<li><p>이 코드는 앞서 작성한 팩토리얼 함수와 비슷</p>
+</li>
+<li><p>첫 번째 패턴은 공리스트와 매칭되고 두 번째 패턴은 공리스트가 아닌 모든 패턴에 대해 매칭됨</p>
+</li>
+<li><p>먼저 답이 알려진 입력(공리스트)에 대한 결과를 정의</p>
+<ul>
+<li>이것을 경계 조건(edge condition)이라 함.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>두 번째 패턴에서는 리스트를 머리와 꼬리로 분리<ul>
+<li>두 번째 패턴은 어떤 리스트의 length는 1과 그 리스트의 꼬리의 length를 더한 값과 같다는 것을 의미</li>
+<li>리스트의 머리를 함수에서 사용하지 않으므로 이걸 <code>_</code> 기호를 사용해 표시함</li>
+<li>이 함수가 리스트에서 가능한 모든 종류의 패턴을 다루고 있다는 것도 참고</li>
+</ul>
+</li>
+</ul>
+<p><strong>예시 3. <code>"ham"</code>에서 <code>length'</code>을 호출한 경우</strong></p>
+<ul>
+<li>먼저, 공리스트인지 확인</li>
+<li>공리스트가 아니라면, 두 번째 패턴으로 이동</li>
+<li>두 번째 패턴과 매칭이 된다면 리스트의 길이를 <code>1 + length' "am"</code>라고 알려줌</li>
+<li>작동 과정:<div class="highlight"><pre><span></span><span class="nf">length&#39;</span> <span class="s">&quot;ham&quot;</span> <span class="ow">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">length&#39;</span> <span class="s">&quot;am&quot;</span>
+            <span class="ow">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">length&#39;</span> <span class="s">&quot;m&quot;</span><span class="p">)</span>
+            <span class="ow">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">length&#39;</span> <span class="s">&quot;&quot;</span><span class="p">))</span>
+            <span class="ow">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">length&#39;</span> <span class="kt">[]</span><span class="p">))</span>
+            <span class="ow">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</li>
+</ul>
+<p><strong>예시 4. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:sum"><code>sum</code></a> 함수 구현</strong></p>
+<ul>
+<li>공리스트의 합은 0. 아래 코드셀에 이 패턴을 작성해놓음</li>
+<li>어떤 리스트의 원소의 합은 그 머리의 값과 리스트의 나머지 부분의 합으로 구할 수 있음</li>
+<li>위의 패턴을 코드로 작성해보면:</li>
+</ul>
 
 </div>
 </div>
@@ -13689,18 +15013,119 @@ we get:</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>/* Styles used for the Hoogle display in the pager */
+.hoogle-doc {
+display: block;
+padding-bottom: 1.3em;
+padding-left: 0.4em;
+}
+.hoogle-code {
+display: block;
+font-family: monospace;
+white-space: pre;
+}
+.hoogle-text {
+display: block;
+}
+.hoogle-name {
+color: green;
+font-weight: bold;
+}
+.hoogle-head {
+font-weight: bold;
+}
+.hoogle-sub {
+display: block;
+margin-left: 0.4em;
+}
+.hoogle-package {
+font-weight: bold;
+font-style: italic;
+}
+.hoogle-module {
+font-weight: bold;
+}
+.hoogle-class {
+font-weight: bold;
+}
+.get-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+display: block;
+white-space: pre-wrap;
+}
+.show-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+margin-left: 1em;
+}
+.mono {
+font-family: monospace;
+display: block;
+}
+.err-msg {
+color: red;
+font-style: italic;
+font-family: monospace;
+white-space: pre;
+display: block;
+}
+#unshowable {
+color: red;
+font-weight: bold;
+}
+.err-msg.in.collapse {
+padding-top: 0.7em;
+}
+.highlight-code {
+white-space: pre;
+font-family: monospace;
+}
+.suggestion-warning { 
+font-weight: bold;
+color: rgb(200, 130, 0);
+}
+.suggestion-error { 
+font-weight: bold;
+color: red;
+}
+.suggestion-name {
+font-weight: bold;
+}
+</style><div class="suggestion-name" style="clear:both;">Use foldr</div><div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Found:</div><div class="highlight-code" id="haskell">sum' [] = 0
+sum' (x : xs) = x + sum' xs</div></div><div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Why Not:</div><div class="highlight-code" id="haskell">sum' xs = foldr (+) 0 xs</div></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There's also a thing called <em>as patterns</em>. Those are a handy way of
-breaking something up according to a pattern and binding it to names
-whilst still keeping a reference to the whole thing. You do that by
-putting a name and an <code>@</code> in front of a pattern. For instance, the pattern
-<code>xs@(x:y:ys)</code>. This pattern will match exactly the same thing as <code>x:y:ys</code>
-but you can easily get the whole list via <code>xs</code> instead of repeating
-yourself by typing out <code>x:y:ys</code> in the function body again. Here's a quick
-and dirty example:</p>
+<h3 id="&#54056;&#53556;&#46308;(as-patterns)">&#54056;&#53556;&#46308;(as patterns)<a class="anchor-link" href="#&#54056;&#53556;&#46308;(as-patterns)">&#182;</a></h3><ul>
+<li>패턴들은 전체에 대한 이름을 유지하면서 그걸 패턴에 따라 분리해 여러 개의 변수로 사용하고 싶을 때 유용한 방법</li>
+<li>패턴의 앞에 이름과 <code>@</code>를 붙이는 것으로 이 방법을 사용 가능<ul>
+<li>예: <code>xs@(x:y:ys)</code>. 이 패턴은 <code>x:y:ys</code>와 정확히 매칭됨. 함수의 본체에 리스트 전체에 대한 참조를 <code>x:y:ys</code>로 반복적으로 작성하는 대신 <code>xs</code>로 작성하면 됨</li>
+</ul>
+</li>
+</ul>
+<p><strong>예시</strong></p>
 
 </div>
 </div>
@@ -13756,31 +15181,36 @@ and dirty example:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Normally we use as patterns to avoid repeating ourselves when matching
-against a bigger pattern when we have to use the whole thing again in
-the function body.</p>
-<p>One more thing — you can't use <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-43--43-"><code>++</code></a> in pattern matches. If you tried to
-pattern match against <code>(xs ++ ys)</code>, what would be in the first and what
-would be in the second list? It doesn't make much sense. It would make
-sense to match stuff against <code>(xs ++ [x,y,z])</code> or just <code>(xs ++ [x])</code>, but
-because of the nature of lists, you can't do that.</p>
-<p><a name="guards-guards"></a></p>
-<h2 id="Guards,-guards!">Guards, guards!<a class="anchor-link" href="#Guards,-guards!">&#182;</a></h2><p><img src="img/guards.png" title="guards" style="float:left;margin-right:2em;" /></p>
-<p>Whereas patterns are a way of making sure a value conforms to some form
-and deconstructing it, guards are a way of testing whether some property
-of a value (or several of them) are true or false. That sounds a lot
-like an if statement and it's very similar. The thing is that guards are
-a lot more readable when you have several conditions and they play
-really nicely with patterns.</p>
-<p>Instead of explaining their syntax, let's just dive in and make a
-function using guards. We're going to make a simple function that
-berates you differently depending on your
-<a href="http://en.wikipedia.org/wiki/Body_mass_index">BMI</a> (body mass index).
-Your BMI equals your weight divided by your height squared. If your BMI
-is less than 18.5, you're considered underweight. If it's anywhere from
-18.5 to 25 then you're considered normal. 25 to 30 is overweight and
-more than 30 is obese. So here's the function (we won't be calculating
-it right now, this function just gets a BMI and tells you off)</p>
+<ul>
+<li>일반적으로 큰 패턴에 대해 다시 매칭할 때 함수 본체에서 해당 개체 전체를 다시 쓸 필요가 없으므로 패턴 전체를 다시 반복해서 쓰는 걸 피하고 싶을 때 패턴들(patterns)을 사용</li>
+</ul>
+<h3 id="&#54056;&#53556;-&#47588;&#52845;&#50640;&#49436;-&#49324;&#50857;-&#48520;&#44032;&#45733;&#54620;-&#50672;&#49328;&#51088;">&#54056;&#53556; &#47588;&#52845;&#50640;&#49436; &#49324;&#50857; &#48520;&#44032;&#45733;&#54620; &#50672;&#49328;&#51088;<a class="anchor-link" href="#&#54056;&#53556;-&#47588;&#52845;&#50640;&#49436;-&#49324;&#50857;-&#48520;&#44032;&#45733;&#54620;-&#50672;&#49328;&#51088;">&#182;</a></h3><ul>
+<li>패턴 매칭에서는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:-43--43-"><code>++</code></a>는 사용할 수 없음.<ul>
+<li>이유: <code>(xs ++ ys)</code>를 매칭하려한다면, 리스트의 어디까지가 <code>xs</code>이고 <code>ys</code>인지 알 수 없기 때문</li>
+<li><code>(xs ++ ys)</code>를 매칭하고 싶다면, <code>(xs ++ [x,y,z])</code> 혹은 <code>(xs ++ [x])</code>로 작성해야함. 하지만 리스트의 특성 때문에 이렇게는 사용할 수 없음.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2.-&#44032;&#46300;(Guards)">2. &#44032;&#46300;(Guards)<a class="anchor-link" href="#2.-&#44032;&#46300;(Guards)">&#182;</a></h1><hr>
+<ul>
+<li>패턴이 값을 특정 형태에 맞는지 확인하고 그걸 분해하는 방법이라면, 가드(Guards)는 값의 특정 성질(들)이 참인지 혹은 거짓인지 판단하는 방법</li>
+<li>if 표현식과 비슷함. 가드는 여러 개의 조건을 쓸 때 훨씬 가독성이 좋고 패턴과 같이 사용하기도 함.</li>
+</ul>
+<p><strong>예시 1. <a href="http://en.wikipedia.org/wiki/Body_mass_index">BMI</a> 지수에 따라 다른 멘트를 출력해주는 함수</strong></p>
+<ul>
+<li>BMI 지수는 몸무게를 키의 제곱근으로 나눈 값</li>
+<li>BMI가 18.5보다 작다면 "You're underweight, you emo, you!", 18.5에서 25사이면 "You're supposedly normal. Pffft, I bet you're ugly!", 25에서 30은 "You're fat! Lose some weight, fatty!", 30 이상은 "You're a whale, congratulations!"으로 출력해줌<ul>
+<li>BMI는 지금 계산하지 않음. 아래 함수는 BMI 지수를 받아와 값에 따른 결과를 출력해줌</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
@@ -13806,32 +15236,46 @@ it right now, this function just gets a BMI and tells you off)</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Guards are indicated by pipes that follow a function's name and its
-parameters. Usually, they're indented a bit to the right and lined up. A
-guard is basically a boolean expression. If it evaluates to <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:True"><code>True</code></a>, then
-the corresponding function body is used. If it evaluates to <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a>,
-checking drops through to the next guard and so on. If we call this
-function with <code>24.3</code>, it will first check if that's smaller than or equal
-to <code>18.5</code>. Because it isn't, it falls through to the next guard. The check
-is carried out with the second guard and because 24.3 is less than 25.0,
-the second string is returned.</p>
-<p>This is very reminiscent of a big if else tree in imperative languages,
-only this is far better and more readable. While big if else trees are
-usually frowned upon, sometimes a problem is defined in such a discrete
-way that you can't get around them. Guards are a very nice alternative
-for this.</p>
-<p>Many times, the last guard is <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:otherwise"><code>otherwise</code></a>. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:otherwise"><code>otherwise</code></a> is defined simply as
-<code>otherwise = True</code> and catches everything. This is very similar to
-patterns, only they check if the input satisfies a pattern but guards
-check for boolean conditions. If all the guards of a function evaluate
-to <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a> (and we haven't provided an <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:otherwise"><code>otherwise</code></a> catch-all guard),
-evaluation falls through to the next <em>pattern</em>. That's how patterns and
-guards play nicely together. If no suitable guards or patterns are
-found, an error is thrown.</p>
-<p>Of course we can use guards with functions that take as many parameters
-as we want. Instead of having the user calculate his own BMI before
-calling the function, let's modify this function so that it takes a
-height and weight and calculates it for us.</p>
+<h3 id="&#44032;&#46300;-&#49324;&#50857;&#48277;">&#44032;&#46300; &#49324;&#50857;&#48277;<a class="anchor-link" href="#&#44032;&#46300;-&#49324;&#50857;&#48277;">&#182;</a></h3><ul>
+<li>가드는 함수 이름과 인자 다음에 파이프(<code>|</code>)를 사용해 나타냄</li>
+<li>보통 가드는 오른쪽으로 조금 인덴트(indent)를 준 다음 줄을 세워 표현</li>
+<li>가드는 기본적으로 논리 표현식임.<ul>
+<li>가드가 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:True"><code>True</code></a>로 평가되면, 거기에 부합되는 함수의 본체가 실행됨</li>
+<li>가드가 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a>로 평가되면, 다음 가드로 이동해서 평가하고 이 과정이 반복됨</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>만약 위 함수에서 24.3이라는 인자를 호출하면, 우선 18.5 이하인지 검사하고 결과 값이 <code>False</code>이므로 다음 가드로 이동해서 평가. 두 번째 가드에서는 25 이하인지 검사하고 결과 값이 <code>True</code>이므로 두 번째 가드의 문자열이 반환됨</p>
+</li>
+<li><p>가드는 명령형 언어에서의 if-else문을 대체해주기 좋은 구문</p>
+<ul>
+<li>가드가 if-else문보다 가독성이 좋음</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>대부분의 경우 맨 마지막 가드는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:otherwise"><code>otherwise</code></a>로 구성됨.<ul>
+<li><a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:otherwise"><code>otherwise</code></a>는 단순히 <code>otherwise = True</code>로 정의되어 있어 모든 경우를 잡아냄</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>패턴이랑 매우 유사하지만, 패턴 매칭이 주어진 입력이 패턴을 만족하는지 검사한다면 가드는 논리 조건식을 검사함</p>
+</li>
+<li><p>패턴과 가드는 서로 함께 작동함. 만약 어떤 적합한 가드도 패턴도 없다면 에러가 발생함.</p>
+<ul>
+<li>함수의 모든 가드가 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:False"><code>False</code></a>로 평가된다면(모든 경우를 잡아내는 <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:otherwise"><code>otherwise</code></a> 가드를 만들지 않은 경우), 평가는 실패하고 다음 패턴으로 넘어가게 됨</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>가드는 여러 개의 인자를 가진 함수에서도 사용할 수 있음. </li>
+</ul>
+<p><strong>예시 2. BMI 지수에 따라 다른 멘트를 출력해주는 함수 2</strong></p>
+<ul>
+<li>키와 몸무게를 받아와 BMI를 계산해주는 기능을 포함하도록 함수를 수정함.</li>
+</ul>
 
 </div>
 </div>
@@ -13853,14 +15297,6 @@ height and weight and calculates it for us.</p>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's see if I'm fat ...</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13899,12 +15335,13 @@ height and weight and calculates it for us.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Yay! I'm not fat! But Haskell just called me ugly. Whatever!</p>
-<p>Note that there's no <code>=</code> right after the function name and its parameters,
-before the first guard. Many newbies get syntax errors because they
-sometimes put it there.</p>
-<p>Another very simple example: let's implement our own <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:max"><code>max</code></a> function. If
-you remember, it takes two things that can be compared and returns the
-larger of them.</p>
+<ul>
+<li>가드를 사용할 때 함수 이름과 인자 바로 옆에 <code>=</code>가 붙지 않는다는 것에 주의할 것</li>
+</ul>
+<p><strong>예시 3.<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:max"><code>max</code></a> 함수</strong></p>
+<ul>
+<li><code>max</code> 함수는 비교될 수 있는 두 개의 인자를 받아서 그 중 더 큰 값을 반환</li>
+</ul>
 
 </div>
 </div>
@@ -13928,9 +15365,13 @@ larger of them.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Guards can also be written inline, although I'd advise against that
-because it's less readable, even for very short functions. But to
-demonstrate, we could write <code>max'</code> like this:</p>
+<p>가드는 한 줄로도 표현 가능함</p>
+<ul>
+<li><p>가독성이 떨어지기 때문에, 정말 짧은 함수가 아니라면 사용하지 않는 것이 좋음</p>
+</li>
+<li><p><code>max</code> 함수를 한 줄로 쓴다면 아래처럼 표현 가능:</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -13952,8 +15393,11 @@ demonstrate, we could write <code>max'</code> like this:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ugh! Not very readable at all! Moving on: let's implement our own
-<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:compare"><code>compare</code></a> by using guards.</p>
+<p><strong>예제 4. <a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:compare"><code>compare</code></a></strong></p>
+<ul>
+<li>가드를 사용해
+<a href="https://hackage.haskell.org/package/base/docs/Prelude.html#v:compare"><code>compare</code></a>를 구현</li>
+</ul>
 
 </div>
 </div>
@@ -14011,12 +15455,17 @@ demonstrate, we could write <code>max'</code> like this:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Note:</strong> Not only can we call functions as infix with backticks, we can
-also define them using backticks. Sometimes it's easier to read that
-way.</p>
+<blockquote><p><strong>주의:</strong> 백틱 기호를 이용해 함수를 중위 호출할 수 있을 뿐만 아니라, 백틱을 이용해 중위 함수로도 정의할 수 있음. 때론 이것이 가독성이 더 좋음</p>
 </blockquote>
-<h2 id="Where!?">Where!?<a class="anchor-link" href="#Where!?">&#182;</a></h2><p>In the previous section, we defined a BMI calculator function and
-berator like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3.-&#53412;&#50892;&#46300;-Where">3. &#53412;&#50892;&#46300; Where<a class="anchor-link" href="#3.-&#53412;&#50892;&#46300;-Where">&#182;</a></h1><hr>
+<p>이전 섹션에서, BMI 계산 함수를 정의했음</p>
 
 </div>
 </div>
@@ -14042,12 +15491,11 @@ berator like this:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Notice that we repeat ourselves here three times. We repeat ourselves
-three times. Repeating yourself (three times) while programming is about
-as desirable as getting kicked inna head. Since we repeat the same
-expression three times, it would be ideal if we could calculate it once,
-bind it to a name and then use that name instead of the expression.
-Well, we can modify our function like this:</p>
+<ul>
+<li>이 함수는 같은 과정을 3번이나 반복함</li>
+<li>같은 표현식이 세 번이나 반복되므로, 한 번만 계산한 다음 이 값에 이름을 붙여 표현식 대신에 사용하는 것이 좋음</li>
+<li>함수를 수정해보면:</li>
+</ul>
 
 </div>
 </div>
@@ -14074,15 +15522,23 @@ Well, we can modify our function like this:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We put the keyword <code>where</code> after the guards (usually it's best to indent
-it as much as the pipes are indented) and then we define several names
-or functions. These names are visible across the guards and give us the
-advantage of not having to repeat ourselves. If we decide that we want
-to calculate BMI a bit differently, we only have to change it once. It
-also improves readability by giving names to things and can make our
-programs faster since stuff like our <code>bmi</code> variable here is calculated
-only once. We could go a bit overboard and present our function like
-this:</p>
+<h3 id="where-&#49324;&#50857;&#48277;">where &#49324;&#50857;&#48277;<a class="anchor-link" href="#where-&#49324;&#50857;&#48277;">&#182;</a></h3><ul>
+<li>키워드 <code>where</code>은 가드 뒤에 붙임.<ul>
+<li><code>where</code>은 pipe의 인덴트와 동일한만큼의 인덴트를 주는 것이 좋음</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><code>where</code>에서 여러 개의 이름이나 함수를 정의할 수 있음<ul>
+<li>정의된 이름들은 가드 전체에서 사용할 수 있고, 같은 것을 반복하지 않도록 해줌</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>위의 예시에서 BMI를 다른 방식으로 계산하고 싶다면, <code>where</code> 뒤에 있는 공식을 한 번만 바꿔주면 됨.</li>
+<li>특정한 개체에 이름을 붙임으로써 가독성을 높이고, <code>bmi</code> 같은 변수가 한 번만 계산되게 함으로써, 프로그램의 속도를 빠르게 만들어줌</li>
+<li>함수를 아래처럼 표현할 수 있음:</li>
+</ul>
 
 </div>
 </div>
@@ -14112,17 +15568,32 @@ this:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The names we define in the where section of a function are only visible
-to that function, so we don't have to worry about them polluting the
-namespace of other functions. Notice that all the names are aligned at a
-single column. If we don't align them nice and proper, Haskell gets
-confused because then it doesn't know they're all part of the same
-block.</p>
-<p><em>where</em> bindings aren't shared across function bodies of different
-patterns. If you want several patterns of one function to access some
-shared name, you have to define it globally.</p>
-<p>You can also use where bindings to <em>pattern match</em>! We could have
-rewritten the where section of our previous function as:</p>
+<ul>
+<li>어떤 함수의 where 절에서 정의된 이름들은 그 함수 내에서만 사용 가능</li>
+<li>모든 이름들이 같은 줄에 맞춰서 정렬되있어야 함<ul>
+<li>같은 줄에 맞추지 않으면, 하스켈은 어디서 어디까지가 같은 블록의 일부인지를 알 수 없음</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="where-&#53945;&#51669;">where &#53945;&#51669;<a class="anchor-link" href="#where-&#53945;&#51669;">&#182;</a></h3><ul>
+<li><em>where</em> 절은 함수의 서로 다른 패턴까지 공유되지 않음<ul>
+<li>한 함수 내에 여러 개의 패턴에서 공유되는 이름을 만들고 싶다면, 이름을 전역적인 공간에서 정의해야 함</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>where 절에서도 패턴 매칭을 사용할 수 있음<ul>
+<li>위의 함수를 패턴 매칭을 활용해 표현해보면: </li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
@@ -14132,8 +15603,7 @@ rewritten the where section of our previous function as:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's make another fairly trivial function where we get a first and a
-last name and give someone back their initials.</p>
+<p><strong>예시 1. 사람의 성과 이름을 받아 이니셜을 돌려주는 함수</strong></p>
 
 </div>
 </div>
@@ -14157,13 +15627,19 @@ last name and give someone back their initials.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We could have done this pattern matching directly in the function's
-parameters (it would have been shorter and clearer actually) but this
-just goes to show that it's possible to do it in where bindings as well.</p>
-<p>Just like we've defined constants in where blocks, you can also define
-functions. Staying true to our healthy programming theme, let's make a
-function that takes a list of weight-height pairs and returns a list of
-BMIs.</p>
+<ul>
+<li>패턴 매칭을 함수의 인자에서 직접적으로 수행할 수 있음<ul>
+<li>이렇게 표현하면 더 짧고 직관적임</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>where 절에서 상수를 정의한 것처럼, 함수도 정의 가능</li>
+</ul>
+<p><strong>예시 2. BMI의 리스트를 반환하는 함수</strong></p>
+<ul>
+<li>몸무게와 키를 항목으로 가지는 튜플의 리스트를 받아와 BMI의 리스트를 반환해주는 함수</li>
+</ul>
 
 </div>
 </div>
@@ -14186,24 +15662,42 @@ BMIs.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>And that's all there is to it! The reason we had to introduce <code>bmi</code> as a
-function in this example is because we can't just calculate one BMI from
-the function's parameters. We have to examine the list passed to the
-function and there's a different BMI for every pair in there.</p>
-<p><em>where</em> bindings can also be nested. It's a common idiom to make a
-function and define some helper function in its <em>where</em> clause and then
-to give those functions helper functions as well, each with its own
-<em>where</em> clause.</p>
-<p><a name="let-it-be"></a></p>
-<h2 id="Let-it-be">Let it be<a class="anchor-link" href="#Let-it-be">&#182;</a></h2><p>Very similar to where bindings are let bindings. Where bindings are a
-syntactic construct that let you bind to variables at the end of a
-function and the whole function can see them, including all the guards.
-Let bindings let you bind to variables anywhere and are expressions
-themselves, but are very local, so they don't span across guards. Just
-like any construct in Haskell that is used to bind values to names, let
-bindings can be used for pattern matching. Let's see them in action!
-This is how we could define a function that gives us a cylinder's
-surface area based on its height and radius:</p>
+<ul>
+<li><code>bmi</code>를 함수의 인자로 소개한 이유는, 함수의 인자로부터 하나의 BMI를 계산할 수 없기 때문. 함수에서 넘어온 인자를 조사해 모든 튜플에 대해 서로 다른 BMI를 각각 계산해야 함.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="where-&#51208;-&#51473;&#52393;-&#49324;&#50857;">where &#51208; &#51473;&#52393; &#49324;&#50857;<a class="anchor-link" href="#where-&#51208;-&#51473;&#52393;-&#49324;&#50857;">&#182;</a></h3><ul>
+<li>where 절 또한 중첩해서 사용 가능</li>
+<li>함수를 만들 땐 도우미 함수(helper function)를 그 함수의 where 절로 만들고, 도우미 함수가 잘 작동하기 위한 도우미 함수를 다시 그 함수의 where 절에 정의할 수 있음</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="4.-let">4. let<a class="anchor-link" href="#4.-let">&#182;</a></h1><hr>
+<ul>
+<li>let 절은 where 절과 굉장히 비슷함.<ul>
+<li>where 절은 함수의 맨 마지막에서 변수를 묶을 수 있고(bind) 그것을 모든 가드를 포함한 전체 함수 정의에서 사용할 수 있는 구문론적 구조</li>
+<li>let 절은 어디서든 표현식과 변수를 묶을 수 있게 해주지만, 굉장히 지역적이므로 가든 전체에서 사용하지는 못함</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>하스켈에 있는 값을 그 이름과 묶기 위한 용도로 사용되는 다른 구조들과 마찬가지로, let 바인딩은 패턴 매칭을 위해 사용될 수 있음</li>
+</ul>
+<p><strong>예시 1. 원기둥의 겉넓이를 구하는 함수</strong></p>
+<ul>
+<li>원기둥의 높이와 반지름을 이용해서 원기둥의 겉넓이를 구해주는 함수</li>
+</ul>
 
 </div>
 </div>
@@ -14228,18 +15722,19 @@ surface area based on its height and radius:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/letitbe.png" title="let it be" style="float:right;margin-left:2em;" /></p>
-<p>The form is <code>let &lt;bindings&gt; in &lt;expression&gt;</code>. The names that you
-define in the <em>let</em> part are accessible to the expression after the <em>in</em>
-part. As you can see, we could have also defined this with a <em>where</em>
-binding. Notice that the names are also aligned in a single column. So
-what's the difference between the two? For now it just seems that <em>let</em>
-puts the bindings first and the expression that uses them later whereas
-<em>where</em> is the other way around.</p>
-<p>The difference is that <em>let</em> bindings are expressions themselves.
-<em>where</em> bindings are just syntactic constructs. Remember when we did the
-if statement and it was explained that an if else statement is an
-expression and you can cram it in almost anywhere?</p>
+<h3 id="let&#51032;-&#54805;&#53468;">let&#51032; &#54805;&#53468;<a class="anchor-link" href="#let&#51032;-&#54805;&#53468;">&#182;</a></h3><ul>
+<li>기본적인 형태: <code>let &lt;bindings&gt; in &lt;expression&gt;</code></li>
+<li><em>let</em> 부분에서 정의한 이름은 <em>in</em> 이후 부분에서 나오는 표현식에서 사용 가능</li>
+<li><em>where</em> 절을 이용해서도 구현할 수 있음</li>
+<li>이름들이 같은 줄에 맞춰서 정렬되어 있어야함</li>
+</ul>
+<h3 id="where&#44284;-let-&#51208;&#51032;-&#52264;&#51060;&#51216;">where&#44284; let &#51208;&#51032; &#52264;&#51060;&#51216;<a class="anchor-link" href="#where&#44284;-let-&#51208;&#51032;-&#52264;&#51060;&#51216;">&#182;</a></h3><ol>
+<li><em>let</em> 절은 값과 변수를 묶는 작업을 먼저 하고 묶인 변수가 쓰이는 표현식이 나중에 나오는 반면 <em>where</em> 절은 순서가 반대</li>
+<li><em>let</em> 절은 그 자체로 표현식이고 <em>where</em> 절은 구문론적인 구문임<ul>
+<li>if 구문에서 if 구문은 표현식이기 때문에 어디서든 사용 가능했던 것처럼 let 절에서도 똑같이 가능</li>
+</ul>
+</li>
+</ol>
 
 </div>
 </div>
@@ -14310,14 +15805,6 @@ expression and you can cram it in almost anywhere?</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You can also do that with let bindings.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
@@ -14354,7 +15841,9 @@ expression and you can cram it in almost anywhere?</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>They can also be used to introduce functions in a local scope:</p>
+<h3 id="let-&#51208;&#51032;-&#53945;&#51669;">let &#51208;&#51032; &#53945;&#51669;<a class="anchor-link" href="#let-&#51208;&#51032;-&#53945;&#51669;">&#182;</a></h3><ul>
+<li>let 절은 지역적인 범위에서 쓰이는 함수를 만들 때에도 사용</li>
+</ul>
 
 </div>
 </div>
@@ -14395,8 +15884,9 @@ expression and you can cram it in almost anywhere?</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If we want to bind to several variables inline, we obviously can't align
-them at columns. That's why we can separate them with semicolons.</p>
+<ul>
+<li>한 줄에 여러 개의 변수를 묶고 싶다면, 줄을 맞추기 않아도 되지만 세미콜론(;)으로 구분해야함</li>
+</ul>
 
 </div>
 </div>
@@ -14437,10 +15927,15 @@ them at columns. That's why we can separate them with semicolons.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You don't have to put a semicolon after the last binding but you can if
-you want. Like we said before, you can pattern match with <em>let</em>
-bindings. They're very useful for quickly dismantling a tuple into
-components and binding them to names and such.</p>
+<ul>
+<li><p>마지막 바인딩 뒤에는 세미콜론을 붙일 필요 없지만, 붙여도 상관 없음</p>
+</li>
+<li><p>let 바인딩과 함께 패턴 매칭을 사용할 수 있음</p>
+<ul>
+<li>튜플을 항목들로 빠르게 분해해서 이름을 붙이는 것 같은 작업에 굉장히 유용함</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
@@ -14481,10 +15976,13 @@ components and binding them to names and such.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can also put <em>let</em> bindings inside list comprehensions. Let's
-rewrite our previous example of calculating lists of weight-height pairs
-to use a <em>let</em> inside a list comprehension instead of defining an
-auxiliary function with a <em>where</em>.</p>
+<ul>
+<li><em>let</em> 절은 리스트 조건 제시법에서도 사용 가능</li>
+</ul>
+<p><strong>예시 2. BMI 계산 함수</strong></p>
+<ul>
+<li>몸무게와 키를 항목으로 가지는 튜플의 리스트를 받아서 BMI를 계산하는 이전의 예제를 <em>where</em> 절에서 보조 함수를 정의해서 쓰는 대신 리스트 조건 제시법 안에서 <em>let</em>절을 이용하도록 수정</li>
+</ul>
 
 </div>
 </div>
@@ -14506,12 +16004,16 @@ auxiliary function with a <em>where</em>.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We include a <em>let</em> inside a list comprehension much like we would a
-predicate, only it doesn't filter the list, it only binds to names. The
-names defined in a <em>let</em> inside a list comprehension are visible to the
-output function (the part before the |) and all predicates and sections
-that come after of the binding. So we could make our function return
-only the BMIs of fat people:</p>
+<ul>
+<li><em>let</em> 절을 리스트 조건 제시법에서 술어를 쓰듯이 포함시킬 수 있음<ul>
+<li>이 경우 리스트를 필터링하지 않음. 이름과 값을 묶는 역할만 수행</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>리스트 조건 제시법의 내부의 <em>let</em>절에서 정의된 이름들은 출력 함수(파이프(|) 전부분)와 해당 바인딩(let 절) 이후에 오는 섹션들, 술어들에서만 사용할 수 있음</li>
+<li>따라서 위 함수를 뚱뚱한 사람들의 BMI만 반환하도록 만들 수 있음</li>
+</ul>
 
 </div>
 </div>
@@ -14533,15 +16035,17 @@ only the BMIs of fat people:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can't use the <code>bmi</code> name in the <code>(w, h) &lt;- xs</code> part because it's defined
-prior to the <em>let</em> binding.</p>
-<p>We omitted the <em>in</em> part of the <em>let</em> binding when we used them in list
-comprehensions because the visibility of the names is already predefined
-there. However, we could use a <em>let in</em> binding in a predicate and the
-names defined would only be visible to that predicate. The <em>in</em> part can
-also be omitted when defining functions and constants directly in GHCi.
-If we do that, then the names will be visible throughout the entire
-interactive session.</p>
+<ul>
+<li><code>bmi</code>라는 이름을 <code>(w, h) &lt;- xs</code> 부분에서는 사용할 수 없음.<ul>
+<li>이유: <em>let</em> 절보다 앞에서 정의됐기 때문</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><em>let</em> 절을 리스트 조건 제시법에서 사용할 때 해당 이름이 사용되는 범위가 리스트 내부로 이미 정의되어 있기 때문에 <code>in</code>을 빼먹어도 상관없음</li>
+<li>하지만, 술어에서 <em>let in</em> 절을 사용할 수도 있고, 이렇게 되면 <em>let</em> 절에서 정의된 이름들은 해당 술어부에서만 사용할 수 있음</li>
+<li><em>in</em> 부분은 GHCI에서 함수나 상수를 직접 정의할 때 빼먹을 수 있음. 그렇게 되면, 이 이름들은 전체 상호작용 세션 내내 사용 가능하게 됨</li>
+</ul>
 
 </div>
 </div>
@@ -14661,28 +16165,50 @@ interactive session.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If <em>let</em> bindings are so cool, why not use them all the time instead of
-<em>where</em> bindings, you ask? Well, since <em>let</em> bindings are expressions
-and are fairly local in their scope, they can't be used across guards.
-Some people prefer <em>where</em> bindings because the names come after the
-function they're being used in. That way, the function body is closer to
-its name and type declaration and to some that's more readable.</p>
-<h2 id="Case-expressions">Case expressions<a class="anchor-link" href="#Case-expressions">&#182;</a></h2><p><img src="img/case.png" title="case" style="float:right;margin-left:2em;" /></p>
-<p>Many imperative languages (C, C++, Java, etc.) have case syntax and if
-you've ever programmed in them, you probably know what it's about. It's
-about taking a variable and then executing blocks of code for specific
-values of that variable and then maybe including a catch-all block of
-code in case the variable has some value for which we didn't set up a
-case.</p>
-<p>Haskell takes that concept and one-ups it. Like the name implies, case
-expressions are, well, expressions, much like if else expressions and
-<em>let</em> bindings. Not only can we evaluate expressions based on the
-possible cases of the value of a variable, we can also do pattern
-matching. Hmmm, taking a variable, pattern matching it, evaluating
-pieces of code based on its value, where have we heard this before? Oh
-yeah, pattern matching on parameters in function definitions! Well,
-that's actually just syntactic sugar for case expressions. These two
-pieces of code do the same thing and are interchangeable:</p>
+<h3 id="where-&#51208;&#51012;-&#49324;&#50857;&#54616;&#45716;-&#51060;&#50976;">where &#51208;&#51012; &#49324;&#50857;&#54616;&#45716; &#51060;&#50976;<a class="anchor-link" href="#where-&#51208;&#51012;-&#49324;&#50857;&#54616;&#45716;-&#51060;&#50976;">&#182;</a></h3><ul>
+<li><em>let</em> 절이 편리하지만, 모든 <em>where</em> 절 대신 <em>let</em> 절을 사용하지 않는 이유:<ul>
+<li><em>let</em> 절은 표현식이고 굉장히 지역적이기 때문에, 모든 가드 내에서 통용되어 사용할 수 없음</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><em>where</em> 절이 이름을 쓰는 부분이 정의하는 부분보다 함수에서 앞에 있기 때문에 <code>where</code> 절을 선호함</p>
+</li>
+<li><p><code>where</code> 절을 사용하면, 함수의 본체가 함수의 이름과 유형 선언에 더 가까워지고 이것이 가독성이 좋아 보임</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="5.-&#52992;&#51060;&#49828;-&#54364;&#54788;&#49885;(Case-expressions)">5. &#52992;&#51060;&#49828; &#54364;&#54788;&#49885;(Case expressions)<a class="anchor-link" href="#5.-&#52992;&#51060;&#49828;-&#54364;&#54788;&#49885;(Case-expressions)">&#182;</a></h1><hr>
+<ul>
+<li>많은 명령형 언어(C, C++, Java 등등)는 case 구문을 갖고 있음<ul>
+<li>case 구문은 어떤 변수를 받아 해당 변수의 특정한 값에 대해 수행하는 코드 블록들을 만들어 놓은 것</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>하스켈은 이 개념을 받아 한 단계 업그레이드 시킴<ul>
+<li>케이스 표현식은 if else 표현식이나 let 절과 마찬가지로 표현식임</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>값이 가능한 경우에 기반해서 평가하는 표현식일 뿐만 아니라, 매턴 매칭도 가능</p>
+</li>
+<li><p>함수 정의에서 인자에 따라 패턴 매칭하는 것과 똑같이 변수를 취해서, 패턴 매칭을 하고, 그 값에 따라서 코드 조각을 평가함</p>
+<ul>
+<li>함수 정의는 케이스 표현식의 간략화된 표현</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>아래 두 코드 조각은 완전히 같고 서로 바꿔쓸 수 있음</li>
+</ul>
 
 </div>
 </div>
@@ -14720,7 +16246,9 @@ pieces of code do the same thing and are interchangeable:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see, the syntax for case expressions is pretty simple:</p>
+<h3 id="&#52992;&#51060;&#49828;-&#54364;&#54788;&#49885;-&#44396;&#47928;">&#52992;&#51060;&#49828; &#54364;&#54788;&#49885; &#44396;&#47928;<a class="anchor-link" href="#&#52992;&#51060;&#49828;-&#54364;&#54788;&#49885;-&#44396;&#47928;">&#182;</a></h3><ul>
+<li>케이스 표현식 구문은 굉장히 단순함</li>
+</ul>
 
 </div>
 </div>
@@ -14731,13 +16259,16 @@ pieces of code do the same thing and are interchangeable:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>expression</code> is matched against the patterns. The pattern matching action
-is the same as expected: the first pattern that matches the expression
-is used. If it falls through the whole case expression and no suitable
-pattern is found, a runtime error occurs.</p>
-<p>Whereas pattern matching on function parameters can only be done when
-defining functions, case expressions can be used pretty much anywhere.
-For instance:</p>
+<ul>
+<li><code>expression</code>은 패턴에 대응해서 매칭됨</li>
+<li>패턴 매칭은 예측한 것 그대로 동작함<ul>
+<li>첫 번째 패턴이 표현식과 매칭되는지 확인하고, 아닐 경우 두 번째, 세 번째.. 패턴으로 넘어가면서 매칭되는지 확인. 맞는 패턴이 없다면 런타임 에러가 발생함</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>함수 인자에서의 패턴 매칭이 함수를 정의하는 것에만 사용될 수 있는 반면에, 케이스 표현식은 거의 어디에서든 사용가능 함. 예시를 살펴보면:</li>
+</ul>
 
 </div>
 </div>
@@ -14761,10 +16292,15 @@ For instance:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>They are useful for pattern matching against something in the middle of
-an expression. Because pattern matching in function definitions is
-syntactic sugar for case expressions, we could have also defined this
-like so:</p>
+<ul>
+<li>표현식 중간에서 어떤 것에 대한 패턴 매칭을 하고 싶을 때 유용하게 사용 가능<ul>
+<li>이유: 함수 정의에서의 패턴 매칭이 케이스 표현식의 간략화된 표현이기 때문</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>위 함수를 아래처럼도 정의할 수 있음</li>
+</ul>
 
 </div>
 </div>

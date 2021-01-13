@@ -15,12 +15,13 @@
 
 * [A Gentle Introduction To Haskell](https://www.haskell.org/tutorial/), 
     Paul Hudak, John Peterson, and Joseph Fasel
+    (번역본: [하스켈 공식 입문서](http://wiki.reeseo.net/Haskell/공식%20입문서%20번역문))
 * [Programming in Haskell](https://www.cambridge.org/core/books/programming-in-haskell/8FED82E807EF12D390DE0D16FDE217E4), 
     Graham Hutton
 * [The Haskell Road to Logic, Maths and Programming](https://staff.fnwi.uva.nl/d.j.n.vaneijck2/HR/), 
     Kees Doets and Jan van Eijck
-* [Wikibooks Haskell](https://en.wikibooks.org/wiki/Haskell/Print_version)
-    * 번역본: [Wikibooks Haskell](https://wikidocs.net/book/204)
+* [Wikibooks Haskell](https://en.wikibooks.org/wiki/Haskell/Print_version) 
+    (번역본: [Wikibooks Haskell](https://wikidocs.net/book/204))
 
 함께 제공되는 주피터 노트북은 James Brock의 
 [learn-you-a-haskell-notebook](https://github.com/jamesdbrock/learn-you-a-haskell-notebook)을 
