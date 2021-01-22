@@ -15627,14 +15627,16 @@ font-weight: bold;
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>함수 <code>f</code>를 정의할 때 사용되는 패턴이 아래 모양이라고 가정하자.</p>
 <div class="highlight"><pre><span></span><span class="nf">f</span> <span class="n">p11</span> <span class="o">...</span> <span class="n">p1k</span> <span class="ow">=</span> <span class="n">e1</span>
+<span class="nf">f</span> <span class="n">p21</span> <span class="o">...</span> <span class="n">p2k</span> <span class="ow">=</span> <span class="n">e2</span>
+<span class="nf">f</span> <span class="n">p31</span> <span class="o">...</span> <span class="n">p3k</span> <span class="ow">=</span> <span class="n">e3</span>
 <span class="o">...</span>
-<span class="nf">f</span> <span class="n">pn1</span> <span class="o">...</span> <span class="n">pnk</span> <span class="ow">=</span> <span class="n">en</span>
 </pre></div>
 <p>위에서 <code>pij</code> 는 각각 특정 패턴을 나타낸다고 가정한다.
 그러면 함수 <code>f</code>를 아래처럼 <code>case</code> 표현식을 이용하여 의미상 동일하게 구현한 것이다.</p>
 <div class="highlight"><pre><span></span><span class="nf">f</span> <span class="n">x1</span> <span class="o">...</span> <span class="n">xk</span> <span class="ow">=</span> <span class="kr">case</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">xk</span><span class="p">)</span> <span class="kr">of</span> <span class="n">f</span> <span class="n">p11</span> <span class="o">...</span> <span class="n">p1k</span> <span class="ow">-&gt;</span> <span class="n">e1</span>
+                                    <span class="n">f</span> <span class="n">p21</span> <span class="o">...</span> <span class="n">p2k</span> <span class="ow">-&gt;</span> <span class="n">e2</span>
+                                    <span class="n">f</span> <span class="n">p31</span> <span class="o">...</span> <span class="n">p3k</span> <span class="ow">-&gt;</span> <span class="n">e3</span>
                                     <span class="o">...</span>
-                                    <span class="n">f</span> <span class="n">pn1</span> <span class="o">...</span> <span class="n">pnk</span> <span class="ow">-&gt;</span> <span class="n">en</span>
 </pre></div>
 
 </div>
@@ -16314,8 +16316,8 @@ font-weight: bold;
 일반적으로 아래 형식을 갖는다.</p>
 <div class="highlight"><pre><span></span><span class="kr">where</span> <span class="err">바인딩</span><span class="mi">1</span>
       <span class="err">바인딩</span><span class="mi">2</span>
+      <span class="err">바인딩</span><span class="mi">3</span>
       <span class="o">...</span>
-      <span class="err">바인딩</span><span class="n">k</span>
 </pre></div>
 <p><strong>바인딩</strong>(binding)의 형식은 상수 또는 함수를 정의하는 형식과 동일하다.
 아래 예제는 네 개의 바인딩을 사용하며 
@@ -17330,8 +17332,8 @@ font-weight: bold;
 (바인딩은 앞서 <code>where</code> 절에서 설명한 것과 동일함)</p>
 <div class="highlight"><pre><span></span><span class="kr">let</span> <span class="err">바인딩</span><span class="mi">1</span>
     <span class="err">바인딩</span><span class="mi">2</span>
+    <span class="err">바인딩</span><span class="mi">3</span>
     <span class="o">...</span>
-    <span class="err">바인딩</span><span class="n">k</span>
 <span class="kr">in</span> <span class="err">표현식</span>
 </pre></div>
 <p>형식에서 알아볼 수 있듯이 <code>let</code> 표현식은 
@@ -17727,15 +17729,8 @@ font-weight: bold;
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p><strong>리스트 조건제시법 활용:</strong> 리스트 조건제시법을 정의할 때 <code>let</code> 바인딩을 사용할 수 있다. 
-  예를 들어, 아래와 같이 정의되었던 <code>calcBmis</code> 함수를 <code>let</code> 바인딩을 이용하여 정의해보자.</p>
-<div class="highlight"><pre><span></span><span class="nf">calcBmis</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
-  <span class="n">calcBmis</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmiTell</span> <span class="p">(</span><span class="n">bmi</span> <span class="n">w</span> <span class="n">h</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">]</span>
-      <span class="kr">where</span> <span class="n">bmi</span> <span class="n">weight</span> <span class="n">height</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span>
-</pre></div>
-<p>방법은 <code>where</code> 절을 <code>let</code> 표현식으로 바꾸어 조건제시법 내부로 끌어 들이기만 하면 된다.
-  결과는 다음과 같다.</p>
-</li>
+<li><strong>리스트 조건제시법 활용:</strong> 리스트 조건제시법을 정의할 때 <code>let</code> 바인딩을 사용할 수 있다. 
+  예를 들어, 아래와 같이 정의되었던 <code>calcBmis</code> 함수를 <code>let</code> 바인딩을 이용하여 정의해보자.</li>
 </ul>
 
 </div>
@@ -17746,8 +17741,32 @@ font-weight: bold;
 <div class="prompt input_prompt">In&nbsp;[118]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">calcBmis</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+<span class="nf">calcBmis</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmiTell</span> <span class="p">(</span><span class="n">bmi</span> <span class="n">w</span> <span class="n">h</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">]</span>
+    <span class="kr">where</span> <span class="n">bmi</span> <span class="n">weight</span> <span class="n">height</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>방법은 <code>where</code> 절을 <code>let</code> 표현식으로 바꾸어 조건제시법 내부로 끌어 들이기만 하면 된다.
+결과는 다음과 같다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">calcBmis</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
-<span class="nf">calcBmis</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmi</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="kr">let</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">w</span> <span class="o">/</span> <span class="n">h</span> <span class="o">^</span> <span class="mi">2</span><span class="p">]</span>
+<span class="nf">calcBmis</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmi</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="kr">let</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">w</span> <span class="o">/</span> <span class="n">h</span><span class="o">^</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -17776,11 +17795,11 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[120]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">calcBmis&#39;</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
-<span class="nf">calcBmis&#39;</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmi</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="kr">let</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">w</span> <span class="o">/</span> <span class="n">h</span> <span class="o">^</span> <span class="mi">2</span><span class="p">,</span> <span class="n">bmi</span> <span class="o">&gt;=</span> <span class="mf">25.0</span><span class="p">]</span>
+<span class="nf">calcBmis&#39;</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmi</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="kr">let</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">w</span> <span class="o">/</span> <span class="n">h</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="n">bmi</span> <span class="o">&gt;=</span> <span class="mf">25.0</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -17809,7 +17828,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">zoot</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
@@ -17822,7 +17841,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="prompt input_prompt">In&nbsp;[122]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">zoot</span> <span class="mi">3</span> <span class="mi">9</span> <span class="mi">2</span>
@@ -17863,7 +17882,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[122]:</div>
+<div class="prompt input_prompt">In&nbsp;[123]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">boot</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="kr">in</span> <span class="n">boot</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">2</span>
@@ -17896,7 +17915,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="prompt input_prompt">In&nbsp;[124]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">boot</span>
@@ -18011,7 +18030,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[124]:</div>
+<div class="prompt input_prompt">In&nbsp;[125]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collatz</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
@@ -18041,7 +18060,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collatz</span> <span class="mi">3</span>
@@ -18082,7 +18101,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collatz</span> <span class="mi">100</span>
@@ -18123,7 +18142,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collatz</span> <span class="mi">171</span>
@@ -18168,7 +18187,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collaztNumbers</span> <span class="ow">=</span> <span class="n">map</span> <span class="n">collatz</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10000</span><span class="p">]</span>
@@ -18181,7 +18200,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[130]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">maximum</span> <span class="n">collaztNumbers</span>
@@ -18216,10 +18235,10 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>함수 $f$를 262 번 호출하도록 하는 인자는 
-<code>Data.List</code> 모듈에 포함된 <code>elemIndex</code> 함수를 이용하여 확인할 수 있다.</p>
+<code>Data.List</code> 모듈에 포함된 <code>elemIndices</code> 함수를 이용하여 확인할 수 있다.</p>
 <ul>
 <li>모듈 활용법은 나중에 자세히 설명한다.
-  여기서는 먼저 특정 모듈을 아래와 같이 불러온다(import) 한다는 것만 기억해두면 된다.</li>
+  여기서는 먼저 특정 모듈을 아래와 같이 불러온다(import)는 것만 기억해두면 된다.</li>
 </ul>
 
 </div>
@@ -18227,7 +18246,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[131]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">import</span> <span class="nn">Data.List</span>
@@ -18248,7 +18267,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[132]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">elemIndices</span> <span class="mi">262</span> <span class="n">collaztNumbers</span>
@@ -18290,7 +18309,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="prompt input_prompt">In&nbsp;[133]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collatz</span> <span class="mi">6171</span>
