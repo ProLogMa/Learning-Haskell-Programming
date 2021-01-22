@@ -14434,7 +14434,8 @@ font-weight: bold;
 <p>다음 <code>first</code>, <code>second</code>, <code>third</code> 함수는 위 패턴을 이용하여 
 길이가 3인 튜플에서 각각 첫째, 둘째, 셋째 항목을 추출해준다.
 각 함수의 경우 지정된 위치 이외의 항목은 전혀 관심대상이 아니기에 
-이전에 리스트 조건제시법을 설명할 때 언급한 것처럼 밑줄(underscore)로 표시하였다.</p>
+이전에 리스트 조건제시법을 설명할 때 언급한 것처럼 
+와일드카드인 밑줄(underscore)로 표시하였다.</p>
 
 </div>
 </div>
@@ -14708,11 +14709,11 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>x:xs</code> 대신에 밑줄을 이용하여 <code>x:_</code>를 지정한 이유는 <code>xs</code>의 역할이 없기 때문이다.
+<p><code>x:xs</code> 대신에 와일드카드를 이용하여 <code>x:_</code>를 지정한 이유는 <code>xs</code>의 역할이 없기 때문이다.
 우리가 알고 있는 <code>head</code> 함수와 동일하게 작동함을 쉽게 확인할 수 있다.</p>
 <p><strong>참고</strong></p>
 <ul>
-<li><p>패턴에 밑줄을 포함하여 여러 개의 변수가 사용되는 경우 패턴 전체를
+<li><p>패턴에 와일드카드를 포함하여 여러 개의 변수가 사용되는 경우 패턴 전체를
   소괄호로 감싸야 한다. 그렇지 않으면 오류가 발생한다.</p>
 </li>
 <li><p><code>error</code> 함수: 프로그램 실행중 고의로 오류를, 즉 런타임 에러를 발생시키면서 
@@ -15551,18 +15552,7 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>C, C++, Java 등의 언어에서 지원하는 <code>case</code> 구문과 유사하게 작동한다.</p>
-<ul>
-<li>case 구문은 어떤 변수를 받아 해당 변수의 특정한 값에 대해 수행하는 코드 블록들을 만들어 놓은 것</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>(매개)변수가 가리킬 수 있는 값에 다른 계산을 수행하도록 지정할 때 사용하는 표현식이다. 
+<p>(매개)변수가 가리킬 수 있는 값에 따라 다른 계산을 수행하도록 지정할 때 사용하는 표현식이다. 
 이때 변수가 가리키는 다른 값은 패턴 매칭을 사용하여 구분한다. 
 <code>case</code> 표현식의 일반적인 구문은 다음과 같다.</p>
 
@@ -15594,12 +15584,13 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">head&#39;</span> <span class="ow">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="n">a</span>
-<span class="nf">head&#39;</span> <span class="n">xs</span> <span class="ow">=</span> <span class="kr">case</span> <span class="n">xs</span> <span class="kr">of</span> <span class="kt">[]</span>    <span class="ow">-&gt;</span> <span class="ne">error</span> <span class="s">&quot;No head for empty lists!&quot;</span>
-                      <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="kr">_</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">x</span>
+<span class="nf">head&#39;</span> <span class="n">xs</span> <span class="ow">=</span> <span class="kr">case</span> <span class="n">xs</span> <span class="kr">of</span> 
+                <span class="kt">[]</span>    <span class="ow">-&gt;</span> <span class="ne">error</span> <span class="s">&quot;No head for empty lists!&quot;</span>
+                <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="kr">_</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">x</span>
 </pre></div>
 
     </div>
@@ -15618,7 +15609,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">head&#39;</span> <span class="ow">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="n">a</span>
@@ -15634,6 +15625,31 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>함수 <code>f</code>를 정의할 때 사용되는 패턴이 아래 모양이라고 가정하자.</p>
+<div class="highlight"><pre><span></span><span class="nf">f</span> <span class="n">p11</span> <span class="o">...</span> <span class="n">p1k</span> <span class="ow">=</span> <span class="n">e1</span>
+<span class="o">...</span>
+<span class="nf">f</span> <span class="n">pn1</span> <span class="o">...</span> <span class="n">pnk</span> <span class="ow">=</span> <span class="n">en</span>
+</pre></div>
+<p>위에서 <code>pij</code> 는 각각 특정 패턴을 나타낸다고 가정한다.
+그러면 함수 <code>f</code>를 아래처럼 <code>case</code> 표현식을 이용하여 의미상 동일하게 구현한 것이다.</p>
+<div class="highlight"><pre><span></span><span class="nf">f</span> <span class="n">x1</span> <span class="o">...</span> <span class="n">xk</span> <span class="ow">=</span> <span class="kr">case</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">xk</span><span class="p">)</span> <span class="kr">of</span> <span class="n">f</span> <span class="n">p11</span> <span class="o">...</span> <span class="n">p1k</span> <span class="ow">-&gt;</span> <span class="n">e1</span>
+                                    <span class="o">...</span>
+                                    <span class="n">f</span> <span class="n">pn1</span> <span class="o">...</span> <span class="n">pnk</span> <span class="ow">-&gt;</span> <span class="n">en</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="case-&#54364;&#54788;&#49885;-&#51068;&#48152;-&#49324;&#50857;&#48277;"><code>case</code> &#54364;&#54788;&#49885; &#51068;&#48152; &#49324;&#50857;&#48277;<a class="anchor-link" href="#case-&#54364;&#54788;&#49885;-&#51068;&#48152;-&#49324;&#50857;&#48277;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>함수의 매개변수에 대한 패턴 매칭은 함수를 정의할 때만 사용될 수 있다.
 반면에 <code>case</code> 표현식은 거의 어디에서든 사용가능하다. 
 예를 들어, 아래에서처럼 임의의 표현식 중간에 위치할 수도 있다. 
@@ -15644,7 +15660,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList</span> <span class="ow">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
@@ -15657,6 +15673,38 @@ font-weight: bold;
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="case-&#54364;&#54788;&#49885;&#44284;-if-&#54364;&#54788;&#49885;"><code>case</code> &#54364;&#54788;&#49885;&#44284; <code>if</code> &#54364;&#54788;&#49885;<a class="anchor-link" href="#case-&#54364;&#54788;&#49885;&#44284;-if-&#54364;&#54788;&#49885;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>if</code> 표현식은 참, 거짓 두 경우로 이루어진 <code>case</code> 표현식를 간략하게 표현한 것에 불과하다.
+실제로</p>
+<div class="highlight"><pre><span></span><span class="kr">if</span> <span class="n">e1</span> <span class="kr">then</span> <span class="n">e2</span> <span class="kr">else</span> <span class="n">e3</span>
+</pre></div>
+<p>는 아래 표현식에 해당한다.</p>
+<div class="highlight"><pre><span></span><span class="kr">case</span> <span class="n">e1</span> <span class="kr">of</span> <span class="kt">True</span>  <span class="ow">-&gt;</span> <span class="n">e2</span>
+           <span class="kt">False</span> <span class="ow">-&gt;</span> <span class="n">e3</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>참고:</strong> 
+C, C++, Java 등의 언어에서 지원하는 <code>case</code> 구문과 유사하게 작동한다. 
+하지만 하스켈에서는 명령문에 사용되는 구문이 아니라 특정 값을 나타내는 표현식이라는 차이를 갖는다.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -15700,7 +15748,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">bmiTell</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
@@ -15764,7 +15812,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">bmiTell</span> <span class="n">bmi</span> 
@@ -15781,7 +15829,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="n">bmiTell</span>
@@ -15910,7 +15958,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">countPositives</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Ord</span> <span class="n">a</span><span class="p">,</span> <span class="kt">Num</span> <span class="n">a</span><span class="p">,</span> <span class="kt">Num</span> <span class="n">b</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="n">b</span>
@@ -15926,7 +15974,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">countPositives</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
@@ -15959,7 +16007,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">countPositives</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
@@ -16009,14 +16057,14 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">bmiTell</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
 <span class="nf">bmiTell</span> <span class="n">weight</span> <span class="n">height</span>
-    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">18.5</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re underweight, you emo, you!&quot;</span>
-    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">25.0</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re supposedly normal. Pffft, I bet you&#39;re ugly!&quot;</span>
-    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">30.0</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re fat! Lose some weight, fatty!&quot;</span>
+    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">18.5</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re underweight, you emo, you!&quot;</span>
+    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">25.0</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re supposedly normal. Pffft, I bet you&#39;re ugly!&quot;</span>
+    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">30.0</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re fat! Lose some weight, fatty!&quot;</span>
     <span class="o">|</span> <span class="n">otherwise</span>                   <span class="ow">=</span> <span class="s">&quot;You&#39;re a whale, congratulations!&quot;</span>
 </pre></div>
 
@@ -16035,7 +16083,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">bmiTell</span> <span class="mi">70</span> <span class="mf">1.78</span>
@@ -16077,7 +16125,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">max&#39;</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Ord</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span>
@@ -16104,7 +16152,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">max&#39;</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Ord</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span>
@@ -16127,7 +16175,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">myCompare</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Ord</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Ordering</span>
@@ -16143,7 +16191,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">3</span> <span class="p">`</span><span class="n">myCompare</span><span class="p">`</span> <span class="mi">2</span>
@@ -16200,14 +16248,14 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">bmiTell</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
 <span class="nf">bmiTell</span> <span class="n">weight</span> <span class="n">height</span>
-    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">18.5</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re underweight, you emo, you!&quot;</span>
-    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">25.0</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re supposedly normal. Pffft, I bet you&#39;re ugly!&quot;</span>
-    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">30.0</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re fat! Lose some weight, fatty!&quot;</span>
+    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">18.5</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re underweight, you emo, you!&quot;</span>
+    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">25.0</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re supposedly normal. Pffft, I bet you&#39;re ugly!&quot;</span>
+    <span class="o">|</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mf">30.0</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re fat! Lose some weight, fatty!&quot;</span>
     <span class="o">|</span> <span class="n">otherwise</span>                   <span class="ow">=</span> <span class="s">&quot;You&#39;re a whale, congratulations!&quot;</span>
 </pre></div>
 
@@ -16220,9 +16268,9 @@ font-weight: bold;
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>그런데 위 함수는 아래 표현식이 반복적으로 언급되었다.</p>
-<div class="highlight"><pre><span></span><span class="nf">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span>
+<div class="highlight"><pre><span></span><span class="nf">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span>
 </pre></div>
-<p>이런 경우에 위 표현식에 이름을 주면 함수를 보다 단순하게 작성할 수 있으며,
+<p>이런 경우에 위 표현식에 이름을 주어 상수로 지정할 수 있으며,
 단축 이름은 <code>where</code> 절에서 지정한다.</p>
 
 </div>
@@ -16230,7 +16278,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">bmiTell</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
@@ -16239,7 +16287,7 @@ font-weight: bold;
     <span class="o">|</span> <span class="n">bmi</span> <span class="o">&lt;=</span> <span class="mf">25.0</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re supposedly normal. Pffft, I bet you&#39;re ugly!&quot;</span>
     <span class="o">|</span> <span class="n">bmi</span> <span class="o">&lt;=</span> <span class="mf">30.0</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re fat! Lose some weight, fatty!&quot;</span>
     <span class="o">|</span> <span class="n">otherwise</span>   <span class="ow">=</span> <span class="s">&quot;You&#39;re a whale, congratulations!&quot;</span>
-    <span class="kr">where</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span>
+    <span class="kr">where</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span>
 </pre></div>
 
     </div>
@@ -16257,30 +16305,29 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>키워드 <code>where</code>은 가드 뒤에 붙임.<ul>
-<li><code>where</code>은 pipe의 인덴트와 동일한만큼의 인덴트를 주는 것이 좋음</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><code>where</code>에서 여러 개의 이름이나 함수를 정의할 수 있음<ul>
-<li>정의된 이름들은 가드 전체에서 사용할 수 있고, 같은 것을 반복하지 않도록 해줌</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>위의 예시에서 BMI를 다른 방식으로 계산하고 싶다면, <code>where</code> 뒤에 있는 공식을 한 번만 바꿔주면 됨.</li>
-<li>특정한 개체에 이름을 붙임으로써 가독성을 높이고, <code>bmi</code> 같은 변수가 한 번만 계산되게 함으로써, 프로그램의 속도를 빠르게 만들어줌</li>
-<li>함수를 아래처럼 표현할 수 있음:</li>
-</ul>
+<p><code>where</code> 절은 하나의 패턴 내에서 사용되며, 가드와 동일한 수준으로 들여써서 사용한다.
+위 정의의 <code>bmi</code>를 지정한 것처럼 특정 표현식에 이름을 붙임으로써 가독성을 높이고, 
+해당 표현식의 값이 한 번만 계산되게 함으로써, 프로그램의 실행속도를 높혀준다. 
+또한 필요한 경우 지정된 이름에 다른 값을 지정하면 함수 자체를 더 이상 수정할 필요가 없어서
+프로그래밍 효율성도 함께 높아진다.</p>
+<p>여러 개의 상수 또는 함수를 <code>where</code> 절에서 정의할 수 있으려, 
+일반적으로 아래 형식을 갖는다.</p>
+<div class="highlight"><pre><span></span><span class="kr">where</span> <span class="err">바인딩</span><span class="mi">1</span>
+      <span class="err">바인딩</span><span class="mi">2</span>
+      <span class="o">...</span>
+      <span class="err">바인딩</span><span class="n">k</span>
+</pre></div>
+<p><strong>바인딩</strong>(binding)의 형식은 상수 또는 함수를 정의하는 형식과 동일하다.
+아래 예제는 네 개의 바인딩을 사용하며 
+각각 <code>bmi</code>, <code>skinny</code>, <code>normal</code>, <code>fat</code> 등 총 4개의 상수를 정의하는 것을 보여준다. 
+바인딩의 열맞춤에 주의해야 한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">bmiTell</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
@@ -16289,7 +16336,7 @@ font-weight: bold;
     <span class="o">|</span> <span class="n">bmi</span> <span class="o">&lt;=</span> <span class="n">normal</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re supposedly normal. Pffft, I bet you&#39;re ugly!&quot;</span>
     <span class="o">|</span> <span class="n">bmi</span> <span class="o">&lt;=</span> <span class="n">fat</span>    <span class="ow">=</span> <span class="s">&quot;You&#39;re fat! Lose some weight, fatty!&quot;</span>
     <span class="o">|</span> <span class="n">otherwise</span>     <span class="ow">=</span> <span class="s">&quot;You&#39;re a whale, congratulations!&quot;</span>
-    <span class="kr">where</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span>
+    <span class="kr">where</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span>
           <span class="n">skinny</span> <span class="ow">=</span> <span class="mf">18.5</span>
           <span class="n">normal</span> <span class="ow">=</span> <span class="mf">25.0</span>
           <span class="n">fat</span> <span class="ow">=</span> <span class="mf">30.0</span>
@@ -16303,13 +16350,19 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>어떤 함수의 where 절에서 정의된 이름들은 그 함수 내에서만 사용 가능</li>
-<li>모든 이름들이 같은 줄에 맞춰서 정렬되있어야 함<ul>
-<li>같은 줄에 맞추지 않으면, 하스켈은 어디서 어디까지가 같은 블록의 일부인지를 알 수 없음</li>
-</ul>
-</li>
-</ul>
+<h3 id="where-&#51208;&#51032;-&#50689;&#54693;&#47141;"><code>where</code> &#51208;&#51032; &#50689;&#54693;&#47141;<a class="anchor-link" href="#where-&#51208;&#51032;-&#50689;&#54693;&#47141;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>특정 함수를 정의할 때 사용되는 <code>where</code> 절에서 정의된 상수와 함수는 
+해당 함수 내에서만 사용할 수 있다.
+심지어 한 함수 내에서도 하나의 패턴 내에서만 영향을 갖는다.
+즉, <code>where</code> 절에서 정의된 상수와 함수의 활동영역(scope)이 매우 제한적이다. 
+여러 패턴, 여러 함수에서 공유될 수 있는 이름은
+전역 함수로 정의해야 한다.</p>
 
 </div>
 </div>
@@ -16317,44 +16370,51 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="where-&#53945;&#51669;">where &#53945;&#51669;<a class="anchor-link" href="#where-&#53945;&#51669;">&#182;</a></h3><ul>
-<li><em>where</em> 절은 함수의 서로 다른 패턴까지 공유되지 않음<ul>
-<li>한 함수 내에 여러 개의 패턴에서 공유되는 이름을 만들고 싶다면, 이름을 전역적인 공간에서 정의해야 함</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>where 절에서도 패턴 매칭을 사용할 수 있음<ul>
-<li>위의 함수를 패턴 매칭을 활용해 표현해보면: </li>
-</ul>
-</li>
-</ul>
-
+<h3 id="where-&#51208;&#44284;-&#54056;&#53556;-&#47588;&#52845;"><code>where</code> &#51208;&#44284; &#54056;&#53556; &#47588;&#52845;<a class="anchor-link" href="#where-&#51208;&#44284;-&#54056;&#53556;-&#47588;&#52845;">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="o">...</span>
-    <span class="kr">where</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span>
-          <span class="p">(</span><span class="n">skinny</span><span class="p">,</span> <span class="n">normal</span><span class="p">,</span> <span class="n">fat</span><span class="p">)</span> <span class="ow">=</span> <span class="p">(</span><span class="mf">18.5</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>예시 1. 사람의 성과 이름을 받아 이니셜을 돌려주는 함수</strong></p>
+<p><code>where</code> 절 내에서 패턴 매칭을 사용할 수 있다. 
+예를 들어, <code>bmiTell</code> 함수를 아래와 같이 정의할 수 있다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">bmiTell</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">bmiTell</span> <span class="n">weight</span> <span class="n">height</span>
+    <span class="o">|</span> <span class="n">bmi</span> <span class="o">&lt;=</span> <span class="n">skinny</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re underweight, you emo, you!&quot;</span>
+    <span class="o">|</span> <span class="n">bmi</span> <span class="o">&lt;=</span> <span class="n">normal</span> <span class="ow">=</span> <span class="s">&quot;You&#39;re supposedly normal. Pffft, I bet you&#39;re ugly!&quot;</span>
+    <span class="o">|</span> <span class="n">bmi</span> <span class="o">&lt;=</span> <span class="n">fat</span>    <span class="ow">=</span> <span class="s">&quot;You&#39;re fat! Lose some weight, fatty!&quot;</span>
+    <span class="o">|</span> <span class="n">otherwise</span>     <span class="ow">=</span> <span class="s">&quot;You&#39;re a whale, congratulations!&quot;</span>
+    <span class="kr">where</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span>
+          <span class="p">(</span><span class="n">skinny</span><span class="p">,</span> <span class="n">normal</span><span class="p">,</span> <span class="n">fat</span><span class="p">)</span> <span class="ow">=</span> <span class="p">(</span><span class="mf">18.5</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>where</code> 절에서 패턴 매칭을 사용하는 예를 몇 개 살펴본다. 
+아래 예제는 좀 작위적이지만 패턴 매칭의 활용성을 잘 보여준다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">initials</span> <span class="ow">::</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
@@ -16371,31 +16431,180 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>패턴 매칭을 함수의 인자에서 직접적으로 수행할 수 있음<ul>
-<li>이렇게 표현하면 더 짧고 직관적임</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>where 절에서 상수를 정의한 것처럼, 함수도 정의 가능</li>
-</ul>
-<p><strong>예시 2. BMI의 리스트를 반환하는 함수</strong></p>
-<ul>
-<li>몸무게와 키를 항목으로 가지는 튜플의 리스트를 받아와 BMI의 리스트를 반환해주는 함수</li>
-</ul>
+<p>하스켈 언어는 <a href="https://en.wikipedia.org/wiki/Haskell_Curry">Haskell Curry(1900-1982)</a>
+라는 미국 수리논리학자의 이름을 따서 만들었다.
+Haskell Curry의 약자는 다음과 같다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">initials</span> <span class="s">&quot;Haskell&quot;</span> <span class="s">&quot;Curry&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;H. C.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>사실 위 함수는 아래처럼 <code>where</code> 절을 사용하지 않으면서 함수의 인자에 대한 패턴 매칭을 직접 적용하는 게
+더 간결하다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">initials</span> <span class="ow">::</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">initials</span> <span class="p">(</span><span class="n">f</span><span class="kt">:</span><span class="kr">_</span><span class="p">)</span> <span class="p">(</span><span class="n">l</span><span class="kt">:</span><span class="kr">_</span><span class="p">)</span> <span class="ow">=</span> <span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">++</span> <span class="s">&quot;. &quot;</span> <span class="o">++</span> <span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">++</span> <span class="s">&quot;.&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">initials</span> <span class="s">&quot;Haskell&quot;</span> <span class="s">&quot;Curry&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;H. C.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>물론 <code>as</code> 패턴 사용도 가능하다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">initials</span> <span class="ow">::</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">initials</span> <span class="n">firstname</span><span class="o">@</span><span class="p">(</span><span class="n">f</span><span class="kt">:</span><span class="kr">_</span><span class="p">)</span> <span class="n">lastname</span><span class="o">@</span><span class="p">(</span><span class="n">l</span><span class="kt">:</span><span class="kr">_</span><span class="p">)</span> <span class="ow">=</span> <span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">++</span> <span class="s">&quot;. &quot;</span> <span class="o">++</span> <span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">++</span> <span class="s">&quot;.&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">initials</span> <span class="s">&quot;Haskell&quot;</span> <span class="s">&quot;Curry&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;H. C.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>앞서 정의한 <code>bmiTell</code> 함수에서 사용하는 <code>bmi</code> 값은 하나의 값으로 고정된다.
+변하는 값을 다루기 위해서는 아래와 같은 체질량지수를 반환하는 함수가 필요하다.</p>
+<div class="highlight"><pre><span></span><span class="nf">bmi</span> <span class="n">weight</span> <span class="n">height</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+<p>다행히도 <code>where</code> 절에서 함수를 정의할 수 있다. 
+아래 <code>calcBmis</code> 함수는 여러 명의 체중과 키 정보가 담긴 리스트를 이용하여 
+각자의 체질량지수를 계산한다.</p>
+<p><strong>주의:</strong> 리스트 조건제시법을 활용한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">calcBmis</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
 <span class="nf">calcBmis</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmi</span> <span class="n">w</span> <span class="n">h</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">]</span>
-    <span class="kr">where</span> <span class="n">bmi</span> <span class="n">weight</span> <span class="n">height</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span> <span class="o">^</span> <span class="mi">2</span>
+    <span class="kr">where</span> <span class="n">bmi</span> <span class="n">weight</span> <span class="n">height</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span>
 </pre></div>
 
     </div>
@@ -16406,9 +16615,261 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><code>bmi</code>를 함수의 인자로 소개한 이유는, 함수의 인자로부터 하나의 BMI를 계산할 수 없기 때문. 함수에서 넘어온 인자를 조사해 모든 튜플에 대해 서로 다른 BMI를 각각 계산해야 함.</li>
-</ul>
+<p>몸무게와 키가 각각 다음과 같은 세 명의 체질량지수를 계산해보자.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">w_h_List</span> <span class="ow">=</span> <span class="p">[(</span><span class="mi">65</span><span class="p">,</span> <span class="mf">1.60</span><span class="p">),</span> <span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mf">1.87</span><span class="p">),</span> <span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mf">1.67</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">calcBmis</span> <span class="n">w_h_List</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>[25.390624999999996,27.166919271354622,16.1353938828929]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>체질량지수를 직접 확인하는 것 보다는 <code>bmiTell</code> 함수를 활용하면 결과를 보다 쉽게 파악할 수도 있다. 
+하지만 이전 정의에서는 반환값으로 사용된 문자열이 좀 수다스럽기에 여기서는 조금 간결하게 다시 정의해서 사용한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">bmiTell</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">bmiTell</span> <span class="n">bmi</span>
+    <span class="o">|</span> <span class="n">bmi</span> <span class="o">&lt;=</span> <span class="mf">18.5</span> <span class="ow">=</span> <span class="s">&quot;Underweight&quot;</span>
+    <span class="o">|</span> <span class="n">bmi</span> <span class="o">&lt;=</span> <span class="mf">25.0</span> <span class="ow">=</span> <span class="s">&quot;Normal&quot;</span>
+    <span class="o">|</span> <span class="n">bmi</span> <span class="o">&lt;=</span> <span class="mf">30.0</span> <span class="ow">=</span> <span class="s">&quot;Fat&quot;</span>
+    <span class="o">|</span> <span class="n">otherwise</span>   <span class="ow">=</span> <span class="s">&quot;A whale&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>bmiTell</code> 함수를 활용하는 두 가지 방법을 소개한다. 
+한 가지는 <code>calcBmis</code> 함수를 수정하는 방식이고 
+다른 하나는 그러지 않는 방식이다.</p>
+<p>먼저 수정하지 않는 방식은 <code>map</code> 함수를 활용한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">map</span> <span class="n">bmiTell</span> <span class="p">(</span><span class="n">calcBmis</span> <span class="n">w_h_List</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>[&#34;Fat&#34;,&#34;Fat&#34;,&#34;Underweight&#34;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>map</code> 함수의 활용법은 나중에 고계함수(higher-order function)을 소개할 때 자세히 설명한다. 
+여기서는 리스트 각각의 항목에 대해 지정된 함수를 실행한 결과값으로 이루어진 리스트를 반환한다는 정도만 
+기억해두면 좋다. 
+참고로 <code>map</code> 함수의 유형은 다음과 같다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="kt">:</span><span class="n">t</span> <span class="n">map</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<style>/* Styles used for the Hoogle display in the pager */
+.hoogle-doc {
+display: block;
+padding-bottom: 1.3em;
+padding-left: 0.4em;
+}
+.hoogle-code {
+display: block;
+font-family: monospace;
+white-space: pre;
+}
+.hoogle-text {
+display: block;
+}
+.hoogle-name {
+color: green;
+font-weight: bold;
+}
+.hoogle-head {
+font-weight: bold;
+}
+.hoogle-sub {
+display: block;
+margin-left: 0.4em;
+}
+.hoogle-package {
+font-weight: bold;
+font-style: italic;
+}
+.hoogle-module {
+font-weight: bold;
+}
+.hoogle-class {
+font-weight: bold;
+}
+.get-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+display: block;
+white-space: pre-wrap;
+}
+.show-type {
+color: green;
+font-weight: bold;
+font-family: monospace;
+margin-left: 1em;
+}
+.mono {
+font-family: monospace;
+display: block;
+}
+.err-msg {
+color: red;
+font-style: italic;
+font-family: monospace;
+white-space: pre;
+display: block;
+}
+#unshowable {
+color: red;
+font-weight: bold;
+}
+.err-msg.in.collapse {
+padding-top: 0.7em;
+}
+.highlight-code {
+white-space: pre;
+font-family: monospace;
+}
+.suggestion-warning { 
+font-weight: bold;
+color: rgb(200, 130, 0);
+}
+.suggestion-error { 
+font-weight: bold;
+color: red;
+}
+.suggestion-name {
+font-weight: bold;
+}
+</style><span class='get-type'>map :: forall a b. (a -> b) -> [a] -> [b]</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>위 유형의 의미는 다음과 같다.</p>
+<blockquote><p>유형 <code>a</code>에서 유형 <code>b</code>로 가는 함수와 <code>a</code> 유형의 리스트가 인자로 들어오면 <code>b</code> 유형의 리스트를 반환한다.</p>
+</blockquote>
+<p>예를 들어, <code>f :: a -&gt; b</code> 이고 <code>[a1, a2, ..., ak] :: [a]</code> 이면 다음이 성립한다.</p>
+<div class="highlight"><pre><span></span><span class="nf">map</span> <span class="n">f</span> <span class="p">[</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">ak</span><span class="p">]</span> <span class="ow">=</span> <span class="p">[</span><span class="n">f</span> <span class="n">a1</span><span class="p">,</span> <span class="n">f</span> <span class="n">a2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">f</span> <span class="n">ak</span><span class="p">]</span>
+</pre></div>
 
 </div>
 </div>
@@ -16416,8 +16877,88 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><code>map</code> 함수를 사용하지 않으려면 예를 들어 아래처럼 <code>bmiTell</code> 함수를 이용하여 <code>calcBmis</code> 함수를 정의할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">calcBmis</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+<span class="nf">calcBmis</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmiTell</span> <span class="p">(</span><span class="n">bmi</span> <span class="n">w</span> <span class="n">h</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">]</span>
+    <span class="kr">where</span> <span class="n">bmi</span> <span class="n">weight</span> <span class="n">height</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">calcBmis</span> <span class="p">[(</span><span class="mi">65</span><span class="p">,</span> <span class="mf">1.60</span><span class="p">),</span> <span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mf">1.87</span><span class="p">),</span> <span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mf">1.67</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>[&#34;Fat&#34;,&#34;Fat&#34;,&#34;Underweight&#34;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><code>where</code> 절 안에서 패턴 매칭을 이용한 함수 정의하기 또한 가능하다.
-앞서 <code>case</code> 표현식을 설명할 때 정의했던 <code>describeList</code> 함수를 <code>where</code> 절를 이용하여
+앞서 <code>case</code> 표현식을 설명할 때 정의했던 <code>describeList</code> 함수는 다음과 같다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList</span> <span class="ow">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">describeList</span> <span class="n">xs</span> <span class="ow">=</span> <span class="s">&quot;The list is &quot;</span> <span class="o">++</span> <span class="kr">case</span> <span class="n">xs</span> <span class="kr">of</span> <span class="kt">[]</span>  <span class="ow">-&gt;</span> <span class="s">&quot;empty.&quot;</span>
+                                               <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="s">&quot;a singleton list.&quot;</span>
+                                               <span class="n">xs</span>  <span class="ow">-&gt;</span> <span class="s">&quot;a longer list.&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>위 함수를 <code>where</code> 절를 이용하여
 다음과 같이 재정의 할 수 있다.</p>
 
 </div>
@@ -16425,7 +16966,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList</span> <span class="ow">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
@@ -16443,13 +16984,337 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="where-&#51208;-&#51473;&#52393;-&#49324;&#50857;">where &#51208; &#51473;&#52393; &#49324;&#50857;<a class="anchor-link" href="#where-&#51208;-&#51473;&#52393;-&#49324;&#50857;">&#182;</a></h3><ul>
-<li>where 절 또한 중첩해서 사용 가능</li>
-<li>함수를 만들 땐 도우미 함수(helper function)를 그 함수의 where 절로 만들고, 도우미 함수가 잘 작동하기 위한 도우미 함수를 다시 그 함수의 where 절에 정의할 수 있음</li>
-</ul>
+<h3 id="&#51473;&#52393;-where-&#51208;">&#51473;&#52393; <code>where</code> &#51208;<a class="anchor-link" href="#&#51473;&#52393;-where-&#51208;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>함수의 정의를 너무 복잡하게 만들기에 권장되지는 않지만 <code>where</code> 절을 중첩해서 사용할 수 있다. 
+예를 들어, 위 <code>describeList</code> 함수는 리스트의 길이가 2 이상이면 'long list'라는 내용을 반환한다.
+아래 함수는 길이가 2이면 'two-item list', 
+길이가 3 이상일 때 'longer than two'라는 내용을 반환하도록 수정하였다.</p>
+<p><strong>주의사항:</strong>
+<code>where</code> 절은 하나의 패턴 내에서 사용되기에, 
+<code>where</code> 절을 중첩으로 사용하려면 먼저 패턴을 중첩으로 사용해야 한다.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList&#39;</span> <span class="ow">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">describeList&#39;</span> <span class="n">xs</span> <span class="ow">=</span> <span class="s">&quot;The list is &quot;</span> <span class="o">++</span> <span class="n">what</span> <span class="n">xs</span>
+    <span class="kr">where</span> <span class="n">what</span> <span class="kt">[]</span>  <span class="ow">=</span> <span class="s">&quot;empty.&quot;</span>
+          <span class="n">what</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="ow">=</span> <span class="s">&quot;a singleton list.&quot;</span>
+          <span class="n">what</span> <span class="n">xs</span> 
+              <span class="o">|</span> <span class="n">length</span> <span class="n">xs</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">=</span> <span class="s">&quot;a two-item list.&quot;</span>
+              <span class="o">|</span> <span class="n">otherwise</span>      <span class="ow">=</span> <span class="n">reallyLong</span>
+              <span class="kr">where</span> <span class="n">reallyLong</span> <span class="ow">=</span> <span class="s">&quot;longer than two.&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList&#39;</span> <span class="kt">[]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;The list is empty.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList&#39;</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;The list is a singleton list.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList&#39;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;The list is a two-item list.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList&#39;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;The list is longer than two.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>위 정의는 중첩 <code>where</code> 절의 사용법을 보여주기 위해 매우 인위적으로 작성하였다.
+앞서 언급하였듯이 <code>where</code> 절을 포함하여 <code>if</code> 표현식, 패턴 매칭 등을 중첩으로 
+사용하는 것은 권장되지 않는다. 
+실제로 많은 경우 굳이 중첩 사용을 피할 수 있다. 
+위 함수의 경우도 사실은 아래와 같이 정의하면 보다 이해하기 쉽다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList&#39;&#39;</span> <span class="ow">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">describeList&#39;&#39;</span> <span class="n">xs</span> <span class="ow">=</span> <span class="s">&quot;The list is &quot;</span> <span class="o">++</span> <span class="n">what</span> <span class="n">xs</span>
+    <span class="kr">where</span> <span class="n">what</span> <span class="kt">[]</span>     <span class="ow">=</span> <span class="s">&quot;empty.&quot;</span>
+          <span class="n">what</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>    <span class="ow">=</span> <span class="s">&quot;a singleton list.&quot;</span>
+          <span class="n">what</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="ow">=</span> <span class="s">&quot;a two-item list.&quot;</span>
+          <span class="n">what</span> <span class="n">xs</span>     <span class="ow">=</span> <span class="s">&quot;longer than two.&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList&#39;&#39;</span> <span class="kt">[]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;The list is empty.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList&#39;&#39;</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;The list is a singleton list.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList&#39;&#39;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;The list is a two-item list.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">describeList&#39;&#39;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;The list is longer than two.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -16461,34 +17326,159 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>let 절은 where 절과 굉장히 비슷함.<ul>
-<li>where 절은 함수의 맨 마지막에서 변수를 묶을 수 있고(bind) 그것을 모든 가드를 포함한 전체 함수 정의에서 사용할 수 있는 구문론적 구조</li>
-<li>let 절은 어디서든 표현식과 변수를 묶을 수 있게 해주지만, 굉장히 지역적이므로 가든 전체에서 사용하지는 못함</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>하스켈에 있는 값을 그 이름과 묶기 위한 용도로 사용되는 다른 구조들과 마찬가지로, let 바인딩은 패턴 매칭을 위해 사용될 수 있음</li>
-</ul>
-<p><strong>예시 1. 원기둥의 겉넓이를 구하는 함수</strong></p>
-<ul>
-<li>원기둥의 높이와 반지름을 이용해서 원기둥의 겉넓이를 구해주는 함수</li>
-</ul>
+<p><code>let</code> 표현식의 기본적인 형태는 다음과 같다.
+(바인딩은 앞서 <code>where</code> 절에서 설명한 것과 동일함)</p>
+<div class="highlight"><pre><span></span><span class="kr">let</span> <span class="err">바인딩</span><span class="mi">1</span>
+    <span class="err">바인딩</span><span class="mi">2</span>
+    <span class="o">...</span>
+    <span class="err">바인딩</span><span class="n">k</span>
+<span class="kr">in</span> <span class="err">표현식</span>
+</pre></div>
+<p>형식에서 알아볼 수 있듯이 <code>let</code> 표현식은 
+좁은 영역(local)에서 사용될 수 있는 상수 또는 함수를 지정한다. 
+예를 들어, 원기둥의 높이와 반지름을 이용해서 원기둥의 겉넓이를 구해주는 함수는 다음과 같다. 
+(함수 정의 패턴 매칭에 사용되는 변수를 활용하였음)</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">cylinder</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span>
-<span class="nf">cylinder</span> <span class="n">r</span> <span class="n">h</span> <span class="ow">=</span>
-    <span class="kr">let</span> <span class="n">sideArea</span> <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">h</span>
-        <span class="n">topArea</span> <span class="ow">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">^</span><span class="mi">2</span>
-    <span class="kr">in</span>  <span class="n">sideArea</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">topArea</span>
+<span class="nf">cylinder</span> <span class="n">r</span> <span class="n">h</span> <span class="ow">=</span> <span class="kr">let</span> <span class="n">sideArea</span> <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">h</span>
+                   <span class="n">topArea</span> <span class="ow">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">^</span><span class="mi">2</span>
+               <span class="kr">in</span>  <span class="n">sideArea</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">topArea</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">cylinder</span> <span class="mi">2</span> <span class="mi">3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>62.83185307179586</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>let</code> 표현식 대신에 <code>where</code> 절을 이용할 수 있다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">cylinder&#39;</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span>
+<span class="nf">cylinder&#39;</span> <span class="n">r</span> <span class="n">h</span> <span class="ow">=</span> <span class="n">sideArea</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">topArea</span>
+               <span class="kr">where</span> <span class="n">sideArea</span> <span class="ow">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">h</span>
+                     <span class="n">topArea</span> <span class="ow">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">^</span><span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">cylinder&#39;</span> <span class="mi">2</span> <span class="mi">3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>62.83185307179586</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="let-&#54364;&#54788;&#49885;&#51032;-&#53945;&#51669;"><code>let</code> &#54364;&#54788;&#49885;&#51032; &#53945;&#51669;<a class="anchor-link" href="#let-&#54364;&#54788;&#49885;&#51032;-&#53945;&#51669;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>앞서 살펴 보았듯이 
+<code>let</code> 바인딩과 <code>where</code> 바인딩은 기본적으로 동일한 역할을 수행한다. 
+다만 다음 두 가지 측면에서 서로 다른 특성을 갖는다.</p>
+<p>첫째, <code>where</code> 절은 함수의 본문 끝에 위치하며 따라서 사용되는 바인딩이 함수 전체에 영향을 미친다.
+반면에 <code>let</code> 바인딩에서 정의되는 상수 및 함수는 <code>in</code> 키워드 다음에 위치한 표현식에서만 사용할 수 있다.
+따라서 <code>let</code> 바인딩의 적용 범위(scope)는 <code>where</code> 절 바인딩의 적용 영역보다 보다 좁다. 
+따라서 임의의 <code>where</code> 절을 간단한 <code>let</code> 표현식으로 구현할 수 있는 것은 아니다.
+예를 들어, 아래 함수의 경우가 그러하다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">f</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Ord</span> <span class="n">a</span><span class="p">,</span> <span class="kt">Show</span> <span class="n">a</span><span class="p">,</span> <span class="kt">Num</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">String</span>
+<span class="nf">f</span> <span class="n">x</span> <span class="n">y</span> <span class="o">|</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">z</span>  <span class="ow">=</span> <span class="n">show</span> <span class="n">y</span> <span class="o">++</span> <span class="s">&quot;is very big.&quot;</span>
+      <span class="o">|</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="n">z</span> <span class="ow">=</span> <span class="n">show</span> <span class="n">y</span> <span class="o">++</span> <span class="s">&quot;is not so big.&quot;</span>
+      <span class="kr">where</span> <span class="n">z</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 </pre></div>
 
     </div>
@@ -16499,26 +17489,15 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="let&#51032;-&#54805;&#53468;">let&#51032; &#54805;&#53468;<a class="anchor-link" href="#let&#51032;-&#54805;&#53468;">&#182;</a></h3><ul>
-<li>기본적인 형태: <code>let &lt;bindings&gt; in &lt;expression&gt;</code></li>
-<li><em>let</em> 부분에서 정의한 이름은 <em>in</em> 이후 부분에서 나오는 표현식에서 사용 가능</li>
-<li><em>where</em> 절을 이용해서도 구현할 수 있음</li>
-<li>이름들이 같은 줄에 맞춰서 정렬되어 있어야함</li>
-</ul>
-<h3 id="where&#44284;-let-&#51208;&#51032;-&#52264;&#51060;&#51216;">where&#44284; let &#51208;&#51032; &#52264;&#51060;&#51216;<a class="anchor-link" href="#where&#44284;-let-&#51208;&#51032;-&#52264;&#51060;&#51216;">&#182;</a></h3><ol>
-<li><em>let</em> 절은 값과 변수를 묶는 작업을 먼저 하고 묶인 변수가 쓰이는 표현식이 나중에 나오는 반면 <em>where</em> 절은 순서가 반대</li>
-<li><em>let</em> 절은 그 자체로 표현식이고 <em>where</em> 절은 구문론적인 구문임<ul>
-<li>if 구문에서 if 구문은 표현식이기 때문에 어디서든 사용 가능했던 것처럼 let 절에서도 똑같이 가능</li>
-</ul>
-</li>
-</ol>
+<p>둘째, <code>where</code> 절은 패턴 매칭 또는 가드 등 지정된 구문 형식에만 활용될 수 있는 반면에,
+<code>let</code> 표현식은 <code>if</code> 표현식처럼 임의의 표현식에 활용될 수 있다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="kr">if</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="kr">then</span> <span class="s">&quot;Woo&quot;</span> <span class="kr">else</span> <span class="s">&quot;Boo&quot;</span><span class="p">,</span> <span class="kr">if</span> <span class="sc">&#39;a&#39;</span> <span class="o">&gt;</span> <span class="sc">&#39;b&#39;</span> <span class="kr">then</span> <span class="s">&quot;Foo&quot;</span> <span class="kr">else</span> <span class="s">&quot;Bar&quot;</span><span class="p">]</span>
@@ -16551,7 +17530,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="kr">if</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="kr">then</span> <span class="mi">10</span> <span class="kr">else</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
@@ -16584,7 +17563,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[114]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="kr">let</span> <span class="n">a</span> <span class="ow">=</span> <span class="mi">9</span> <span class="kr">in</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
@@ -16615,19 +17594,9 @@ font-weight: bold;
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="let-&#51208;&#51032;-&#53945;&#51669;">let &#51208;&#51032; &#53945;&#51669;<a class="anchor-link" href="#let-&#51208;&#51032;-&#53945;&#51669;">&#182;</a></h3><ul>
-<li>let 절은 지역적인 범위에서 쓰이는 함수를 만들 때에도 사용</li>
-</ul>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">[</span><span class="kr">let</span> <span class="n">square</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="kr">in</span> <span class="p">(</span><span class="n">square</span> <span class="mi">5</span><span class="p">,</span> <span class="n">square</span> <span class="mi">3</span><span class="p">,</span> <span class="n">square</span> <span class="mi">2</span><span class="p">)]</span>
@@ -16661,8 +17630,17 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="let-&#54364;&#54788;&#49885;-&#54876;&#50857;&#48277;"><code>let</code> &#54364;&#54788;&#49885; &#54876;&#50857;&#48277;<a class="anchor-link" href="#let-&#54364;&#54788;&#49885;-&#54876;&#50857;&#48277;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>아래 예제들은 <code>let</code> 표현식의 다양한 활용법을 보여준다.</p>
 <ul>
-<li>한 줄에 여러 개의 변수를 묶고 싶다면, 줄을 맞추기 않아도 되지만 세미콜론(;)으로 구분해야함</li>
+<li><strong>세미콜론 활용:</strong> 여러 개의 바인딩을 세미콜론(;)으로 구분하며 한 줄로 작성할 수 있으며,
+  마지막 바인딩 뒤에는 세미콜론을 사용하지 않아도 된다. </li>
 </ul>
 
 </div>
@@ -16670,7 +17648,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="kr">let</span> <span class="n">a</span> <span class="ow">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">b</span> <span class="ow">=</span> <span class="mi">200</span><span class="p">;</span> <span class="n">c</span> <span class="ow">=</span> <span class="mi">300</span> <span class="kr">in</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="kr">let</span> <span class="n">foo</span><span class="ow">=</span><span class="s">&quot;Hey &quot;</span><span class="p">;</span> <span class="n">bar</span> <span class="ow">=</span> <span class="s">&quot;there!&quot;</span> <span class="kr">in</span> <span class="n">foo</span> <span class="o">++</span> <span class="n">bar</span><span class="p">)</span>
@@ -16705,13 +17683,8 @@ font-weight: bold;
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>마지막 바인딩 뒤에는 세미콜론을 붙일 필요 없지만, 붙여도 상관 없음</p>
-</li>
-<li><p>let 바인딩과 함께 패턴 매칭을 사용할 수 있음</p>
-<ul>
-<li>튜플을 항목들로 빠르게 분해해서 이름을 붙이는 것 같은 작업에 굉장히 유용함</li>
-</ul>
-</li>
+<li><strong>패턴 매칭 활용:</strong> <code>let</code> 바인딩과 함께 패턴 매칭을 사용할 수 있다.
+  예를 들어, 튜플 패턴 매칭을 이용하면 항목별 이름을 간단하게 지정하여 활용할 수 있다.</li>
 </ul>
 
 </div>
@@ -16719,7 +17692,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="p">(</span><span class="kr">let</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span> <span class="ow">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="kr">in</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
@@ -16754,11 +17727,15 @@ font-weight: bold;
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><em>let</em> 절은 리스트 조건 제시법에서도 사용 가능</li>
-</ul>
-<p><strong>예시 2. BMI 계산 함수</strong></p>
-<ul>
-<li>몸무게와 키를 항목으로 가지는 튜플의 리스트를 받아서 BMI를 계산하는 이전의 예제를 <em>where</em> 절에서 보조 함수를 정의해서 쓰는 대신 리스트 조건 제시법 안에서 <em>let</em>절을 이용하도록 수정</li>
+<li><p><strong>리스트 조건제시법 활용:</strong> 리스트 조건제시법을 정의할 때 <code>let</code> 바인딩을 사용할 수 있다. 
+  예를 들어, 아래와 같이 정의되었던 <code>calcBmis</code> 함수를 <code>let</code> 바인딩을 이용하여 정의해보자.</p>
+<div class="highlight"><pre><span></span><span class="nf">calcBmis</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+  <span class="n">calcBmis</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmiTell</span> <span class="p">(</span><span class="n">bmi</span> <span class="n">w</span> <span class="n">h</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">]</span>
+      <span class="kr">where</span> <span class="n">bmi</span> <span class="n">weight</span> <span class="n">height</span> <span class="ow">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+<p>방법은 <code>where</code> 절을 <code>let</code> 표현식으로 바꾸어 조건제시법 내부로 끌어 들이기만 하면 된다.
+  결과는 다음과 같다.</p>
+</li>
 </ul>
 
 </div>
@@ -16766,7 +17743,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[118]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">calcBmis</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
@@ -16781,27 +17758,29 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>위 조건제시법에 사용된 <code>let</code> 바인딩은 다음과 같이 이해해야 한다.</p>
 <ul>
-<li><em>let</em> 절을 리스트 조건 제시법에서 술어를 쓰듯이 포함시킬 수 있음<ul>
-<li>이 경우 리스트를 필터링하지 않음. 이름과 값을 묶는 역할만 수행</li>
+<li><code>let</code> 바인딩은 리스트에 포함되는 항목을 필터링하는 용도로 사용되지 않는다. </li>
+<li><code>let</code> 바인딩에서 정의된 이름은 파이프 기호 왼편에 위치한 항목 표현식에 사용될 수 있다.</li>
 </ul>
-</li>
-</ul>
+<p>또한 아래 기능도 기억해두어야 한다.</p>
 <ul>
-<li>리스트 조건 제시법의 내부의 <em>let</em>절에서 정의된 이름들은 출력 함수(파이프(|) 전부분)와 해당 바인딩(let 절) 이후에 오는 섹션들, 술어들에서만 사용할 수 있음</li>
-<li>따라서 위 함수를 뚱뚱한 사람들의 BMI만 반환하도록 만들 수 있음</li>
+<li><code>let</code> 바인딩에서 정의된 이름은 이후에 지정되는 조건식에서 활용될 수 있다. 
+  하지만 이전에 지정된 조건식에서는 사용될 수 없다. 
+  예를 들어, 위 조건제시법에서 <code>bmi</code>라는 이름을 <code>(w, h) &lt;- xs</code> 부분에서는 사용할 수 없다. </li>
 </ul>
+<p>위 기능을 이용하여 뚱뚱한 사람들의 BMI만 반환하는 함수를 아래와 같이 정의할 수 있다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[119]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">calcBmis</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
-<span class="nf">calcBmis</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmi</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="kr">let</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">w</span> <span class="o">/</span> <span class="n">h</span> <span class="o">^</span> <span class="mi">2</span><span class="p">,</span> <span class="n">bmi</span> <span class="o">&gt;=</span> <span class="mf">25.0</span><span class="p">]</span>
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">calcBmis&#39;</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">RealFloat</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+<span class="nf">calcBmis&#39;</span> <span class="n">xs</span> <span class="ow">=</span> <span class="p">[</span><span class="n">bmi</span> <span class="o">|</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="kr">let</span> <span class="n">bmi</span> <span class="ow">=</span> <span class="n">w</span> <span class="o">/</span> <span class="n">h</span> <span class="o">^</span> <span class="mi">2</span><span class="p">,</span> <span class="n">bmi</span> <span class="o">&gt;=</span> <span class="mf">25.0</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -16812,24 +17791,25 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><code>bmi</code>라는 이름을 <code>(w, h) &lt;- xs</code> 부분에서는 사용할 수 없음.<ul>
-<li>이유: <em>let</em> 절보다 앞에서 정의됐기 때문</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><em>let</em> 절을 리스트 조건 제시법에서 사용할 때 해당 이름이 사용되는 범위가 리스트 내부로 이미 정의되어 있기 때문에 <code>in</code>을 빼먹어도 상관없음</li>
-<li>하지만, 술어에서 <em>let in</em> 절을 사용할 수도 있고, 이렇게 되면 <em>let</em> 절에서 정의된 이름들은 해당 술어부에서만 사용할 수 있음</li>
-<li><em>in</em> 부분은 GHCI에서 함수나 상수를 직접 정의할 때 빼먹을 수 있음. 그렇게 되면, 이 이름들은 전체 상호작용 세션 내내 사용 가능하게 됨</li>
-</ul>
+<p><strong>참고:<code>in</code> 부분 생략</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>앞서 설명한대로 조건제시법에서의 <code>let</code> 바인딩의 적용 범위는 정해져 있기에 <code>in</code> 부분을 생략하였다. 
+하지만, 물론 다른 조건식에서 <code>let ... in ...</code> 표현식이 사용될 수도 있으며,
+일반적인 <code>let</code> 바인딩의 적용 범위를 갖는다.</p>
+<p>그리도 GHCi에서 전역함수나 전역상수를 직접 정의할 때에도 <code>in</code> 부분을 때 생략한다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="prompt input_prompt">In&nbsp;[120]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">zoot</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
@@ -16842,7 +17822,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">zoot</span> <span class="mi">3</span> <span class="mi">9</span> <span class="mi">2</span>
@@ -16873,9 +17853,17 @@ font-weight: bold;
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>물론 <code>in</code> 부분을 사용하면 지역적(local)으로 영향을 미친다.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[122]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">let</span> <span class="n">boot</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="kr">in</span> <span class="n">boot</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">2</span>
@@ -16908,7 +17896,7 @@ font-weight: bold;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[123]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">boot</span>
@@ -16942,25 +17930,6 @@ font-weight: bold;
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="where-&#51208;&#51012;-&#49324;&#50857;&#54616;&#45716;-&#51060;&#50976;">where &#51208;&#51012; &#49324;&#50857;&#54616;&#45716; &#51060;&#50976;<a class="anchor-link" href="#where-&#51208;&#51012;-&#49324;&#50857;&#54616;&#45716;-&#51060;&#50976;">&#182;</a></h3><ul>
-<li><em>let</em> 절이 편리하지만, 모든 <em>where</em> 절 대신 <em>let</em> 절을 사용하지 않는 이유:<ul>
-<li><em>let</em> 절은 표현식이고 굉장히 지역적이기 때문에, 모든 가드 내에서 통용되어 사용할 수 없음</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p><em>where</em> 절이 이름을 쓰는 부분이 정의하는 부분보다 함수에서 앞에 있기 때문에 <code>where</code> 절을 선호함</p>
-</li>
-<li><p><code>where</code> 절을 사용하면, 함수의 본체가 함수의 이름과 유형 선언에 더 가까워지고 이것이 가독성이 좋아 보임</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="4.4-&#48512;&#47197;:-&#51116;&#44480;&#54632;&#49688;&#51032;-&#51221;&#51648;&#47928;&#51228;">4.4 &#48512;&#47197;: &#51116;&#44480;&#54632;&#49688;&#51032; &#51221;&#51648;&#47928;&#51228;<a class="anchor-link" href="#4.4-&#48512;&#47197;:-&#51116;&#44480;&#54632;&#49688;&#51032;-&#51221;&#51648;&#47928;&#51228;">&#182;</a></h2>
 </div>
 </div>
@@ -16971,7 +17940,21 @@ font-weight: bold;
 <p><a href="https://ko.wikipedia.org/wiki/콜라츠_추측">콜라츠 추측(Collatz Conjecture)</a>에서
 언급된 함수를 이용하여 구조적 재귀를 사용하지 않는 재귀함수의 정지문제의 판단이 
 매우 어렵거나 경우에 따라 판단이 불가능할 수 있음을 설명한다.</p>
-<p>콜라츠 추측에서 소개된 함수는 다음과 같다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#53084;&#46972;&#52768;-&#52628;&#52769;">&#53084;&#46972;&#52768; &#52628;&#52769;<a class="anchor-link" href="#&#53084;&#46972;&#52768;-&#52628;&#52769;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>콜라츠 추측에서 사용된 재귀함수는 다음과 같다.</p>
 $$
 f(n) = 
 \begin{cases}
@@ -17005,16 +17988,30 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>콜라츠 추측은 함수 $f$가 임의의 양의 정수 $n$에 대해 항상 1을 반환하며 
 실행을 멈춘다는 내용이다. 
-하지만 이에 대한 어떤 증명도 지금까지 알려지지 않았다.</p>
+하지만 이에 대한 어떠한 증명도 지금까지 알려지지 않았다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#53084;&#46972;&#52768;-&#51116;&#44480;&#54632;&#49688;&#51032;-&#51221;&#51648;&#47928;&#51228;">&#53084;&#46972;&#52768; &#51116;&#44480;&#54632;&#49688;&#51032; &#51221;&#51648;&#47928;&#51228;<a class="anchor-link" href="#&#53084;&#46972;&#52768;-&#51116;&#44480;&#54632;&#49688;&#51032;-&#51221;&#51648;&#47928;&#51228;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>아래 함수는 위 함수 $f$가 각 인자에 대해 재귀적으로 몇 번 호출되는가를 세어주는 함수이며
-가드를 활용한다.</p>
+가드를 활용하여 정의되었다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[124]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collatz</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
@@ -17044,7 +18041,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[125]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collatz</span> <span class="mi">3</span>
@@ -17085,7 +18082,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collatz</span> <span class="mi">100</span>
@@ -17126,7 +18123,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collatz</span> <span class="mi">171</span>
@@ -17149,6 +18146,173 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 
 <div class="output_text output_subarea ">
 <pre>125</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1부터 10,000까지를 대상으로 했을 때 함수 $f$가 가장 많이 호출되는 횟수는 다음과 같다.</p>
+<ul>
+<li>앞서 언급한 <code>map</code> 함수를 이용하여 1부터 10,000까지의 정수에 <code>collatz</code> 함수를 적용한 후
+  <code>maximum</code> 함수를 이용하여 최댓값을 찾는다. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collaztNumbers</span> <span class="ow">=</span> <span class="n">map</span> <span class="n">collatz</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10000</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">maximum</span> <span class="n">collaztNumbers</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>262</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>함수 $f$를 262 번 호출하도록 하는 인자는 
+<code>Data.List</code> 모듈에 포함된 <code>elemIndex</code> 함수를 이용하여 확인할 수 있다.</p>
+<ul>
+<li>모듈 활용법은 나중에 자세히 설명한다.
+  여기서는 먼저 특정 모듈을 아래와 같이 불러온다(import) 한다는 것만 기억해두면 된다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="kr">import</span> <span class="nn">Data.List</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이제 262가 위치한 자리의 인덱스는 6170 하나인 것으로 확인된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">elemIndices</span> <span class="mi">262</span> <span class="n">collaztNumbers</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>[6170]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>리스트 <code>[1..10000]</code> 에서 6170 인덱스를 갖는 값은 6171이다(인덱스는 0부터 시작하기 때문임).
+실제로 6171을 <code>collatz</code> 함수의 인자로 사용하면 262가 반환된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">collatz</span> <span class="mi">6171</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>262</pre>
 </div>
 
 </div>
