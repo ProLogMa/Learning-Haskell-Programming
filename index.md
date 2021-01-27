@@ -42,23 +42,23 @@
 
 프로그래밍 초보자에게는
 목차에서 안내하는 챕터별 링크에 연결된 HTML 강의노트를 읽으면서 
-[Repl.it](https://repl.it/) 사이트에서 실습하는 방식이 가장 간단하다.
+[Repl.it](https://repl.it/) 사이트에서 실습하는 방식이 가장 간단합니다.
 
 * [Repl.it에서 하스켈 프로그래밍하기](https://youtu.be/OZ6q6Rz9f6k?t=261) 동영상 참조할 것
 
 * 주의사항: 아래에서 언급하는 
     [바인더(Binder) 서버](https://mybinder.org/v2/gh/prologma/learn-you-a-haskell/master?urlpath=lab/tree/learn_you_a_haskell/00-preface.ipynb) 가 
     제공하는 주피터 노트북을 활용하여 실습을 진행할 수도 있음.
-    하지만 바인더 서버가 실행될 때까지 경우에 따라 시간이 좀 걸릴 수도 있으며, 수정한 내용은 저장되지 않음에 주의할 것.
+    하지만 바인더 서버에서 수정한 내용은 저장되지 않음에 주의할 것.
 
 ### 추천 환경
 
-* 주의사항: 아래 추천 환경은 비초보자용입니다. 
-    초보자가 아니더라도 도커(Docker)와 Visual Studio Code의 조합을 처음 접하는 경우 많이 생소하고, 또 설치 및 설정 과정이 어려울 수 있습니다.
-    하지만 프로그래밍에 관심이 많다면 상식적으로 알고 있어야 하는 내용입니다. 
-    조금 어렵더라도 검색을 통해 확인하면서 시도해보세요.  
+__주의사항:__ 아래 추천 환경은 비초보자용입니다. 
+초보자가 아니더라도 도커(Docker)와 Visual Studio Code의 조합을 처음 접하는 경우 많이 생소하고, 또 설치 및 설정 과정이 어려울 수 있습니다.
+하지만 프로그래밍에 관심이 많다면 상식적으로 알고 있어야 하는 내용입니다. 
+조금 어렵더라도 검색을 통해 확인하면서 시도해보세요.  
 
-[깃허브 원격저장소(repository)](https://github.com/prologma/learn-you-a-haskell)를 PC에 복제하여 도커(Docker) 이미지와 함께 활용할 것을 추천합니다.
+먼저, [깃허브 원격저장소(repository)](https://github.com/prologma/learn-you-a-haskell)를 PC에 복제하여 도커(Docker) 이미지와 함께 활용할 것을 추천합니다.
 
 * 깃허브 원격저장소 복제하기
 
