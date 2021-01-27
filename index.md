@@ -33,6 +33,7 @@
 1. [하스켈 프로그래밍 시작하기](./notebooks_html/02-starting-out.html)
 1. [유형과 유형클래스](./notebooks_html/03-types-and-typeclasses.html)
 1. [함수의 구문](./notebooks_html/04-syntax-in-functions.html)
+1. [재귀와 귀납법](./notebooks_html/05-recursion-and-induction.html) (준비중)
 1. ...
 
 ## 학습 및 프로그래밍 환경
