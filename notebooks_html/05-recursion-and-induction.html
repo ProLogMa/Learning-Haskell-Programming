@@ -12947,13 +12947,8 @@ ul.typeahead-list  > li > a.pull-right {
 /*# sourceMappingURL=style.min.css.map */
     </style>
 <style type="text/css">
-    pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-.highlight .hll { background-color: #ffffcc }
-.highlight { background: #f8f8f8; }
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -13180,8 +13175,8 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>위 정의에 의하면, <code>n &gt;= 2</code> 인 경우, <code>fib n</code>을 계산하려면 
 <code>fib (n-1)</code> 과 <code>fib (n-2)</code> 를 먼저 계산해야 한다.
-이와 같이 함수를 정의할 때 해당 함수를 활용하는 방식을 <strong>재귀</strong>(recursion)라 부른다.</p>
-<p>예를 들어, <code>fib(3)</code>가 계산되는 과정은 다음과 같다.</p>
+이와 같이 함수를 정의할 때 해당 함수를 <strong>다시 활용</strong>하는 방식을 <strong>재귀</strong>(recursion)라 부른다.</p>
+<p>예를 들어, <code>fib(3)</code>이 계산되는 과정은 다음과 같다.</p>
 <div class="highlight"><pre><span></span><span class="nf">fib</span> <span class="mi">3</span> <span class="ow">=</span> <span class="n">fib</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">fib</span> <span class="mi">1</span>
       <span class="ow">=</span> <span class="p">(</span><span class="n">fib</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">fib</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span> <span class="mi">1</span>
       <span class="ow">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">fib</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span> <span class="mi">1</span>
@@ -13193,7 +13188,7 @@ div#notebook {
 <p><strong>참고</strong></p>
 <ul>
 <li>소괄호를 이용하여 표현된 계산 순서에 주의하라. 
-  예를 들어, 첫째 등호 오른편이 가리키는 값을 계산하기 위해 
+  예를 들어, 첫째 등호 오른편에 위치한 표현식이 가리키는 값을 계산하기 위해 
   <code>fib 1</code>의 계산은 <code>fib 2</code>의 계산이 완료될 때까지 기다려야 한다.</li>
 <li><code>fib</code> 함수는 음수에 대해서는 계산과정이 절대로 멈추지 않는다.</li>
 <li><code>fib</code> 함수가 조금만 커져도 계산과정이 매우 오래 걸릴 수 있다.
@@ -13221,7 +13216,7 @@ div#notebook {
 <p>정리하면, 재귀함수를 작성할 때 아래 두 사항을 고려해야 한다.</p>
 <ul>
 <li>시작단계: 인자와 반환값을 구체적으로 지정하는 단계</li>
-<li>재귀단계: 주어진 인자의 반환값을 지정하는 표현식에 해당 함수가 사용되는 단계    </li>
+<li>재귀단계: 주어진 인자의 반환값을 지정하는 표현식에 해당 함수가 다시 사용되는 단계    </li>
 </ul>
 
 </div>
@@ -13254,7 +13249,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>재귀함수를 정의할 때 사용되는 시작단계와 재귀단계 중에서
-재귀단계에 구조적 제약을 가하는 방식으로
+재귀단계에 구조적 제약(structural constraints)을 가하는 방식으로
 <strong>구조적 재귀</strong>(structural recursion)를 정의하며,
 기본 양식은 다음과 같다.</p>
 <ul>
@@ -13277,11 +13272,11 @@ div#notebook {
 <ul>
 <li>시작단계: <ul>
 <li>공리스트인 경우: 반환값 없음. 오류 발생해야 함.</li>
-<li>한 개의 항목으로 구성된 리스트의 경우: 해당 항목이 최대값임.</li>
+<li>한 개의 항목으로 구성된 리스트의 경우: 주어진 하나의 항목이 최대값임.</li>
 </ul>
 </li>
 <li>재귀단계: 공리스트가 아닌 경우<ul>
-<li>꼬리(tail)의 최댓값과 머리(head)를 비교하여 큰 값을 반환함.</li>
+<li>꼬리(tail)의 최댓값과 머리(head)를 비교하여 큰 값 반환</li>
 </ul>
 </li>
 </ul>
@@ -13487,7 +13482,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>즉, 보다 긴 리스트의 항목 일부는 무시된다.</p>
 <p>시작단계는 역시 공리스트를 대상으로 한다.
-다만, 인자가 두 개이므로 각각의 인자에 대해 따로따로 다뤄야 한다.
+다만, 인자가 두 개이므로 각각의 인자에 경우를 달리해서 다뤄야 한다.
 반면에, 재귀 단계는 두 인자 모두 한 개 이상의 항목을 가질 때이다. 
 <code>zip</code> 함수를 직접 구현하면 다음과 같다.</p>
 
@@ -13524,14 +13519,14 @@ div#notebook {
                        <span class="ow">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="sc">&#39;a&#39;</span><span class="p">)</span> <span class="kt">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">)</span> <span class="kt">:</span> <span class="kt">[]</span>
                        <span class="ow">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="sc">&#39;a&#39;</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">)]</span>
 </pre></div>
-<p>실제 실행결과와 동일하다.</p>
+<p>아래의 실제 실행결과와 동일하다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">zip&#39;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="sc">&#39;b&#39;</span><span class="p">]</span>
@@ -13566,7 +13561,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>예제:</strong> <code>elem</code> 함수 구현</p>
-<p><code>elem</code> 함수는 어떤 값이 어떤 리스트의 항목으로 사용되었는지 여부를 판단해주는 함수이다.</p>
+<p><code>elem</code> 함수는 어떤 값이 어떤 리스트의 항목으로 사용되었는지 여부를 판단하는 함수이다.</p>
 <ul>
 <li>시작단계: 공리스트인 경우</li>
 <li>재귀단계: 공리스트가 아닌 경우</li>
@@ -13579,7 +13574,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">elem&#39;</span> <span class="ow">::</span> <span class="p">(</span><span class="kt">Eq</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
@@ -13597,14 +13592,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>재귀단계에 사용된 <code>elem</code> 함수의 인자는 <code>xs</code>이며, <code>x:xs</code>의 하위패턴이기에 구조적 재귀가 명확하다.</p>
+<p>재귀단계에 사용된 <code>elem</code> 함수의 인자는 <code>xs</code>이며, <code>x:xs</code>의 하위패턴이기에 구조적 재귀가 사용된 것이 명확하다.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">elem&#39;</span> <span class="mi">3</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -13637,7 +13632,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="nf">elem&#39;</span> <span class="mi">5</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -13668,79 +13663,87 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span>
-</pre></div>
-
-    </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44396;&#51312;&#51201;-&#51116;&#44480;&#51032;-&#51109;&#51216;">&#44396;&#51312;&#51201; &#51116;&#44480;&#51032; &#51109;&#51216;<a class="anchor-link" href="#&#44396;&#51312;&#51201;-&#51116;&#44480;&#51032;-&#51109;&#51216;">&#182;</a></h3>
 </div>
 </div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-Haskell"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>구조적 재귀의 장점은 사용된 인자의 패턴, 즉 모양에만 의존하여 반환값을 지정한다는 것이다.
 즉, 사용된 인자의 의미를 생각할 필요없이 겉모습만 보면 해당 인자의 값을 계산할 수 있다.
-반면에 구조적 재귀가 아닌 경우는 사용되는 인자의 겉모습 뿐만 아니라 의미 또한 반환값을 
-지정할 때 함께 고려해야 한다.</p>
-<p>예를 들어, ...</p>
+실제로 앞서 살펴 본 <code>maximum'</code>, <code>reverse'</code>, <code>zip'</code>, <code>elem'</code> 모두 
+사용된 인자의 패턴에만 의존한다.</p>
+<p>반면에 구조적 재귀가 아닌 경우는 사용되는 인자의 겉모습 뿐만 아니라 의미 또한 반환값을 
+지정할 때 함께 고려해야 한다. 
+예를 들어, 두 양의 정수의 최대공약수를 계산하는 유클리드 호제법(Euclidean algorithm)의 경우
+구조적 재귀를 사용하지 않는다.</p>
+<p><strong>참고:</strong> 두 정수의 최대공약수를 계산하는 <code>gcd</code> 함수가 이미 정의되어 있다. 
+따라서 여기서는 다른 이름을 사용한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">gcd&#39;</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="kt">Integer</span>
+<span class="nf">gcd&#39;</span> <span class="mi">0</span> <span class="n">y</span> <span class="ow">=</span> <span class="n">y</span>
+<span class="nf">gcd&#39;</span> <span class="n">x</span> <span class="n">y</span> <span class="ow">=</span> <span class="n">gcd&#39;</span> <span class="p">(</span><span class="n">y</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="n">x</span><span class="p">)</span> <span class="n">x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">gcd&#39;</span> <span class="mi">42</span> <span class="mi">36</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>그런데 <code>0</code>이 아닌 <code>x</code>에 대한 <code>gcd' x y</code>에 사용된 
+인자 <code>(y `mod` x)</code>가 <code>x</code>의 하위 패턴이 아니다.
+물론, <code>x</code>, <code>y</code> 모두 양의 정수이면 <code>(y `mod` x)</code> 는 <code>x</code> 보다 작은 값이기 때문에
+<code>gcd' x y</code> 는 임의의 양의 정수에 대해 항상 최대공약수를 계산한다. 
+이렇듯 구조적 재귀가 아닌 재귀함수의 계산은 단순히 인자의 패턴만을 보고서 판단할 수 없으며
+사용된 인자의 의미를 따져 보아야 한다.</p>
 
 </div>
 </div>
@@ -13748,21 +13751,170 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>엄밀히 따지면 위 <code>factorial</code> 함수의 정의는 구조적 재귀를 따르지 않는다.
-이유는 변수 <code>n</code>이 패턴이 아닌 기타의 경우를 다루는 단순한 (패턴)변수이며,
-따라서 <code>(n-1)</code>이 <code>n</code>의 <strong>하위 구조</strong>(substructure)는 아니기 때문이다.</p>
-<p><code>(n-1)</code>이 의미상 <code>n</code> 보다 작은 값을 표현한다는 것과 하위 구조라는 것은
-서로 별개이며, 구조적 재귀로 작성된 함수는 시작단계를 적절하게 정의한 경우
-기본적으로 모든 계산이 항상 특정 값을 반환하고 실행을 멈춘다.
-하지만 여기서는 <code>factorial</code> 함수의 경우 구조적 재귀함수로 간주해도 전혀 문제가 없다는 
-점만 언급하고 자세한 설명은 생략한다.</p>
-<p>모든 재귀함수를 항상 구조적 재귀함수로 정의할 수는 없다.
-구조적 재귀를 사용하지 않는 재귀함수는 경우에 따라 계산 실행이 언제 멈출지 알 수 없는 경우가
-발생하며, 일반적으로 판단이 불가능하다 
-(<a href="https://www.youtube.com/watch?v=92WHN-pAFCs&amp;t=389s">튜링의 정지문제 동영상</a> 참조).</p>
-<p><img src="img/halting-problem.png"/></p>
-<p>잠시 뒤에 콜라츠 추측(Collatz conjecture)을 설명하면서 계산실행이 언젠가는 멈추기는 하지만 
-얼마나 오래 걸리는지 예측하는 방법은 아직 알려지지 않은 재귀함수를 살펴볼 것이다.</p>
+<p><strong>주의:</strong> <code>gcd'</code> 함수는 음의 정수에 대해서는 <code>gcd</code>와 다르게 작동한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">gcd</span> <span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">)</span> <span class="p">(</span><span class="o">-</span><span class="mi">36</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">gcd&#39;</span> <span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">)</span> <span class="p">(</span><span class="o">-</span><span class="mi">36</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>-6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>gcd</code> 함수처럼 작동하는 함수는 아래와 같이 정의할 수 있다. 
+(참고: <a href="https://wiki.haskell.org/99_questions/Solutions/32">https://wiki.haskell.org/99_questions/Solutions/32</a>)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">myGCD</span> <span class="n">x</span> <span class="n">y</span> <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span>     <span class="ow">=</span> <span class="n">myGCD</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="n">y</span>
+          <span class="o">|</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span>     <span class="ow">=</span> <span class="n">myGCD</span> <span class="n">x</span> <span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+          <span class="o">|</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">x</span>     <span class="ow">=</span> <span class="n">gcd&#39;</span> <span class="n">y</span> <span class="n">x</span>
+          <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="n">gcd&#39;</span> <span class="n">x</span> <span class="n">y</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-Haskell"><pre><span></span><span class="nf">myGCD</span> <span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">)</span> <span class="p">(</span><span class="o">-</span><span class="mi">36</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51088;&#50672;&#49688;&#50752;-&#44396;&#51312;&#51201;-&#51116;&#44480;">&#51088;&#50672;&#49688;&#50752; &#44396;&#51312;&#51201; &#51116;&#44480;<a class="anchor-link" href="#&#51088;&#50672;&#49688;&#50752;-&#44396;&#51312;&#51201;-&#51116;&#44480;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>앞서 살펴본 <code>fib</code> 함수의 정의는 구조적 재귀를 따르지 않는다.
+이유는 <code>n-1</code>과 <code>n-2</code> 둘 모두 패턴 변수 <code>n</code>의 하위패턴이 아니기 때문이다.
+사실 <code>n-1</code>과 <code>n-2</code>가 의미상 <code>n</code> 보다 작은 값을 표현한다는 것과 하위패턴이라는 것은 
+서로 별개이다.</p>
+<p>하지만 인자를 자연수로 제한할 경우 <code>fib'</code> 함수를 구조적 재귀로 볼 수 있다. 
+예를 들어, <code>Data.Nat</code> 패키지에 제공하는 <code>Nat</code> 유형은 아래와 같이 정의되어 있다.</p>
+<div class="highlight"><pre><span></span><span class="kr">data</span> <span class="kt">Nat</span> <span class="ow">=</span> <span class="kt">Zero</span> <span class="o">|</span> <span class="kt">Succ</span> <span class="kt">Nat</span>
+</pre></div>
+<p>즉, <code>Nat</code>은 음이 아닌 정수들의 유형을 가리키며, <code>Nat</code> 유형의 값의 패턴은
+<code>Zero</code> 또는 <code>Succ n</code>이며, 각 유형의 의미는 다음과 같다.</p>
+<ul>
+<li><code>Zero</code>: <code>0</code>에 해당</li>
+<li><code>Succ n</code>: <code>n+1</code> 에 해당</li>
+</ul>
+<p>이제 <code>fib'</code> 함수를 다음과 같이 구조적 재귀를 이용하여 정의할 수 있다.</p>
+<div class="highlight"><pre><span></span><span class="nf">fib&#39;</span> <span class="kt">Zero</span>            <span class="ow">=</span> <span class="mi">0</span>
+<span class="nf">fib&#39;</span> <span class="p">(</span><span class="kt">Succ</span> <span class="kt">Zero</span><span class="p">)</span>     <span class="ow">=</span> <span class="mi">1</span>
+<span class="nf">fib&#39;</span> <span class="p">(</span><span class="kt">Succ</span> <span class="p">(</span><span class="kt">Succ</span> <span class="n">n</span><span class="p">))</span> <span class="ow">=</span> <span class="n">fib&#39;</span> <span class="p">(</span><span class="kt">Succ</span> <span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib&#39;</span> <span class="n">n</span>
+</pre></div>
+<p>따라서 임의의 정수에 대해 정의된 <code>fib'</code> 함수를 음이 아닌 정수에 대해 제한한다면
+구조적 재귀를 따르는 함수라고 볼 수 있다.
+왜냐하면 <code>(Succ n)</code>, <code>n</code> 모두 <code>(Succ (Succ n))</code>의 하위패턴이기 때문이다.</p>
+<p><strong>주의:</strong> <code>Data.Nat</code> 패키지는 하스켈의 기본 패키지가 아니라 추가로 설치해야 한다.
+설치할 수 있으면 직접 확인해볼 수 있지만 패키지를 추가로 설치할 수 없거나 어떻게 하는지 모른다 하더라도 
+이후 내용을 이해하는 데에 아무 상관이 없다.</p>
 
 </div>
 </div>
@@ -13770,11 +13922,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>예제</strong></p>
-<p>Now that we know how to generally think recursively, let's implement a
-few functions using recursion.</p>
-<p>First off, we'll implement <code>replicate</code>.
-<code>replicate</code> takes an <code>Int</code> and some element and returns a list that has
+<p><strong>예제:</strong> <code>replicate</code> 함수 구현</p>
+<p><code>fib'</code> 함수처럼 엄밀하게 따지면 구조적 재귀를 따르지 않지만 
+인자를 음의 정수로 제한하면 구조적 재귀를 따른다고 볼 수 있는 함수를 좀 더 살펴보자.</p>
+<p>먼저, <code>replicate</code> 함수를 직접 구현한다.</p>
+<p><code>replicate</code> takes an <code>Int</code> and some element and returns a list that has
 several repetitions of the same element. 
 For instance, <code>replicate 3 5</code>
 returns <code>[5,5,5]</code>. Let's think about the edge condition. My guess is that
@@ -13877,6 +14029,13 @@ then a list that takes <code>n-1</code> elements from the tail as a tail.</p>
                   <span class="ow">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.3-&#48708;&#44396;&#51312;&#51201;-&#51116;&#44480;(Non-structural-Recursion)">5.3 &#48708;&#44396;&#51312;&#51201; &#51116;&#44480;(Non-structural Recursion)<a class="anchor-link" href="#5.3-&#48708;&#44396;&#51312;&#51201;-&#51116;&#44480;(Non-structural-Recursion)">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14141,7 +14300,7 @@ application of quicksort.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="5.3-&#51116;&#44480;&#50752;-&#44480;&#45225;&#48277;">5.3 &#51116;&#44480;&#50752; &#44480;&#45225;&#48277;<a class="anchor-link" href="#5.3-&#51116;&#44480;&#50752;-&#44480;&#45225;&#48277;">&#182;</a></h2>
+<h2 id="5.4-&#51116;&#44480;&#50752;-&#44480;&#45225;&#48277;">5.4 &#51116;&#44480;&#50752; &#44480;&#45225;&#48277;<a class="anchor-link" href="#5.4-&#51116;&#44480;&#50752;-&#44480;&#45225;&#48277;">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14197,16 +14356,27 @@ which part you'll use the recursive call.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="5.4-&#48512;&#47197;:-&#51116;&#44480;&#54632;&#49688;&#51032;-&#51221;&#51648;&#47928;&#51228;">5.4 &#48512;&#47197;: &#51116;&#44480;&#54632;&#49688;&#51032; &#51221;&#51648;&#47928;&#51228;<a class="anchor-link" href="#5.4-&#48512;&#47197;:-&#51116;&#44480;&#54632;&#49688;&#51032;-&#51221;&#51648;&#47928;&#51228;">&#182;</a></h2>
+<h2 id="5.5-&#51116;&#44480;&#54632;&#49688;&#51032;-&#51221;&#51648;&#47928;&#51228;">5.5 &#51116;&#44480;&#54632;&#49688;&#51032; &#51221;&#51648;&#47928;&#51228;<a class="anchor-link" href="#5.5-&#51116;&#44480;&#54632;&#49688;&#51032;-&#51221;&#51648;&#47928;&#51228;">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://ko.wikipedia.org/wiki/콜라츠_추측">콜라츠 추측(Collatz Conjecture)</a>에서
-언급된 함수를 이용하여 구조적 재귀를 사용하지 않는 재귀함수의 정지문제의 판단이 
-매우 어렵거나 경우에 따라 판단이 불가능할 수 있음을 설명한다.</p>
+<h3 id="&#51221;&#51648;&#47928;&#51228;">&#51221;&#51648;&#47928;&#51228;<a class="anchor-link" href="#&#51221;&#51648;&#47928;&#51228;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>모든 재귀함수를 항상 구조적 재귀함수로 정의할 수는 없다.
+구조적 재귀를 사용하지 않는 재귀함수는 경우에 따라 계산 실행이 언제 멈출지 알 수 없는 경우가
+발생하며, 일반적으로 판단이 불가능하다 
+(<a href="https://www.youtube.com/watch?v=92WHN-pAFCs&amp;t=389s">튜링의 정지문제 동영상</a> 참조).</p>
+<p><img src="img/halting-problem.png"/></p>
+<p>잠시 뒤에 콜라츠 추측(Collatz conjecture)을 설명하면서 계산실행이 언젠가는 멈추기는 하지만 
+얼마나 오래 걸리는지 예측하는 방법은 아직 알려지지 않은 재귀함수를 살펴볼 것이다.</p>
 
 </div>
 </div>
@@ -14221,6 +14391,9 @@ which part you'll use the recursive call.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://ko.wikipedia.org/wiki/콜라츠_추측">콜라츠 추측(Collatz Conjecture)</a>에서
+언급된 함수를 이용하여 구조적 재귀를 사용하지 않는 재귀함수의 정지문제의 판단이 
+매우 어렵거나 경우에 따라 판단이 불가능할 수 있음을 설명한다.</p>
 <p>콜라츠 추측에서 사용된 재귀함수는 다음과 같다.</p>
 $$
 f(n) = 
@@ -14494,7 +14667,7 @@ $$<p>예를 들어, $f(3)$이 계산되는 과정은 다음과 같다.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-Haskell"><pre><span></span><span class="kr">import</span> <span class="nn">Data.List</span>
